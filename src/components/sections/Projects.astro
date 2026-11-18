@@ -1,0 +1,124 @@
+---
+/**
+ * Portfolio: filter chips (generated from data), editorial grid, <dialog> lightbox.
+ * Gallery images live in <template> tags (inert, not in the DOM) until a project is opened.
+ */
+import { Picture } from 'astro:assets';
+import SectionLabel from '../SectionLabel.astro';
+import ArchEdge from '../ArchEdge.astro';
+import Icon from '../Icon.astro';
+import { t, fmt, plural, type Lang } from '../../i18n';
+import { projects, projectCategories, categoryCounts } from '../../data/projects';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const p = d.projects;
+// Image slot widths match the desktop grid (6/12 vs 3/12 columns) so no card downloads
+// a bigger file than it shows (lesson P-02). scripts/projects.ts swaps them after filtering.
+const SIZES_WIDE = '(min-width: 1100px) min(44vw, 740px), (min-width: 768px) 46vw, 100vw';
+const SIZES_NARROW = '(min-width: 1100px) min(21vw, 360px), (min-width: 768px) 46vw, 100vw';
+---
+
+<section class="section projects" id="projects" data-theme="dark" aria-labelledby="projects-title">
+  <ArchEdge />
+  <div class="container">
+    <header class="section-head section-head--split">
+      <SectionLabel index="02">{p.label}</SectionLabel>
+      <h2 id="projects-title" class="t-h2" data-split>{p.title}</h2>
+      <p class="t-lead" data-reveal>{p.lead}</p>
+    </header>
+
+    <div class="filters" role="group" aria-label={p.filterLabel} data-filters hidden>
+      <button class="chip" type="button" aria-pressed="true" data-filter="all">
+        {p.all} <sup>{projects.length}</sup>
+      </button>
+      {
+        projectCategories.map((c) => (
+          <button class="chip" type="button" aria-pressed="false" data-filter={c}>
+            {p.categories[c]} <sup>{categoryCounts[c]}</sup>
+          </button>
+        ))
+      }
+    </div>
+    <p class="sr-only" aria-live="polite" data-filter-status data-template={p.shown}></p>
+
+    <ul class="pgrid" data-projects-grid role="list" data-sizes-wide={SIZES_WIDE} data-sizes-narrow={SIZES_NARROW}>
+      {
+        projects.map((proj, i) => {
+          const item = p.items[proj.id];
+          return (
+            <li class="pcard" data-slot={i % 6} data-categories={proj.categories.join(' ')} data-reveal>
+              <div class="frame pcard__media" data-reveal-img>
+                <Picture
+                  src={proj.cover}
+                  alt={item.alt}
+                  widths={[320, 480, 640, 800, 960, 1280]}
+                  sizes={i % 6 === 0 || i % 6 === 5 ? SIZES_WIDE : SIZES_NARROW}
+                  formats={['avif']}
+                  fallbackFormat="webp"
+                  quality={50}
+                />
+                <span class="pcard__open" aria-hidden="true"><Icon name="plus" /></span>
+              </div>
+              <p class="pcard__meta">
+                <span class="label">{proj.categories.map((c) => p.categories[c]).join(' · ')}</span>
+                <span class="label">{plural(lang, proj.photos.length, p.photos)}</span>
+              </p>
+              <h3 class="pcard__title">
+                <button
+                  class="pcard__btn"
+                  type="button"
+                  aria-haspopup="dialog"
+                  data-gallery={proj.id}
+                  data-title={item.title}
+                >
+                  {item.title}
+                  <span class="sr-only">— {p.open}</span>
+                </button>
+              </h3>
+              <p class="pcard__desc">{item.desc}</p>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+
+  {
+    projects.map((proj) => (
+      <template id={`gallery-${proj.id}`}>
+        {proj.photos.map((img, n) => (
+          <div class="lightbox__slide">
+            <Picture
+              src={img}
+              alt={`${p.items[proj.id].title} — ${fmt(d.a11y.photoOf, { n: n + 1, total: proj.photos.length })}`}
+              widths={[720, 1280, 1800]}
+              sizes="(min-aspect-ratio: 1/1) 80vw, 100vw"
+              formats={['avif']}
+              fallbackFormat="webp"
+              quality={50}
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        ))}
+      </template>
+    ))
+  }
+
+  <dialog class="lightbox" aria-labelledby="lb-title" data-lightbox data-photo-of={d.a11y.photoOf}>
+    <div class="lightbox__inner">
+      <div class="lightbox__top">
+        <p class="lightbox__title" id="lb-title" data-lb-title></p>
+        <p class="lightbox__count" aria-live="polite" data-lb-count></p>
+        <button class="lightbox__close" type="button" aria-label={d.a11y.close} data-lb-close><span></span><span></span></button>
+      </div>
+      <div class="lightbox__stage" data-lb-stage></div>
+      <div class="lightbox__bar">
+        <button class="lightbox__nav" type="button" aria-label={d.a11y.prev} data-lb-prev><Icon name="arrow-left" /></button>
+        <button class="lightbox__nav" type="button" aria-label={d.a11y.next} data-lb-next><Icon name="arrow" /></button>
+      </div>
+    </div>
+  </dialog>
+</section>

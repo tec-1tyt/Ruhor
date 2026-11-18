@@ -1,0 +1,31 @@
+---
+/** Minimal line icons on a 24px grid, 1.5px stroke. Decorative by default. */
+interface Props {
+  name: 'arrow' | 'arrow-left' | 'plus' | 'chevron' | 'mail' | 'phone' | 'pin' | 'check' | 'arrow-up' | 'chat';
+  class?: string;
+}
+const { name, class: className } = Astro.props;
+const paths: Record<Props['name'], string> = {
+  arrow: 'M4 12h15M13 6l6 6-6 6',
+  'arrow-left': 'M20 12H5M11 6l-6 6 6 6',
+  'arrow-up': 'M12 20V5M6 11l6-6 6 6',
+  plus: 'M12 4v16M4 12h16',
+  chevron: 'M5 9l7 7 7-7',
+  mail: 'M3 6h18v12H3zM3 7l9 6 9-6',
+  phone: 'M6.5 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A17 17 0 0 1 4.5 5a2 2 0 0 1 2-2z',
+  pin: 'M12 21s7-6.2 7-11.5a7 7 0 1 0-14 0C5 14.8 12 21 12 21zM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z',
+  check: 'M4 12.5l5 5L20 6.5',
+  chat: 'M4 5h16v11H9l-5 4z',
+};
+---
+
+<svg
+  class={className}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="square"
+  aria-hidden="true"
+  focusable="false"><path d={paths[name]}></path></svg
+>

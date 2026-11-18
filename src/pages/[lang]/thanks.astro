@@ -1,0 +1,23 @@
+---
+/** Landing page after a form submission without JavaScript. Not indexed. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+import { langCodes, t, paths, type Lang } from '../../i18n';
+
+export function getStaticPaths() {
+  return langCodes.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const d = t(lang);
+---
+
+<BaseLayout lang={lang} page="thanks" title={d.meta.thanksTitle} description={d.thanks.text} noindex>
+  <section class="page" data-theme="dark" data-section-theme="dark" style="background: var(--bg); color: var(--fg)">
+    <div class="container" style="display: grid; gap: 28px; justify-items: start">
+      <h1 class="t-h2" style="max-width: 16ch">{d.thanks.title}</h1>
+      <p class="t-lead">{d.thanks.text}</p>
+      <Button href={paths.home(lang)} icon="arrow">{d.thanks.back}</Button>
+    </div>
+  </section>
+</BaseLayout>

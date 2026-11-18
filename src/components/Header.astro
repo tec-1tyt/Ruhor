@@ -1,0 +1,121 @@
+---
+/**
+ * Fixed header: logo, section nav, language switcher, CTA, and a native <dialog> mobile menu.
+ * Theme (light/dark) follows the section underneath — set by scripts/header.ts.
+ */
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import Button from './Button.astro';
+import { languages, t, paths, type Lang, type PageKey } from '../i18n';
+import { company, mailHref, telHref } from '../data/company';
+
+interface Props {
+  lang: Lang;
+  page: PageKey | 'notFound';
+}
+const { lang, page } = Astro.props;
+const d = t(lang);
+const base = page === 'home' ? '' : paths.home(lang);
+const nav = [
+  { id: 'services', label: d.nav.services },
+  { id: 'projects', label: d.nav.projects },
+  { id: 'process', label: d.nav.process },
+  { id: 'about', label: d.nav.about },
+  { id: 'contact', label: d.nav.contact },
+];
+const langHref = (l: Lang) => (page === 'notFound' ? paths.home(l) : paths[page as PageKey](l));
+---
+
+<header class="header" data-header data-theme="dark">
+  <div class="container header__inner">
+    <a class="header__logo" href={`${base || ''}#top`} aria-label={d.a11y.home}>
+      <Logo animate />
+      <span class="header__descriptor" aria-hidden="true">{d.hero.eyebrow}</span>
+    </a>
+
+    <nav class="header__nav" aria-label={d.a11y.mainNav}>
+      <ul>
+        {nav.map((n) => <li><a href={`${base}#${n.id}`} data-nav={n.id}>{n.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <div class="lang lang--desktop" data-lang>
+        <button
+          class="lang__btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="lang-list"
+          aria-label={`${d.a11y.language}: ${d.langName}`}
+        >
+          {lang}
+          <Icon name="chevron" />
+        </button>
+        <ul class="lang__list" id="lang-list" role="list">
+          {
+            languages.map((l) => (
+              <li>
+                <a
+                  class="lang__item"
+                  href={langHref(l.code)}
+                  hreflang={l.hreflang}
+                  lang={l.hreflang}
+                  aria-current={l.code === lang ? 'true' : undefined}
+                  data-lang-link
+                >
+                  <span>{t(l.code).langName}</span>
+                  <span>{l.code}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <Button href={`${base}#contact`} size="sm" icon={null} class="header__cta-full" magnetic>{d.nav.cta}</Button>
+      <Button href={`${base}#contact`} size="sm" icon={null} class="header__cta-short">{d.nav.ctaShort}</Button>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label={d.a11y.menuOpen} data-menu-open>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<dialog class="menu" id="menu" aria-label={d.a11y.mainNav} data-menu>
+  <div class="container">
+    <div class="menu__top">
+      <a href={`${base}#top`} aria-label={d.a11y.home} data-menu-link><Logo /></a>
+      <button class="menu__close" type="button" aria-label={d.a11y.menuClose} data-menu-close>
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="menu__body">
+      <nav class="menu__nav">
+        <ol>
+          {nav.map((n) => <li><a href={`${base}#${n.id}`} data-menu-link>{n.label}</a></li>)}
+        </ol>
+      </nav>
+      <div class="menu__langs" role="list" aria-label={d.a11y.language}>
+        {
+          languages.map((l) => (
+            <a
+              role="listitem"
+              href={langHref(l.code)}
+              hreflang={l.hreflang}
+              lang={l.hreflang}
+              aria-current={l.code === lang ? 'true' : undefined}
+              data-lang-link
+            >
+              <span>{t(l.code).langName}</span>
+              <span>{l.code}</span>
+            </a>
+          ))
+        }
+      </div>
+      <div class="menu__foot">
+        <Button href={`${base}#contact`} class="btn--block" data-menu-link>{d.nav.cta}</Button>
+        <a class="link" href={mailHref}>{company.email}</a>
+        {telHref && <a class="link" href={telHref}>{company.phone}</a>}
+      </div>
+    </div>
+  </div>
+</dialog>

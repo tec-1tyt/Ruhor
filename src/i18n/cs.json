@@ -1,0 +1,253 @@
+{
+  "meta": {
+    "title": "RUHOR — stavební firma v Praze: dlažby, beton, rekonstrukce",
+    "description": "Stavební firma RUHOR v Praze: pokládka dlažby, zemní a betonářské práce, fasády, střechy, rekonstrukce a stavby domů na klíč. Jeden z našich projektů v Německu: 3 600 m² dlažby.",
+    "ogAlt": "Logo RUHOR a žulová dlažba kladená do oblouků",
+    "locale": "cs_CZ",
+    "privacyTitle": "Zásady ochrany osobních údajů — RUHOR Company",
+    "privacyDescription": "Jaké údaje RUHOR Company s.r.o. získává přes formulář na webu, k čemu, jak dlouho je uchovává a jaká máte práva podle GDPR.",
+    "thanksTitle": "Poptávka odeslána — RUHOR Company",
+    "notFoundTitle": "Stránka nenalezena — RUHOR Company"
+  },
+  "a11y": {
+    "skip": "Přejít na obsah",
+    "home": "RUHOR — na úvodní stránku",
+    "mainNav": "Hlavní navigace",
+    "footerNav": "Navigace v patičce",
+    "menuOpen": "Otevřít menu",
+    "menuClose": "Zavřít menu",
+    "language": "Jazyk webu",
+    "currentLanguage": "Aktuální jazyk",
+    "close": "Zavřít",
+    "prev": "Předchozí fotografie",
+    "next": "Další fotografie",
+    "gallery": "Galerie realizace",
+    "photoOf": "Fotografie {n} z {total}",
+    "newTab": "(otevře se v novém panelu)",
+    "required": "povinné pole"
+  },
+  "nav": {
+    "services": "Služby",
+    "projects": "Realizace",
+    "process": "Postup",
+    "about": "O nás",
+    "contact": "Kontakt",
+    "cta": "Poslat poptávku",
+    "ctaShort": "Poptávka"
+  },
+  "hero": {
+    "eyebrow": "Stavební firma v Praze",
+    "title": ["Od základů", "až po klíče."],
+    "lead": "Pokládáme dlažbu, provádíme zemní a betonářské práce, stavíme terasy, přístřešky i domy na klíč a rekonstruujeme interiéry. Jeden dodavatel pro celou stavbu.",
+    "ctaPrimary": "Poslat poptávku",
+    "ctaSecondary": "Naše realizace",
+    "caption": "Žulová kostka, pokládka do oblouků",
+    "imageAlt": "Náměstí ze žulové kostky kladené do oblouků; pracovník hutní dlažbu vibrační deskou"
+  },
+  "intro": {
+    "label": "Firma",
+    "statement": "Stavbu vedeme od prvních zemních prací až po finální úpravy — a stavební suť po sobě odvezeme.",
+    "facts": {
+      "paving": "dlažby na jednom z našich projektů v Německu",
+      "services": "druhů stavebních prací",
+      "city": "Sídlo v Praze · IČO {ico}"
+    }
+  },
+  "services": {
+    "label": "Služby",
+    "title": "Vše pro stavbu v jedněch rukou",
+    "lead": "17 druhů prací seřazených podle fází stavby. Objednat můžete jednotlivou práci i více etap najednou.",
+    "count": "Služeb ve skupině: {n}",
+    "categories": {
+      "groundworks": { "title": "Zemní práce a inženýrské sítě", "lead": "Příprava pozemku a vše, co je pod zemí.", "imageAlt": "Bourání starého povrchu sbíjecím kladivem" },
+      "construction": { "title": "Výstavba", "lead": "Od základů až po střechu.", "imageAlt": "Betonové schody ve svahu v bednění" },
+      "paving": { "title": "Dlažby a venkovní úpravy", "lead": "Dvory, chodníky, terasy a okolí domu.", "imageAlt": "Válec hutní velkou plochu zámkové dlažby" },
+      "interiors": { "title": "Interiéry a rekonstrukce", "lead": "Vnitřní práce od hrubých po finální.", "imageAlt": "Prostor s velkoformátovou keramickou dlažbou" }
+    },
+    "items": {
+      "excavation": { "name": "Zemní a výkopové práce", "desc": "Stavební jámy, rýhy, terénní úpravy a srovnání pozemku, příprava podkladu pro základy a zpevněné plochy." },
+      "demolition": { "name": "Bourací práce", "desc": "Odstranění starých povrchů, konstrukcí a příček, příprava objektu na nové práce." },
+      "sewerage": { "name": "Kanalizace a potrubí", "desc": "Pokládka kanalizačního a drenážního potrubí, osazení revizních šachet." },
+      "waste": { "name": "Odvoz suti", "desc": "Odvoz stavební suti a odpadu po bourání a stavbě — staveniště zůstane čisté." },
+      "concrete": { "name": "Betonářské práce a monolity", "desc": "Základy, desky, schodiště a další monolitické betonové konstrukce." },
+      "masonry": { "name": "Zdění", "desc": "Zdění nosných stěn a příček z cihel a tvárnic." },
+      "houses": { "name": "Domy na klíč", "desc": "Stavba rodinného domu od nuly: od výkopu a základů až po dokončovací práce." },
+      "roofing": { "name": "Střechy", "desc": "Realizace nových střech a opravy střešní krytiny." },
+      "facade": { "name": "Fasády", "desc": "Úpravy, opravy a renovace fasád domů." },
+      "paving": { "name": "Pokládka dlažby", "desc": "Betonová zámková i žulová dlažba, velkoformátové desky, obrubníky; pokládka do oblouků i dekorativní vzory." },
+      "landscaping": { "name": "Sadové úpravy a trávníky", "desc": "Příprava půdy, zakládání trávníků, záhony a zeleň na pozemku." },
+      "terraces": { "name": "Letní kuchyně a terasy", "desc": "Terasy z dlažby a desek, letní kuchyně a posezení u domu." },
+      "carports": { "name": "Přístřešky a garáže", "desc": "Stavba přístřešků pro auta a garáží." },
+      "renovation": { "name": "Rekonstrukce a obklady", "desc": "Rekonstrukce prostor, dlažby a obklady, velkoformátová keramika." },
+      "drywall": { "name": "Sádrokarton", "desc": "Příčky, podhledy, niky a dekorativní stěny s osvětlením." },
+      "painting": { "name": "Stěrkování a malování", "desc": "Příprava stěn a stropů, stěrkování a malování." },
+      "flooring": { "name": "Podlahy", "desc": "Pokládka vinylu, laminátu a dlažby." }
+    }
+  },
+  "projects": {
+    "label": "Realizace",
+    "title": "Vybrané realizace",
+    "lead": "Skutečné zakázky našeho týmu: od soukromých dvorů po průmyslové plochy a obchodní prostory.",
+    "filterLabel": "Filtrovat podle druhu prací",
+    "all": "Vše",
+    "shown": "Zobrazeno realizací: {n}",
+    "photos": { "one": "{n} fotografie", "few": "{n} fotografie", "many": "{n} fotografie", "other": "{n} fotografií" },
+    "open": "Zobrazit fotografie",
+    "categories": {
+      "paving": "Dlažby",
+      "outdoor": "Venkovní úpravy",
+      "interiors": "Interiéry",
+      "groundworks": "Zemní práce a sítě"
+    },
+    "items": {
+      "granite-square": { "title": "Náměstí ze žulové kostky", "desc": "Žulová kostka kladená do oblouků, chodník z desek a obrubníky. Příprava a hutnění podkladu.", "alt": "Náměstí ze žulové kostky kladené do oblouků a chodník z desek" },
+      "showroom": { "title": "Komerční prostor", "desc": "Velkoformátová keramická dlažba na podlaze i stěnách, přesné spáry a rozvržení.", "alt": "Světlý prostor s podlahou z velkoformátové keramické dlažby" },
+      "industrial-yard": { "title": "Průmyslová plocha", "desc": "Velká plocha ze zámkové dlažby: štěrkový podklad, pokládka a hutnění válcem.", "alt": "Silniční válec na velké ploše zámkové dlažby" },
+      "yards": { "title": "Terasy a dvory rodinných domů", "desc": "Velkoformátové desky na terase, příjezd ke garáži, dekorativní barevná dlažba, záhony.", "alt": "Krytá terasa rodinného domu z velkoformátových desek" },
+      "hall-fan": { "title": "Dlažba do oblouků u výrobní haly", "desc": "Ruční pokládka žulové kostky do segmentových oblouků, s poklopy a odvodňovacími mřížemi.", "alt": "Žulová kostka do oblouků s odvodňovací mříží u výrobní haly" },
+      "mall": { "title": "Obchodní centrum", "desc": "Pokládka dlažby na velké ploše obchodních pasáží.", "alt": "Pasáž obchodního centra s novou dlažbou" },
+      "stairs": { "title": "Schodiště ve svahu", "desc": "Betonové schody s obkladem z dlažby a kamene, obrubníky a podklad.", "alt": "Schody u domu obložené dlažbou v imitaci kamene" },
+      "parking": { "title": "Podzemní garáže", "desc": "Betonová dlažba v podzemním parkovišti se světlým značením.", "alt": "Podzemní parkoviště s betonovou dlažbou" },
+      "paths": { "title": "Chodníky z desek a dlažby", "desc": "Pěší cesty v parku i u budov: podklad, obrubníky, desky.", "alt": "Chodník z betonových desek mezi stromy v parku" },
+      "interiors": { "title": "Interiéry: sádrokarton a dlažba", "desc": "Dekorativní sádrokartonové stěny s osvětlením, dlažba v imitaci dřeva.", "alt": "Dekorativní sádrokartonová stěna s nikami a osvětlením" },
+      "curbs": { "title": "Obrubníky a chodníky", "desc": "Žulové a betonové obrubníky, chodníky z velkoformátových desek, opravy dlážděných ulic.", "alt": "Osazování žulových obrubníků do rýhy" },
+      "utilities": { "title": "Sítě, výkopy a bourání", "desc": "Výkopy pro kanalizaci a drenáž, revizní šachty, bourání starých povrchů.", "alt": "Hluboký výkop pro inženýrské sítě" }
+    }
+  },
+  "process": {
+    "label": "Postup",
+    "title": "Jak pracujeme",
+    "lead": "Srozumitelné kroky od první zprávy až po předání stavby.",
+    "steps": [
+      { "title": "Poptávka", "text": "Popište zadání ve formuláři nebo e-mailem. Upřesníme podrobnosti a domluvíme prohlídku." },
+      { "title": "Prohlídka", "text": "Posoudíme pozemek či prostor: podklad, výšky, přístup techniky a rozsah prací." },
+      { "title": "Rozpočet a plán", "text": "Odsouhlasíme materiály, etapy a termíny a cenu stanovíme v rozpočtu." },
+      { "title": "Realizace", "text": "Pracujeme podle odsouhlaseného plánu a průběžně vás informujeme o každé etapě." },
+      { "title": "Předání a úklid", "text": "Předáme hotové dílo, uklidíme staveniště a odvezeme stavební suť." }
+    ]
+  },
+  "about": {
+    "label": "O nás",
+    "title": "O firmě",
+    "text": [
+      "RUHOR Company s.r.o. je stavební firma se sídlem v Praze. Pokládáme dlažbu, provádíme zemní a betonářské práce, stavíme terasy, přístřešky i domy na klíč a rekonstruujeme interiéry.",
+      "V portfoliu máme žulová náměstí, průmyslové plochy, parkoviště, obchodní prostory i soukromé dvory. Všechny fotografie na webu pocházejí z našich zakázek."
+    ],
+    "photoAlt": "Dva pracovníci ručně kladou žulovou kostku do oblouků",
+    "facts": {
+      "company": "Název",
+      "ico": "IČO",
+      "seat": "Sídlo",
+      "register": "Rejstřík",
+      "registerValue": "Zapsáno v obchodním rejstříku",
+      "services": "Druhy prací"
+    },
+    "whyTitle": "Proč RUHOR",
+    "why": [
+      { "title": "Kompletní dodávka", "text": "17 druhů prací: od bourání a výkopů po malování a podlahy. Méně dodavatelů, méně koordinace." },
+      { "title": "Silní v dlažbách", "text": "Žulová kostka do oblouků, zámková dlažba, velkoformátové desky. Jeden z našich projektů v Německu měl {paving} dlažby." },
+      { "title": "Soukromé i komerční zakázky", "text": "Terasy, dvory a schodiště pro rodinné domy; areály, parkoviště a obchodní prostory pro firmy." },
+      { "title": "Čisté staveniště", "text": "Odvezeme stavební suť a objekt předáme uklizený." }
+    ]
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Napište nám o svém projektu",
+    "lead": "Popište, co je potřeba udělat — ozveme se, upřesníme podrobnosti a domluvíme prohlídku.",
+    "form": {
+      "name": "Jméno",
+      "contact": "Telefon nebo e-mail",
+      "contactHint": "Jak vás můžeme kontaktovat",
+      "service": "Druh prací",
+      "serviceAny": "Vyberte (nepovinné)",
+      "serviceOther": "Jiné nebo více druhů prací",
+      "message": "Co je potřeba udělat",
+      "messageHint": "Objekt, plocha, adresa nebo lokalita, požadovaný termín.",
+      "optional": "nepovinné",
+      "submit": "Odeslat poptávku",
+      "sending": "Odesíláme…",
+      "privacy": "Odesláním formuláře berete na vědomí zpracování údajů podle {link}.",
+      "privacyLink": "zásad ochrany osobních údajů",
+      "honeypot": "Toto pole nevyplňujte"
+    },
+    "errors": {
+      "nameRequired": "Vyplňte jméno.",
+      "contactRequired": "Vyplňte telefon nebo e-mail.",
+      "contactInvalid": "Zkontrolujte telefon nebo e-mail — zdá se, že obsahuje chybu.",
+      "messageRequired": "Stručně popište, co je potřeba udělat.",
+      "messageTooLong": "Zpráva je příliš dlouhá — maximálně 3000 znaků.",
+      "summary": "Zkontrolujte označená pole.",
+      "failed": "Poptávku se nepodařilo odeslat. Zkuste to znovu, nebo ji pošlete e-mailem — text s vašimi údaji jsme už připravili.",
+      "mailto": "Odeslat e-mailem"
+    },
+    "success": {
+      "title": "Děkujeme! Poptávka byla odeslána.",
+      "text": "Vaši zprávu jsme přijali a brzy se vám ozveme.",
+      "again": "Odeslat další poptávku"
+    },
+    "direct": {
+      "title": "Přímo",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "location": "Praha, Česká republika",
+      "map": "Otevřít na mapě",
+      "company": "Fakturační údaje"
+    },
+    "mailSubject": "Poptávka z webu RUHOR"
+  },
+  "transform": {
+    "label": "Výsledek",
+    "title": "Od podkladu až po hotový povrch",
+    "lead": "Posuňte jezdec: stejná místa před a po naší práci.",
+    "before": "Před",
+    "after": "Po",
+    "range": "Porovnání před a po: poloha jezdce",
+    "stairs": { "title": "Schody ve svahu", "caption": "Připravený podklad s obrubami — a hotové schody s obkladem.", "beforeAlt": "Schody u domu ve fázi podkladu: černé obruby stupňů a štěrk", "afterAlt": "Stejné schody s obkladem v imitaci kamene" },
+    "yard": { "title": "Průmyslová plocha", "caption": "Štěrkový podklad — a hotová plocha ze zámkové dlažby na stejném areálu.", "beforeAlt": "Plocha se štěrkovým podkladem před pokládkou dlažby", "afterAlt": "Plocha s hotovou betonovou dlažbou" }
+  },
+  "scale": {
+    "label": "Rozsah",
+    "title": "3 600 m² dlažby na jednom projektu v Německu",
+    "unit": "dlažby na jednom projektu v Německu",
+    "compare": "To je přibližně {n} tenisových kurtů.",
+    "legend": "1 čtverec = {m2} m²",
+    "next": "Další čtverec je váš objekt.",
+    "gridLabel": "Schéma: {tiles} čtverců po {m2} m², celkem {total} m²"
+  },
+  "dock": { "label": "Rychlý kontakt", "call": "Zavolat", "email": "E-mail", "telegram": "Telegram", "whatsapp": "WhatsApp", "viber": "Viber" },
+  "footer": {
+    "tagline": "Stavební firma v Praze. Od základů až po klíče.",
+    "navTitle": "Sekce",
+    "contactTitle": "Kontakt",
+    "legalTitle": "Firma",
+    "registered": "Zapsáno v obchodním rejstříku",
+    "privacy": "Zásady ochrany osobních údajů",
+    "rights": "Všechna práva vyhrazena.",
+    "top": "Nahoru"
+  },
+  "privacy": {
+    "title": "Zásady ochrany osobních údajů",
+    "updated": "Platné od 17. listopadu 2026",
+    "back": "Na úvodní stránku",
+    "sections": [
+      { "h": "Kdo vaše údaje zpracovává", "p": ["Správcem osobních údajů je {company}, IČO {ico}, {address}. Ve věci osobních údajů nás můžete kontaktovat na adrese {email}."] },
+      { "h": "Jaké údaje získáváme", "p": ["Pouze to, co sami vyplníte ve formuláři na webu: jméno, telefon nebo e-mail, druh prací a text zprávy. Pokud nám napíšete přímo e-mailem, získáme vaši e-mailovou adresu a obsah zprávy."] },
+      { "h": "K čemu je používáme", "p": ["Abychom odpověděli na vaši poptávku, upřesnili podrobnosti a připravili nabídku. Právním základem je provedení opatření přijatých před uzavřením smlouvy na vaši žádost (čl. 6 odst. 1 písm. b) GDPR)."] },
+      { "h": "Jak dlouho je uchováváme", "p": ["Údaje z poptávky uchováváme nejdéle 12 měsíců od posledního kontaktu, pokud nedojde k uzavření smlouvy. Pokud smlouvu uzavřeme, uchováváme je po dobu, kterou vyžadují právní předpisy pro smluvní a účetní dokumentaci."] },
+      { "h": "Kdo k nim má přístup", "p": ["Web je hostován na platformě Vercel Inc. Zprávy z formuláře doručuje do naší schránky služba Resend; e-mailovou schránku poskytuje Seznam.cz. Tito dodavatelé zpracovávají údaje pouze za účelem poskytování svých služeb. Někteří z nich mohou údaje zpracovávat mimo EU na základě standardních smluvních doložek Evropské komise.", "Vaše údaje neprodáváme ani je nepředáváme pro reklamní účely."] },
+      { "h": "Cookies a analytika", "p": ["Web nepoužívá cookies, analytiku ani reklamní sledovací nástroje. Písma a obrázky se načítají z našeho vlastního serveru. Hosting může dočasně uchovávat technické záznamy (například IP adresu) kvůli bezpečnosti a spolehlivému provozu webu."] },
+      { "h": "Vaše práva", "p": ["Máte právo na přístup ke svým údajům, jejich opravu nebo výmaz, omezení zpracování, přenositelnost a právo vznést námitku proti zpracování. Napište nám na {email}.", "Stížnost můžete podat také u Úřadu pro ochranu osobních údajů (www.uoou.cz)."] }
+    ]
+  },
+  "thanks": {
+    "title": "Děkujeme! Poptávka byla odeslána.",
+    "text": "Vaši zprávu jsme přijali a brzy se vám ozveme.",
+    "back": "Zpět na úvodní stránku"
+  },
+  "notFound": {
+    "title": "Stránka nenalezena",
+    "text": "Možná byla přesunuta, nebo je v adrese chyba.",
+    "back": "Na úvodní stránku"
+  },
+  "langName": "Čeština"
+}

@@ -1,0 +1,253 @@
+{
+  "meta": {
+    "title": "RUHOR – Bauunternehmen in Prag: Pflaster, Beton, Sanierung",
+    "description": "Bauunternehmen RUHOR in Prag: Pflasterarbeiten, Erd- und Betonarbeiten, Fassaden, Dächer, Sanierungen und schlüsselfertige Häuser. Eines unserer Projekte in Deutschland: 3.600 m² Pflaster.",
+    "ogAlt": "RUHOR-Logo und Granitpflaster im Segmentbogenverband",
+    "locale": "de_DE",
+    "privacyTitle": "Datenschutzerklärung – RUHOR Company",
+    "privacyDescription": "Welche Daten die RUHOR Company s.r.o. über das Kontaktformular erhält, wofür, wie lange sie gespeichert werden und welche Rechte Sie nach der DSGVO haben.",
+    "thanksTitle": "Anfrage gesendet – RUHOR Company",
+    "notFoundTitle": "Seite nicht gefunden – RUHOR Company"
+  },
+  "a11y": {
+    "skip": "Zum Inhalt springen",
+    "home": "RUHOR – zur Startseite",
+    "mainNav": "Hauptnavigation",
+    "footerNav": "Navigation im Seitenfuß",
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen",
+    "language": "Sprache der Website",
+    "currentLanguage": "Aktuelle Sprache",
+    "close": "Schließen",
+    "prev": "Vorheriges Foto",
+    "next": "Nächstes Foto",
+    "gallery": "Projektgalerie",
+    "photoOf": "Foto {n} von {total}",
+    "newTab": "(öffnet in einem neuen Tab)",
+    "required": "Pflichtfeld"
+  },
+  "nav": {
+    "services": "Leistungen",
+    "projects": "Projekte",
+    "process": "Ablauf",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "cta": "Projekt anfragen",
+    "ctaShort": "Anfrage"
+  },
+  "hero": {
+    "eyebrow": "Bauunternehmen in Prag",
+    "title": ["Vom Fundament", "bis zum Schlüssel."],
+    "lead": "Wir verlegen Pflaster, übernehmen Erd- und Betonarbeiten, bauen Terrassen, Carports und schlüsselfertige Häuser und sanieren Innenräume. Ein Auftragnehmer für das gesamte Bauvorhaben.",
+    "ctaPrimary": "Projekt anfragen",
+    "ctaSecondary": "Unsere Projekte",
+    "caption": "Granitpflaster im Segmentbogen",
+    "imageAlt": "Platz aus Granitpflaster im Segmentbogenverband; ein Arbeiter verdichtet die Fläche mit der Rüttelplatte"
+  },
+  "intro": {
+    "label": "Unternehmen",
+    "statement": "Wir begleiten Ihr Bauvorhaben von den ersten Erdarbeiten bis zum letzten Feinschliff – und entsorgen den Bauschutt selbst.",
+    "facts": {
+      "paving": "Pflaster bei einem unserer Projekte in Deutschland",
+      "services": "Bauleistungen aus einer Hand",
+      "city": "Sitz in Prag · IČO {ico}"
+    }
+  },
+  "services": {
+    "label": "Leistungen",
+    "title": "Alles für Ihren Bau aus einer Hand",
+    "lead": "17 Leistungen, geordnet nach Bauphasen. Sie können einzelne Arbeiten oder mehrere Bauabschnitte zusammen beauftragen.",
+    "count": "Leistungen in der Gruppe: {n}",
+    "categories": {
+      "groundworks": { "title": "Erdarbeiten und Leitungsbau", "lead": "Grundstücksvorbereitung und alles unter der Erde.", "imageAlt": "Abbruch eines alten Belags mit dem Abbruchhammer" },
+      "construction": { "title": "Hochbau", "lead": "Vom Fundament bis zum Dach.", "imageAlt": "Betontreppe am Hang in der Schalung" },
+      "paving": { "title": "Pflaster und Außenanlagen", "lead": "Höfe, Wege, Terrassen und das Umfeld Ihres Hauses.", "imageAlt": "Walze verdichtet eine große Fläche aus Betonpflaster" },
+      "interiors": { "title": "Innenausbau und Sanierung", "lead": "Innenarbeiten vom Rohbau bis zum Finish.", "imageAlt": "Raum mit großformatigem Feinsteinzeug auf dem Boden" }
+    },
+    "items": {
+      "excavation": { "name": "Erd- und Aushubarbeiten", "desc": "Baugruben, Gräben, Geländemodellierung und Planie, Unterbau für Fundamente und befestigte Flächen." },
+      "demolition": { "name": "Abbrucharbeiten", "desc": "Rückbau alter Beläge, Bauteile und Trennwände, Vorbereitung für neue Arbeiten." },
+      "sewerage": { "name": "Kanal- und Rohrleitungsbau", "desc": "Verlegung von Abwasser- und Drainageleitungen, Setzen von Revisionsschächten." },
+      "waste": { "name": "Bauschuttentsorgung", "desc": "Abtransport von Bauschutt und Abfällen nach Abbruch und Bau – die Baustelle bleibt sauber." },
+      "concrete": { "name": "Beton- und Ortbetonarbeiten", "desc": "Fundamente, Bodenplatten, Treppen und andere monolithische Betonbauteile." },
+      "masonry": { "name": "Maurerarbeiten", "desc": "Tragende Wände und Trennwände aus Ziegeln und Mauersteinen." },
+      "houses": { "name": "Schlüsselfertige Häuser", "desc": "Einfamilienhaus von Grund auf: vom Aushub und Fundament bis zum Innenausbau." },
+      "roofing": { "name": "Dacharbeiten", "desc": "Neue Dächer und Reparaturen an der Dacheindeckung." },
+      "facade": { "name": "Fassaden", "desc": "Gestaltung, Reparatur und Erneuerung von Hausfassaden." },
+      "paving": { "name": "Pflasterarbeiten", "desc": "Beton- und Granitpflaster, Großformatplatten, Bordsteine; Segmentbogen- und Zierpflaster." },
+      "landscaping": { "name": "Begrünung und Rasen", "desc": "Bodenvorbereitung, Rasenanlage, Beete und Begrünung des Grundstücks." },
+      "terraces": { "name": "Outdoor-Küchen und Terrassen", "desc": "Terrassen aus Platten und Pflaster, Sommerküchen und Sitzplätze am Haus." },
+      "carports": { "name": "Carports und Garagen", "desc": "Bau von Carports und Garagen." },
+      "renovation": { "name": "Sanierung und Fliesen", "desc": "Sanierung von Räumen, Boden- und Wandfliesen, großformatiges Feinsteinzeug." },
+      "drywall": { "name": "Trockenbau", "desc": "Trennwände, Decken, Nischen und dekorative Wände mit Beleuchtung." },
+      "painting": { "name": "Spachtel- und Malerarbeiten", "desc": "Vorbereitung von Wänden und Decken, Spachteln und Streichen." },
+      "flooring": { "name": "Bodenbeläge", "desc": "Verlegung von Vinyl, Laminat und Fliesen." }
+    }
+  },
+  "projects": {
+    "label": "Projekte",
+    "title": "Ausgewählte Projekte",
+    "lead": "Echte Baustellen unseres Teams: von privaten Höfen bis zu Industrieflächen und Verkaufsräumen.",
+    "filterLabel": "Nach Art der Arbeiten filtern",
+    "all": "Alle",
+    "shown": "Angezeigte Projekte: {n}",
+    "photos": { "one": "{n} Foto", "few": "{n} Fotos", "many": "{n} Fotos", "other": "{n} Fotos" },
+    "open": "Fotos ansehen",
+    "categories": {
+      "paving": "Pflaster",
+      "outdoor": "Außenanlagen",
+      "interiors": "Innenausbau",
+      "groundworks": "Erdarbeiten und Leitungen"
+    },
+    "items": {
+      "granite-square": { "title": "Platz aus Granitpflaster", "desc": "Granitpflaster im Segmentbogenverband, Gehweg aus Platten und Bordsteine. Vorbereitung und Verdichtung des Unterbaus.", "alt": "Platz aus Granitpflaster im Segmentbogen und Gehweg aus Platten" },
+      "showroom": { "title": "Gewerberaum", "desc": "Großformatiges Feinsteinzeug auf Boden und Wänden, exakte Fugen und Verlegeplan.", "alt": "Heller Raum mit Boden aus großformatigem Feinsteinzeug" },
+      "industrial-yard": { "title": "Industriefläche", "desc": "Große Fläche aus Betonpflaster: Schotterunterbau, Verlegung und Verdichtung mit der Walze.", "alt": "Straßenwalze auf einer großen Fläche aus Betonpflaster" },
+      "yards": { "title": "Terrassen und Höfe von Einfamilienhäusern", "desc": "Großformatplatten auf der Terrasse, Garagenzufahrt, farbiges Zierpflaster, Beete.", "alt": "Überdachte Terrasse eines Einfamilienhauses mit Großformatplatten" },
+      "hall-fan": { "title": "Bogenpflaster an einer Produktionshalle", "desc": "Handverlegtes Granitpflaster in Segmentbögen, mit Schachtdeckeln und Entwässerungsrinnen.", "alt": "Granitpflaster im Segmentbogen mit Entwässerungsrost vor einer Produktionshalle" },
+      "mall": { "title": "Einkaufszentrum", "desc": "Fliesenverlegung auf großer Fläche in den Ladenpassagen.", "alt": "Ladenpassage eines Einkaufszentrums mit neuem Fliesenboden" },
+      "stairs": { "title": "Treppen am Hang", "desc": "Betontreppen mit Pflaster- und Natursteinbelag, Randsteine und Unterbau.", "alt": "Treppe an einem Haus mit Belag in Natursteinoptik" },
+      "parking": { "title": "Tiefgarage", "desc": "Betonpflaster in einer Tiefgarage mit heller Markierung.", "alt": "Tiefgarage mit Betonpflaster" },
+      "paths": { "title": "Wege aus Platten und Pflaster", "desc": "Fußwege im Park und an Gebäuden: Unterbau, Randsteine, Platten.", "alt": "Weg aus Betonplatten zwischen Bäumen im Park" },
+      "interiors": { "title": "Innenräume: Trockenbau und Fliesen", "desc": "Dekorative Trockenbauwände mit Beleuchtung, Fliesen in Holzoptik.", "alt": "Dekorative Trockenbauwand mit Nischen und Beleuchtung" },
+      "curbs": { "title": "Bordsteine und Gehwege", "desc": "Granit- und Betonbordsteine, Gehwege aus Großformatplatten, Reparatur von Straßenpflaster.", "alt": "Setzen von Granitbordsteinen im Graben" },
+      "utilities": { "title": "Leitungen, Gräben und Abbruch", "desc": "Gräben für Kanal und Drainage, Revisionsschächte, Abbruch alter Beläge.", "alt": "Tiefer Graben für Versorgungsleitungen" }
+    }
+  },
+  "process": {
+    "label": "Ablauf",
+    "title": "So arbeiten wir",
+    "lead": "Klare Schritte von der ersten Nachricht bis zur Übergabe.",
+    "steps": [
+      { "title": "Anfrage", "text": "Beschreiben Sie Ihr Vorhaben im Formular oder per E-Mail. Wir klären Details und vereinbaren einen Vor-Ort-Termin." },
+      { "title": "Besichtigung", "text": "Wir prüfen Grundstück oder Räume: Untergrund, Höhen, Zufahrt für Maschinen und Umfang der Arbeiten." },
+      { "title": "Kostenvoranschlag und Plan", "text": "Wir stimmen Materialien, Bauabschnitte und Termine ab und halten den Preis im Kostenvoranschlag fest." },
+      { "title": "Ausführung", "text": "Wir arbeiten nach dem abgestimmten Plan und informieren Sie über jeden Bauabschnitt." },
+      { "title": "Übergabe und Reinigung", "text": "Wir übergeben das fertige Ergebnis, räumen die Baustelle auf und entsorgen den Bauschutt." }
+    ]
+  },
+  "about": {
+    "label": "Über uns",
+    "title": "Über das Unternehmen",
+    "text": [
+      "Die RUHOR Company s.r.o. ist ein Bauunternehmen mit Sitz in Prag. Wir verlegen Pflaster, übernehmen Erd- und Betonarbeiten, bauen Terrassen, Carports und schlüsselfertige Häuser und sanieren Innenräume.",
+      "Zu unseren Referenzen gehören Granitplätze, Industrieflächen, Tiefgaragen, Verkaufsräume und private Höfe. Alle Fotos auf dieser Website stammen von unseren Baustellen."
+    ],
+    "photoAlt": "Zwei Arbeiter verlegen Granitpflaster von Hand im Segmentbogen",
+    "facts": {
+      "company": "Firma",
+      "ico": "IČO (Firmen-ID)",
+      "seat": "Sitz",
+      "register": "Register",
+      "registerValue": "Tschechisches Handelsregister (Obchodní rejstřík)",
+      "services": "Leistungen"
+    },
+    "whyTitle": "Warum RUHOR",
+    "why": [
+      { "title": "Alles aus einer Hand", "text": "17 Leistungen: vom Abbruch und Aushub bis zu Malerarbeiten und Bodenbelägen. Weniger Firmen, weniger Abstimmung." },
+      { "title": "Stark im Pflasterbau", "text": "Granit im Segmentbogen, Betonpflaster, Großformatplatten. Eines unserer Projekte in Deutschland umfasste {paving} Pflaster." },
+      { "title": "Privat und gewerblich", "text": "Terrassen, Höfe und Treppen für Einfamilienhäuser; Industrieflächen, Tiefgaragen und Verkaufsräume für Unternehmen." },
+      { "title": "Saubere Baustelle", "text": "Wir entsorgen den Bauschutt und hinterlassen das Objekt aufgeräumt." }
+    ]
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Erzählen Sie uns von Ihrem Projekt",
+    "lead": "Beschreiben Sie, was gemacht werden soll – wir melden uns, klären die Details und vereinbaren eine Besichtigung.",
+    "form": {
+      "name": "Name",
+      "contact": "Telefon oder E-Mail",
+      "contactHint": "Wie wir Sie erreichen",
+      "service": "Leistung",
+      "serviceAny": "Bitte wählen (optional)",
+      "serviceOther": "Sonstiges oder mehrere Leistungen",
+      "message": "Was soll gemacht werden?",
+      "messageHint": "Objekt, Fläche, Adresse oder Ort, gewünschter Zeitraum.",
+      "optional": "optional",
+      "submit": "Anfrage senden",
+      "sending": "Wird gesendet …",
+      "privacy": "Wie wir Ihre Daten verarbeiten, lesen Sie in unserer {link}.",
+      "privacyLink": "Datenschutzerklärung",
+      "honeypot": "Dieses Feld bitte leer lassen"
+    },
+    "errors": {
+      "nameRequired": "Bitte geben Sie Ihren Namen ein.",
+      "contactRequired": "Bitte geben Sie Telefon oder E-Mail an.",
+      "contactInvalid": "Bitte prüfen Sie Telefon oder E-Mail – die Angabe scheint fehlerhaft.",
+      "messageRequired": "Bitte beschreiben Sie kurz Ihr Vorhaben.",
+      "messageTooLong": "Die Nachricht ist zu lang – maximal 3000 Zeichen.",
+      "summary": "Bitte prüfen Sie die markierten Felder.",
+      "failed": "Die Anfrage konnte nicht gesendet werden. Versuchen Sie es erneut oder senden Sie sie per E-Mail – der Text mit Ihren Angaben ist schon vorbereitet.",
+      "mailto": "Per E-Mail senden"
+    },
+    "success": {
+      "title": "Vielen Dank! Ihre Anfrage wurde gesendet.",
+      "text": "Wir haben Ihre Nachricht erhalten und melden uns in Kürze.",
+      "again": "Weitere Anfrage senden"
+    },
+    "direct": {
+      "title": "Direkt",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "location": "Prag, Tschechien",
+      "map": "Auf der Karte öffnen",
+      "company": "Firmendaten"
+    },
+    "mailSubject": "Anfrage über die RUHOR-Website"
+  },
+  "transform": {
+    "label": "Ergebnis",
+    "title": "Vom Unterbau bis zum fertigen Belag",
+    "lead": "Schieben Sie den Regler: dieselben Orte vor und nach unserer Arbeit.",
+    "before": "Vorher",
+    "after": "Nachher",
+    "range": "Vorher-nachher-Vergleich: Position des Reglers",
+    "stairs": { "title": "Treppe am Hang", "caption": "Vorbereiteter Unterbau mit Einfassung – und die fertige Treppe mit Belag.", "beforeAlt": "Treppe am Haus im Unterbau-Stadium: schwarze Stufeneinfassung und Schotter", "afterAlt": "Dieselbe Treppe mit Belag in Natursteinoptik" },
+    "yard": { "title": "Industriefläche", "caption": "Schotterunterbau – und die fertige Fläche aus Betonpflaster auf demselben Gelände.", "beforeAlt": "Fläche mit Schotterunterbau vor der Pflasterverlegung", "afterAlt": "Fläche mit fertigem Betonpflaster" }
+  },
+  "scale": {
+    "label": "Umfang",
+    "title": "3.600 m² Pflaster bei einem Projekt in Deutschland",
+    "unit": "Pflaster bei einem Projekt in Deutschland",
+    "compare": "Das entspricht etwa {n} Tennisplätzen.",
+    "legend": "1 Quadrat = {m2} m²",
+    "next": "Das nächste Quadrat ist Ihr Objekt.",
+    "gridLabel": "Schema: {tiles} Quadrate à {m2} m², insgesamt {total} m²"
+  },
+  "dock": { "label": "Schnellkontakt", "call": "Anrufen", "email": "E-Mail", "telegram": "Telegram", "whatsapp": "WhatsApp", "viber": "Viber" },
+  "footer": {
+    "tagline": "Bauunternehmen in Prag. Vom Fundament bis zum Schlüssel.",
+    "navTitle": "Bereiche",
+    "contactTitle": "Kontakt",
+    "legalTitle": "Unternehmen",
+    "registered": "Eingetragen im tschechischen Handelsregister",
+    "privacy": "Datenschutzerklärung",
+    "rights": "Alle Rechte vorbehalten.",
+    "top": "Nach oben"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "updated": "Gültig ab 17. November 2026",
+    "back": "Zur Startseite",
+    "sections": [
+      { "h": "Wer Ihre Daten verarbeitet", "p": ["Verantwortlicher ist die {company}, IČO {ico}, {address}. In Datenschutzfragen erreichen Sie uns unter {email}."] },
+      { "h": "Welche Daten wir erhalten", "p": ["Nur das, was Sie selbst in das Formular eingeben: Name, Telefon oder E-Mail, Art der Arbeiten und Ihre Nachricht. Wenn Sie uns direkt eine E-Mail schreiben, erhalten wir Ihre E-Mail-Adresse und den Inhalt der Nachricht."] },
+      { "h": "Wofür wir sie verwenden", "p": ["Um Ihre Anfrage zu beantworten, Details zu klären und ein Angebot zu erstellen. Rechtsgrundlage ist die Durchführung vorvertraglicher Maßnahmen auf Ihre Anfrage (Art. 6 Abs. 1 lit. b DSGVO)."] },
+      { "h": "Wie lange wir sie speichern", "p": ["Anfragedaten speichern wir höchstens 12 Monate ab dem letzten Kontakt, sofern kein Vertrag zustande kommt. Kommt ein Vertrag zustande, bewahren wir sie so lange auf, wie es die gesetzlichen Aufbewahrungsfristen für Vertrags- und Buchhaltungsunterlagen verlangen."] },
+      { "h": "Wer Zugriff hat", "p": ["Die Website wird bei Vercel Inc. gehostet. Nachrichten aus dem Formular stellt der Dienst Resend in unser Postfach zu; das Postfach stellt Seznam.cz bereit. Diese Anbieter verarbeiten die Daten nur zur Erbringung ihrer Dienste. Einige von ihnen können Daten außerhalb der EU auf Grundlage der Standardvertragsklauseln der Europäischen Kommission verarbeiten.", "Wir verkaufen Ihre Daten nicht und geben sie nicht zu Werbezwecken weiter."] },
+      { "h": "Cookies und Analyse", "p": ["Diese Website verwendet keine Cookies, keine Analysewerkzeuge und keine Werbe-Tracker. Schriften und Bilder werden von unserem eigenen Server geladen. Der Hosting-Anbieter kann technische Protokolle (zum Beispiel die IP-Adresse) vorübergehend speichern, um Sicherheit und stabilen Betrieb zu gewährleisten."] },
+      { "h": "Ihre Rechte", "p": ["Sie haben das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten, auf Einschränkung der Verarbeitung, auf Datenübertragbarkeit und auf Widerspruch gegen die Verarbeitung. Schreiben Sie uns an {email}.", "Sie können sich außerdem bei der tschechischen Aufsichtsbehörde beschweren – Úřad pro ochranu osobních údajů (www.uoou.cz)."] }
+    ]
+  },
+  "thanks": {
+    "title": "Vielen Dank! Ihre Anfrage wurde gesendet.",
+    "text": "Wir haben Ihre Nachricht erhalten und melden uns in Kürze.",
+    "back": "Zurück zur Startseite"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "text": "Vielleicht wurde sie verschoben oder die Adresse enthält einen Fehler.",
+    "back": "Zur Startseite"
+  },
+  "langName": "Deutsch"
+}

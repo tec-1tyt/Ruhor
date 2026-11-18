@@ -1,0 +1,53 @@
+---
+/**
+ * Root "/" — picks the visitor's language (browser preference, default Ukrainian)
+ * and redirects to /uk/, /cs/, /de/ or /en/. Without JS: meta refresh to /uk/.
+ * It is the hreflang x-default target and is not indexed itself.
+ */
+import { languages, t, paths, defaultLang } from '../i18n';
+
+const site = Astro.site!;
+const codes = languages.map((l) => l.code);
+---
+
+<!doctype html>
+<html lang={defaultLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RUHOR Company</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content={t(defaultLang).meta.description} />
+    {languages.map((l) => <link rel="alternate" hreflang={l.hreflang} href={new URL(paths.home(l.code), site).href} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL('/', site).href} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#131518" />
+    <script is:inline define:vars={{ codes, fallback: defaultLang }}>
+      (function () {
+        var prefs = navigator.languages || [navigator.language || ''];
+        var pick = fallback;
+        for (var i = 0; i < prefs.length; i++) {
+          var tag = String(prefs[i]).toLowerCase();
+          var c = tag.slice(0, 2);
+          if (c === 'sk') c = 'cs'; // Slovak readers → Czech
+          if (c === 'ru' || /-ua$/.test(tag)) c = 'uk'; // Russian-language / Ukrainian-region browsers → Ukrainian
+          if (codes.indexOf(c) !== -1) { pick = c; break; }
+        }
+        location.replace('/' + pick + '/' + location.hash);
+      })();
+    </script>
+    <noscript><meta http-equiv="refresh" content={`0; url=${paths.home(defaultLang)}`} /></noscript>
+    <style>
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #131518; color: #f2f0eb; font: 16px/1.5 system-ui, sans-serif; }
+      ul { list-style: none; display: flex; gap: 20px; padding: 0; }
+      a { color: inherit; }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="Language">
+      <ul>
+        {languages.map((l) => <li><a href={paths.home(l.code)} hreflang={l.hreflang} lang={l.hreflang}>{t(l.code).langName}</a></li>)}
+      </ul>
+    </nav>
+  </body>
+</html>

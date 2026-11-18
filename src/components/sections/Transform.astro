@@ -1,0 +1,53 @@
+---
+/** Before/after: two real sites from the owner's photos (same viewpoint, before and after). */
+import Compare from '../Compare.astro';
+import SectionLabel from '../SectionLabel.astro';
+import ArchEdge from '../ArchEdge.astro';
+import { t, type Lang } from '../../i18n';
+import { photo } from '../../data/photos';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const x = d.transform;
+const common = { beforeLabel: x.before, afterLabel: x.after, rangeLabel: x.range };
+---
+
+<section class="section transform has-edge" id="results" data-theme="plaster" aria-labelledby="transform-title">
+  <ArchEdge color="var(--color-ink)" />
+  <div class="container">
+    <header class="section-head section-head--split">
+      <SectionLabel index="03">{x.label}</SectionLabel>
+      <h2 id="transform-title" class="t-h2" data-split>{x.title}</h2>
+      <p class="t-lead" data-reveal>{x.lead}</p>
+    </header>
+    <div class="transform__grid">
+      <div class="transform__item" data-reveal>
+        <Compare
+          before={photo('stairs-2')}
+          after={photo('stairs-1')}
+          beforeAlt={x.stairs.beforeAlt}
+          afterAlt={x.stairs.afterAlt}
+          ratio="4 / 5"
+          sizes="(min-width: 1024px) 36vw, 100vw"
+          {...common}
+        />
+        <h3 class="t-h3">{x.stairs.title}</h3>
+        <p>{x.stairs.caption}</p>
+      </div>
+      <div class="transform__item" data-reveal>
+        <Compare
+          before={photo('industrial-yard-3')}
+          after={photo('industrial-yard-2')}
+          beforeAlt={x.yard.beforeAlt}
+          afterAlt={x.yard.afterAlt}
+          ratio="4 / 3"
+          sizes="(min-width: 1024px) 56vw, 100vw"
+          {...common}
+        />
+        <h3 class="t-h3">{x.yard.title}</h3>
+        <p>{x.yard.caption}</p>
+      </div>
+    </div>
+  </div>
+</section>

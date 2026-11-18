@@ -1,0 +1,253 @@
+{
+  "meta": {
+    "title": "RUHOR — Construction company in Prague: paving, concrete, renovation",
+    "description": "RUHOR is a construction company in Prague: paving, groundworks and concrete, facades, roofing, renovations and turnkey houses. One of our projects in Germany: 3,600 m² of paving.",
+    "ogAlt": "RUHOR logo and granite setts laid in a fan pattern",
+    "locale": "en_GB",
+    "privacyTitle": "Privacy policy — RUHOR Company",
+    "privacyDescription": "What data RUHOR Company s.r.o. receives through the website form, why, how long it is kept and what rights you have under the GDPR.",
+    "thanksTitle": "Enquiry sent — RUHOR Company",
+    "notFoundTitle": "Page not found — RUHOR Company"
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "home": "RUHOR — home",
+    "mainNav": "Main navigation",
+    "footerNav": "Footer navigation",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "language": "Website language",
+    "currentLanguage": "Current language",
+    "close": "Close",
+    "prev": "Previous photo",
+    "next": "Next photo",
+    "gallery": "Project gallery",
+    "photoOf": "Photo {n} of {total}",
+    "newTab": "(opens in a new tab)",
+    "required": "required field"
+  },
+  "nav": {
+    "services": "Services",
+    "projects": "Projects",
+    "process": "Process",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Discuss a project",
+    "ctaShort": "Enquire"
+  },
+  "hero": {
+    "eyebrow": "Construction company in Prague",
+    "title": ["From foundations", "to handover."],
+    "lead": "We lay paving, carry out groundworks and concrete works, build terraces, carports and turnkey houses, and renovate interiors. One contractor for the whole job.",
+    "ctaPrimary": "Discuss your project",
+    "ctaSecondary": "See our work",
+    "caption": "Granite setts, fan-pattern laying",
+    "imageAlt": "A square of granite setts laid in a fan pattern; a worker compacts the surface with a plate compactor"
+  },
+  "intro": {
+    "label": "Company",
+    "statement": "We take a site from the first groundworks to the final finishes — and haul away the construction waste ourselves.",
+    "facts": {
+      "paving": "of paving on one of our projects in Germany",
+      "services": "types of construction work",
+      "city": "Registered in Prague · IČO {ico}"
+    }
+  },
+  "services": {
+    "label": "Services",
+    "title": "Everything your build needs, under one roof",
+    "lead": "17 services, grouped by construction stage. Order a single job or several stages together.",
+    "count": "Services in this group: {n}",
+    "categories": {
+      "groundworks": { "title": "Groundworks & utilities", "lead": "Site preparation and everything below ground.", "imageAlt": "Breaking up an old surface with a jackhammer" },
+      "construction": { "title": "Construction", "lead": "From the foundations to the roof.", "imageAlt": "Concrete hillside steps in formwork" },
+      "paving": { "title": "Paving & outdoor works", "lead": "Yards, paths, terraces and the grounds around your home.", "imageAlt": "A roller compacting a large area of concrete block paving" },
+      "interiors": { "title": "Interiors & renovation", "lead": "Interior work from first fix to finish.", "imageAlt": "A room with large-format porcelain floor tiles" }
+    },
+    "items": {
+      "excavation": { "name": "Excavation & earthworks", "desc": "Foundation pits, trenches, grading and levelling, sub-base preparation for foundations and hard surfaces." },
+      "demolition": { "name": "Demolition", "desc": "Removal of old surfaces, structures and partition walls, getting the site ready for new work." },
+      "sewerage": { "name": "Sewer & drainage pipes", "desc": "Laying sewer and drainage pipes, installing inspection chambers." },
+      "waste": { "name": "Waste removal", "desc": "Removal of construction waste after demolition and building — the site stays clean." },
+      "concrete": { "name": "Concrete & monolithic works", "desc": "Foundations, slabs, stairs and other cast-in-place concrete structures." },
+      "masonry": { "name": "Masonry", "desc": "Load-bearing walls and partitions in brick and block." },
+      "houses": { "name": "Turnkey houses", "desc": "A family home built from scratch: from excavation and foundations to interior finishes." },
+      "roofing": { "name": "Roofing", "desc": "New roofs and roof covering repairs." },
+      "facade": { "name": "Facades", "desc": "Finishing, repair and renewal of building facades." },
+      "paving": { "name": "Paving", "desc": "Concrete and granite paving, large-format slabs, kerbs; fan-pattern and decorative laying." },
+      "landscaping": { "name": "Landscaping & lawns", "desc": "Soil preparation, new lawns, planting beds and greenery." },
+      "terraces": { "name": "Outdoor kitchens & terraces", "desc": "Terraces in slabs and paving, outdoor kitchens and seating areas." },
+      "carports": { "name": "Carports & garages", "desc": "Building carports and garages." },
+      "renovation": { "name": "Renovation & tiling", "desc": "Renovation of rooms, floor and wall tiling, large-format porcelain." },
+      "drywall": { "name": "Drywall", "desc": "Partitions, ceilings, niches and feature walls with lighting." },
+      "painting": { "name": "Plastering & painting", "desc": "Preparing walls and ceilings, skim coating and painting." },
+      "flooring": { "name": "Flooring", "desc": "Vinyl, laminate and tile flooring." }
+    }
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "Selected projects",
+    "lead": "Real sites by our team: from private yards to industrial areas and retail spaces.",
+    "filterLabel": "Filter by type of work",
+    "all": "All",
+    "shown": "Projects shown: {n}",
+    "photos": { "one": "{n} photo", "few": "{n} photos", "many": "{n} photos", "other": "{n} photos" },
+    "open": "View photos",
+    "categories": {
+      "paving": "Paving",
+      "outdoor": "Outdoor",
+      "interiors": "Interiors",
+      "groundworks": "Groundworks & utilities"
+    },
+    "items": {
+      "granite-square": { "title": "Granite sett square", "desc": "Granite setts laid in a fan pattern, a slab footpath and kerbs. Sub-base preparation and compaction.", "alt": "A square of granite setts in a fan pattern with a slab footpath" },
+      "showroom": { "title": "Commercial space", "desc": "Large-format porcelain tiles on floors and walls, precise joints and layout.", "alt": "A bright room with a large-format porcelain tile floor" },
+      "industrial-yard": { "title": "Industrial yard", "desc": "A large area of concrete block paving: crushed-stone sub-base, laying and roller compaction.", "alt": "A road roller on a large area of concrete block paving" },
+      "yards": { "title": "Terraces & driveways for family homes", "desc": "Large-format slabs on a terrace, a garage driveway, coloured decorative paving, planting beds.", "alt": "A covered terrace of a family home in large-format slabs" },
+      "hall-fan": { "title": "Fan-pattern paving at a production hall", "desc": "Granite setts hand-laid in segmental arcs, with manhole covers and drainage gratings.", "alt": "Granite setts in a fan pattern with a drainage grating outside a production hall" },
+      "mall": { "title": "Shopping centre", "desc": "Floor tiling across large retail corridors.", "alt": "A shopping centre corridor with a new tiled floor" },
+      "stairs": { "title": "Hillside stairs", "desc": "Concrete stairs finished with paving and stone, edging and sub-base.", "alt": "Stairs beside a house finished with stone-effect paving" },
+      "parking": { "title": "Underground car park", "desc": "Concrete block paving in an underground car park, with light-coloured markings.", "alt": "An underground car park with concrete block paving" },
+      "paths": { "title": "Slab and block paved paths", "desc": "Footpaths in a park and around buildings: sub-base, edging, slabs.", "alt": "A concrete slab footpath between trees in a park" },
+      "interiors": { "title": "Interiors: drywall & tiles", "desc": "Drywall feature walls with lighting, wood-effect tiles.", "alt": "A drywall feature wall with lit niches" },
+      "curbs": { "title": "Kerbs & pavements", "desc": "Granite and concrete kerbs, large-format slab pavements, street paving repairs.", "alt": "Setting granite kerbs in a trench" },
+      "utilities": { "title": "Utilities, trenches & demolition", "desc": "Trenches for sewer and drainage, inspection chambers, removal of old surfaces.", "alt": "A deep trench for underground utilities" }
+    }
+  },
+  "process": {
+    "label": "Process",
+    "title": "How we work",
+    "lead": "Clear steps from your first message to handover.",
+    "steps": [
+      { "title": "Enquiry", "text": "Describe the job in the form or by email. We clarify the details and arrange a site visit." },
+      { "title": "Site visit", "text": "We assess the site or room: ground conditions, levels, machine access and the scope of work." },
+      { "title": "Estimate & plan", "text": "We agree materials, stages and timing, and set out the price in an estimate." },
+      { "title": "Works", "text": "We work to the agreed plan and keep you updated at every stage." },
+      { "title": "Handover & clean-up", "text": "We hand over the finished work, clean the site and remove construction waste." }
+    ]
+  },
+  "about": {
+    "label": "About",
+    "title": "About the company",
+    "text": [
+      "RUHOR Company s.r.o. is a construction company registered in Prague. We lay paving, carry out groundworks and concrete works, build terraces, carports and turnkey houses, and renovate interiors.",
+      "Our portfolio includes granite squares, industrial yards, car parks, retail spaces and private yards. Every photo on this website comes from our own sites."
+    ],
+    "photoAlt": "Two workers hand-laying granite setts in a fan pattern",
+    "facts": {
+      "company": "Company",
+      "ico": "IČO (company ID)",
+      "seat": "Registered office",
+      "register": "Register",
+      "registerValue": "Czech Commercial Register (Obchodní rejstřík)",
+      "services": "Services"
+    },
+    "whyTitle": "Why RUHOR",
+    "why": [
+      { "title": "One contractor, full scope", "text": "17 services: from demolition and excavation to painting and flooring. Fewer contractors, less coordination." },
+      { "title": "Strong in paving", "text": "Granite fan pattern, concrete block, large-format slabs. One of our projects in Germany covered {paving} of paving." },
+      { "title": "Private and commercial", "text": "Terraces, yards and stairs for homes; industrial yards, car parks and retail spaces for businesses." },
+      { "title": "A clean site", "text": "We remove construction waste and leave the site tidy." }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Tell us about your project",
+    "lead": "Describe what needs doing — we’ll get back to you, clarify the details and arrange a site visit.",
+    "form": {
+      "name": "Name",
+      "contact": "Phone or email",
+      "contactHint": "How we can reach you",
+      "service": "Type of work",
+      "serviceAny": "Choose (optional)",
+      "serviceOther": "Other or several types of work",
+      "message": "What needs doing?",
+      "messageHint": "Site, area, address or district, preferred timing.",
+      "optional": "optional",
+      "submit": "Send enquiry",
+      "sending": "Sending…",
+      "privacy": "How we handle your details is explained in our {link}.",
+      "privacyLink": "privacy policy",
+      "honeypot": "Leave this field empty"
+    },
+    "errors": {
+      "nameRequired": "Please enter your name.",
+      "contactRequired": "Please enter a phone number or email.",
+      "contactInvalid": "Please check the phone number or email — it looks incorrect.",
+      "messageRequired": "Please briefly describe what needs doing.",
+      "messageTooLong": "Your message is too long — 3,000 characters max.",
+      "summary": "Please check the highlighted fields.",
+      "failed": "We couldn’t send your enquiry. Please try again or send it by email — we’ve already prepared the text with your details.",
+      "mailto": "Send by email"
+    },
+    "success": {
+      "title": "Thank you! Your enquiry has been sent.",
+      "text": "We’ve received your message and will get back to you shortly.",
+      "again": "Send another enquiry"
+    },
+    "direct": {
+      "title": "Direct",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Prague, Czech Republic",
+      "map": "Open in maps",
+      "company": "Company details"
+    },
+    "mailSubject": "Enquiry from the RUHOR website"
+  },
+  "transform": {
+    "label": "Result",
+    "title": "From sub-base to finished surface",
+    "lead": "Drag the slider: the same sites before and after our work.",
+    "before": "Before",
+    "after": "After",
+    "range": "Before and after comparison: slider position",
+    "stairs": { "title": "Hillside stairs", "caption": "A prepared base with edging — and the finished stairs with their facing.", "beforeAlt": "Stairs beside a house at sub-base stage: black step edging and gravel", "afterAlt": "The same stairs finished with stone-effect paving" },
+    "yard": { "title": "Industrial yard", "caption": "Crushed-stone base — and the finished concrete block paving on the same site.", "beforeAlt": "An area with a crushed-stone base before paving", "afterAlt": "The area with finished concrete block paving" }
+  },
+  "scale": {
+    "label": "Scale",
+    "title": "3,600 m² of paving on one project in Germany",
+    "unit": "of paving on one project in Germany",
+    "compare": "That is roughly {n} tennis courts.",
+    "legend": "1 square = {m2} m²",
+    "next": "The next square is your site.",
+    "gridLabel": "Diagram: {tiles} squares of {m2} m², {total} m² in total"
+  },
+  "dock": { "label": "Quick contact", "call": "Call", "email": "Email", "telegram": "Telegram", "whatsapp": "WhatsApp", "viber": "Viber" },
+  "footer": {
+    "tagline": "Construction company in Prague. From foundations to handover.",
+    "navTitle": "Sections",
+    "contactTitle": "Contact",
+    "legalTitle": "Company",
+    "registered": "Registered in the Czech Commercial Register",
+    "privacy": "Privacy policy",
+    "rights": "All rights reserved.",
+    "top": "Back to top"
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "updated": "Effective from 17 November 2026",
+    "back": "Back to home",
+    "sections": [
+      { "h": "Who processes your data", "p": ["The data controller is {company}, IČO {ico}, {address}. For any data-related questions, contact us at {email}."] },
+      { "h": "What data we receive", "p": ["Only what you enter in the website form yourself: your name, phone or email, type of work and your message. If you email us directly, we receive your email address and the content of your message."] },
+      { "h": "Why we use it", "p": ["To answer your enquiry, clarify the details and prepare an offer. The legal basis is taking steps at your request prior to entering into a contract (Art. 6(1)(b) GDPR)."] },
+      { "h": "How long we keep it", "p": ["We keep enquiry data for up to 12 months after our last contact if no contract is concluded. If a contract is concluded, we keep it for as long as the law requires for contractual and accounting records."] },
+      { "h": "Who else has access", "p": ["The website is hosted by Vercel Inc. Form messages are delivered to our inbox by Resend; the mailbox is provided by Seznam.cz. These providers process data only to deliver their services. Some of them may process data outside the EU under the European Commission’s standard contractual clauses.", "We do not sell your data or share it for advertising."] },
+      { "h": "Cookies and analytics", "p": ["This website uses no cookies, no analytics and no advertising trackers. Fonts and images are served from our own server. The hosting provider may temporarily keep technical logs (such as IP addresses) for security and reliable operation."] },
+      { "h": "Your rights", "p": ["You have the right to access, correct or delete your data, to restrict processing, to data portability and to object to processing. Write to us at {email}.", "You may also lodge a complaint with the Czech supervisory authority, Úřad pro ochranu osobních údajů (www.uoou.cz)."] }
+    ]
+  },
+  "thanks": {
+    "title": "Thank you! Your enquiry has been sent.",
+    "text": "We’ve received your message and will get back to you shortly.",
+    "back": "Back to home"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "It may have moved, or the address may contain a typo.",
+    "back": "Back to home"
+  },
+  "langName": "English"
+}

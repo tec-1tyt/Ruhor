@@ -1,0 +1,14 @@
+---
+/** Drawing-sheet style section label: "01 —— Services". */
+interface Props {
+  index?: string;
+  class?: string;
+}
+const { index, class: className } = Astro.props;
+---
+
+<p class:list={['label', className]} data-reveal>
+  {index && <span class="label__index">{index}</span>}
+  <span class="label__rule" aria-hidden="true"></span>
+  <span><slot /></span>
+</p>

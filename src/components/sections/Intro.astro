@@ -1,0 +1,41 @@
+---
+/** Company statement + fact sheet (only figures from the owner's notes). */
+import SectionLabel from '../SectionLabel.astro';
+import { t, fmt, num, type Lang } from '../../i18n';
+import { company } from '../../data/company';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const facts = [
+  { value: company.stats.pavingM2, unit: 'm²', label: d.intro.facts.paving, count: true },
+  { value: company.stats.services, unit: '', label: d.intro.facts.services, count: true },
+];
+---
+
+<section class="section intro" id="company" data-theme="light" aria-labelledby="intro-title">
+  <div class="container intro__grid">
+    <div>
+      <SectionLabel index="00">{d.intro.label}</SectionLabel>
+      <h2 id="intro-title" class="sr-only">{d.intro.label}</h2>
+      <p class="t-statement intro__statement" style="margin-top: clamp(24px, 3vw, 40px)" data-split>{d.intro.statement}</p>
+    </div>
+    <dl class="facts">
+      {
+        facts.map((f) => (
+          <div class="fact" data-reveal>
+            <dt class="fact__label">{f.label}</dt>
+            <dd class="fact__value">
+              <span data-count={f.value} data-locale={lang}>{num(lang, f.value)}</span>
+              {f.unit && <small>{f.unit}</small>}
+            </dd>
+          </div>
+        ))
+      }
+      <div class="fact" data-reveal>
+        <dt class="fact__label">{fmt(d.intro.facts.city, { ico: company.ico })}</dt>
+        <dd class="fact__value">{company.city}</dd>
+      </div>
+    </dl>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380"><rect width="300" height="380" fill="#F2F0EB"/>
+    <path d="M90 214V90A60 60 0 0 1 210 90V214" fill="none" stroke="#131518" stroke-width="1.6"/>
+    <path d="M101 214V92A49 49 0 0 1 199 92V214" fill="none" stroke="#C4A46A" stroke-width="0.9"/>
+    <path d="M70 214H230" stroke="#131518" stroke-width="1.6"/>
+    <g transform="translate(136.5 142)" fill="none" stroke-width="2.4" stroke-linecap="square">
+      <path d="M0 48V0H15A12.5 12.5 0 0 1 15 25H0" stroke="#131518"/><path d="M13 25L27 48" stroke="#E0592A"/>
+    </g>
+    <g transform="translate(98.5 262) scale(0.5)"><path transform="translate(0 0)" d="M0 48V0H15A12.5 12.5 0 0 1 15 25H0M13 25L27 48" fill="none" stroke="#E0592A" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/><path transform="translate(47 0)" d="M0 0V30A12 12 0 0 0 24 30V0" fill="none" stroke="#131518" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/><path transform="translate(91 0)" d="M0 0V48M24 0V48M0 24H24" fill="none" stroke="#131518" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/><path transform="translate(135 0)" d="M0 12A12 12 0 0 1 24 12V36A12 12 0 0 1 0 36Z" fill="none" stroke="#131518" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/><path transform="translate(179 0)" d="M0 48V0H15A12.5 12.5 0 0 1 15 25H0M13 25L27 48" fill="none" stroke="#131518" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/></g>
+    <path d="M138 308H162" stroke="#C4A46A" stroke-width="1"/></svg>

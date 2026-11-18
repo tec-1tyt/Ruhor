@@ -1,0 +1,14 @@
+---
+/**
+ * Arch-shaped edge at the top of a dark section: the colour of the previous
+ * section hangs down as a shallow arch and flattens while you scroll in (see motion.ts).
+ */
+interface Props {
+  color?: string;
+}
+const { color = 'var(--color-stone)' } = Astro.props;
+---
+
+<svg class="arch-edge" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <path d="M0 0H100V0Q50 20 0 0Z" fill={color} data-arch-edge></path>
+</svg>

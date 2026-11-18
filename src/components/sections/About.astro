@@ -1,0 +1,66 @@
+---
+/** About the company (real register data as a spec sheet) + four reasons to choose RUHOR. */
+import { Picture } from 'astro:assets';
+import SectionLabel from '../SectionLabel.astro';
+import { t, fmt, num, type Lang } from '../../i18n';
+import { company } from '../../data/company';
+import { photo } from '../../data/photos';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const a = d.about;
+const seat = [company.street, [company.postalCode, company.city].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+const spec = [
+  { k: a.facts.company, v: company.legalName },
+  { k: a.facts.ico, v: company.ico },
+  { k: a.facts.seat, v: seat },
+  { k: a.facts.register, v: company.registryFile ? `${a.facts.registerValue}, ${company.registryFile}` : a.facts.registerValue },
+  { k: a.facts.services, v: String(company.stats.services) },
+];
+const pavingText = `${num(lang, company.stats.pavingM2)} m²`;
+---
+
+<section class="section about" id="about" data-theme="plaster" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about__grid">
+      <div>
+        <SectionLabel index="06">{a.label}</SectionLabel>
+        <h2 id="about-title" class="t-h2" style="margin-block: clamp(20px, 2.4vw, 32px) clamp(28px, 3vw, 40px)" data-split>{a.title}</h2>
+        <div class="about__text">
+          {a.text.map((para) => <p data-reveal>{para}</p>)}
+        </div>
+        <dl class="spec" data-reveal>
+          {spec.map((s) => <div><dt>{s.k}</dt><dd>{s.v}</dd></div>)}
+        </dl>
+      </div>
+      <div class="frame about__media" data-reveal-img>
+        <Picture
+          src={photo('hall-fan-3')}
+          alt={a.photoAlt}
+          widths={[560, 800, 1100, 1600]}
+          sizes="(min-width: 1024px) 55vw, 100vw"
+          formats={['avif']}
+          fallbackFormat="webp"
+          quality={50}
+          data-parallax
+        />
+      </div>
+    </div>
+
+    <div class="why">
+      <h3 class="t-h2" style="margin-bottom: clamp(32px, 4vw, 56px)" data-split>{a.whyTitle}</h3>
+      <ol class="why__grid">
+        {
+          a.why.map((w, i) => (
+            <li class="why__item" data-reveal>
+              <span class="why__num">{String(i + 1).padStart(2, '0')}</span>
+              <h4 class="t-h3">{w.title}</h4>
+              <p>{fmt(w.text, { paving: pavingText })}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>

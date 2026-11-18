@@ -1,0 +1,74 @@
+---
+/**
+ * Hero: one H1 (eyebrow + display lines), lead, two CTAs, and the real project photo
+ * inside an arch that opens to full width while scrolling (motion.ts → heroArch).
+ * Entrance is pure CSS so the H1 never waits for JavaScript.
+ */
+import { Picture } from 'astro:assets';
+import Button from '../Button.astro';
+import { t, type Lang } from '../../i18n';
+import { photo } from '../../data/photos';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const heroImg = photo('granite-square-2');
+// Segmental-fan paving pattern (same arcs as the logo's arch): concentric half circles on a 80×40 tile.
+const fanPaths = [[40, 40], [0, 20], [80, 20], [0, 60], [80, 60]]
+  .flatMap(([cx, cy]) => [10, 20, 30, 40].map((r) => `<path d="M${cx - r} ${cy}A${r} ${r} 0 0 1 ${cx + r} ${cy}"/>`))
+  .join('');
+---
+
+<section class="hero" id="top" data-theme="dark" data-section-theme="dark">
+  <div class="hero__fan" aria-hidden="true" data-hero-fan>
+    <svg class="hero__fan-base" width="100%" height="100%" focusable="false">
+      <defs><pattern id="fan-base" width="80" height="40" patternUnits="userSpaceOnUse"><g fill="none" stroke="#f2f0eb" stroke-width="1" set:html={fanPaths} /></pattern></defs>
+      <rect width="100%" height="100%" fill="url(#fan-base)" />
+    </svg>
+    <svg class="hero__fan-hot" width="100%" height="100%" focusable="false">
+      <defs><pattern id="fan-hot" width="80" height="40" patternUnits="userSpaceOnUse"><g fill="none" stroke="#f07a4a" stroke-width="1.25" set:html={fanPaths} /></pattern></defs>
+      <rect width="100%" height="100%" fill="url(#fan-hot)" />
+    </svg>
+  </div>
+
+  <div class="hero__guides" aria-hidden="true">
+    <div class="container"><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="container hero__inner">
+    <h1>
+      <span class="label hero__eyebrow">{d.hero.eyebrow}</span>
+      <span class="t-display hero__display">
+        {d.hero.title.map((line, i) => <span class="line"><span class="line__inner" style={`--i:${i}`}>{line}</span></span>)}
+      </span>
+    </h1>
+    <div class="hero__aside">
+      <p class="hero__lead">{d.hero.lead}</p>
+      <div class="hero__ctas">
+        <Button href="#contact" magnetic>{d.hero.ctaPrimary}</Button>
+        <Button href="#projects" variant="ghost" icon="arrow">{d.hero.ctaSecondary}</Button>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__media" data-hero-media>
+    <div class="hero__dim" aria-hidden="true"><i></i></div>
+    <div class="hero__frame" data-hero-frame>
+      <Picture
+        src={heroImg}
+        alt={d.hero.imageAlt}
+        widths={[480, 720, 960, 1280, 1600, 1920, 2400]}
+        sizes="100vw"
+        formats={['avif']}
+        fallbackFormat="webp"
+        quality={48}
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        data-hero-img
+      />
+      <div class="hero__shade" aria-hidden="true"></div>
+    </div>
+    <p class="label hero__caption">{d.hero.caption}</p>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+---
+/**
+ * Before/after slider. Works with pointer/touch drag and the keyboard (a real range input
+ * drives it). Without JavaScript the two photos are simply shown one after the other.
+ */
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  before: ImageMetadata;
+  after: ImageMetadata;
+  beforeAlt: string;
+  afterAlt: string;
+  beforeLabel: string;
+  afterLabel: string;
+  rangeLabel: string;
+  /** CSS aspect-ratio of the frame, e.g. "4 / 5". */
+  ratio: string;
+  sizes: string;
+}
+const { before, after, beforeAlt, afterAlt, beforeLabel, afterLabel, rangeLabel, ratio, sizes } = Astro.props;
+const pic = { widths: [480, 720, 1000, 1400], sizes, formats: ['avif' as const], fallbackFormat: 'webp' as const, quality: 55 };
+---
+
+<figure class="compare" data-compare style={`--ar:${ratio}`}>
+  <div class="compare__layer compare__layer--after">
+    <Picture src={after} alt={afterAlt} {...pic} />
+    <span class="compare__tag compare__tag--after label">{afterLabel}</span>
+  </div>
+  <div class="compare__layer compare__layer--before">
+    <Picture src={before} alt={beforeAlt} {...pic} />
+    <span class="compare__tag label">{beforeLabel}</span>
+  </div>
+  <span class="compare__handle" aria-hidden="true"
+    ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6" /></svg></span
+  >
+  <input class="compare__range" type="range" min="0" max="100" value="50" step="1" aria-label={rangeLabel} />
+</figure>

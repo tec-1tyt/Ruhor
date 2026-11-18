@@ -1,0 +1,47 @@
+---
+/**
+ * RUHOR logo as inline SVG (colour = currentColor, strut = kiln accent).
+ * `data-logo` hooks let the motion script morph the R from three "foundation blocks".
+ */
+import { R, GLYPHS, WORDMARK_LAYOUT, WORDMARK_SIZE, MARK_SIZE } from '../brand/logo';
+
+interface Props {
+  variant?: 'wordmark' | 'mark';
+  /** Accessible name; omit when the logo sits inside a labelled link. */
+  label?: string;
+  class?: string;
+  animate?: boolean;
+}
+const { variant = 'wordmark', label, class: className, animate = false } = Astro.props;
+const size = variant === 'mark' ? MARK_SIZE : WORDMARK_SIZE;
+const letters = variant === 'mark' ? [WORDMARK_LAYOUT[0]] : WORDMARK_LAYOUT;
+---
+
+<svg
+  class={className}
+  viewBox={`0 0 ${size.width} ${size.height}`}
+  width={size.width}
+  height={size.height}
+  fill="currentColor"
+  {...label ? { role: 'img', 'aria-label': label } : { 'aria-hidden': 'true', focusable: 'false' }}
+  data-logo={animate ? 'intro' : undefined}
+>
+  {
+    letters.map(({ glyph, x }, i) =>
+      glyph === 'R' ? (
+        <g transform={`translate(${x} 0)`} data-logo-r={i === 0 ? '' : undefined}>
+          <path d={R.strut} fill={i === 0 ? 'var(--color-kiln)' : undefined} data-part="strut" />
+          <path d={R.arch} data-part="arch" />
+          <path d={R.pillar} data-part="pillar" />
+        </g>
+      ) : (
+        <path
+          transform={`translate(${x} 0)`}
+          d={GLYPHS[glyph as keyof typeof GLYPHS]}
+          fill-rule={glyph === 'O' ? 'evenodd' : undefined}
+          data-letter
+        />
+      ),
+    )
+  }
+</svg>

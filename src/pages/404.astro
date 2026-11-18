@@ -1,0 +1,45 @@
+---
+/**
+ * One 404 page for all languages (lesson C-04): it is rendered in Ukrainian and a tiny
+ * inline script swaps to the visitor's section language based on the URL (/cs/…, /de/…, /en/…).
+ * All four "back home" links are always visible, so it works without JavaScript too.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { languages, t, paths, defaultLang } from '../i18n';
+
+const d = t(defaultLang);
+const strings = Object.fromEntries(
+  languages.map((l) => [l.code, { title: t(l.code).notFound.title, text: t(l.code).notFound.text, meta: t(l.code).meta.notFoundTitle }]),
+);
+---
+
+<BaseLayout lang={defaultLang} page="notFound" title={d.meta.notFoundTitle} description={d.notFound.text} noindex>
+  <section class="page" data-theme="dark" data-section-theme="dark" style="background: var(--bg); color: var(--fg)">
+    <div class="container" style="display: grid; gap: 28px; justify-items: start">
+      <p class="label" style="color: var(--color-kiln-soft)">404</p>
+      <h1 class="t-h2" data-nf-title>{d.notFound.title}</h1>
+      <p class="t-lead" data-nf-text>{d.notFound.text}</p>
+      <ul style="display: flex; flex-wrap: wrap; gap: 12px" role="list">
+        {
+          languages.map((l) => (
+            <li>
+              <a class="btn btn--sm btn--ghost" href={paths.home(l.code)} hreflang={l.hreflang} lang={l.hreflang}>
+                <span class="btn__roll"><span>{t(l.code).langName}</span><span aria-hidden="true">{t(l.code).langName}</span></span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+  <script is:inline define:vars={{ strings }}>
+    (function () {
+      var lang = location.pathname.split('/')[1];
+      if (!lang || lang === 'uk' || !Object.prototype.hasOwnProperty.call(strings, lang)) return;
+      document.documentElement.lang = lang;
+      document.title = strings[lang].meta;
+      document.querySelector('[data-nf-title]').textContent = strings[lang].title;
+      document.querySelector('[data-nf-text]').textContent = strings[lang].text;
+    })();
+  </script>
+</BaseLayout>

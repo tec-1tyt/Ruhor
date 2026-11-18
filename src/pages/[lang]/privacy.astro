@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
+import { langCodes, t, fmt, paths, type Lang } from '../../i18n';
+import { company } from '../../data/company';
+
+export function getStaticPaths() {
+  return langCodes.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const d = t(lang);
+const address = [company.street, [company.postalCode, company.city].filter(Boolean).join(' '), 'Česká republika']
+  .filter(Boolean)
+  .join(', ');
+const vars = {
+  company: company.legalName,
+  ico: company.ico,
+  address,
+  email: `<a class="link" href="mailto:${company.email}">${company.email}</a>`,
+};
+---
+
+<BaseLayout lang={lang} page="privacy" title={d.meta.privacyTitle} description={d.meta.privacyDescription}>
+  <article class="page" data-theme="light" data-section-theme="light" style="background: var(--bg); color: var(--fg)">
+    <div class="container">
+      <SectionLabel>{d.privacy.updated}</SectionLabel>
+      <h1 class="t-h2" style="margin-top: 24px; max-width: 18ch">{d.privacy.title}</h1>
+      <div class="prose-legal">
+        {
+          d.privacy.sections.map((s) => (
+            <section>
+              <h2>{s.h}</h2>
+              {s.p.map((para) => <p set:html={fmt(para, vars)} />)}
+            </section>
+          ))
+        }
+        <p><a class="link" href={paths.home(lang)}>← {d.privacy.back}</a></p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

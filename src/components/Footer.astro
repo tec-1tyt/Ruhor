@@ -1,0 +1,86 @@
+---
+/** Footer: tagline, section links, contacts, legal identification (§ 435 OZ), languages, signature wordmark. */
+import Logo from './Logo.astro';
+import { languages, t, paths, type Lang, type PageKey } from '../i18n';
+import { company, mailHref, telHref, mapUrl } from '../data/company';
+
+interface Props {
+  lang: Lang;
+  page: PageKey | 'notFound';
+}
+const { lang, page } = Astro.props;
+const d = t(lang);
+const base = page === 'home' ? '' : paths.home(lang);
+const year = new Date().getFullYear();
+const seat = [company.street, [company.postalCode, company.city].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+const langHref = (l: Lang) => (page === 'notFound' ? paths.home(l) : paths[page as PageKey](l));
+const nav = [
+  { id: 'services', label: d.nav.services },
+  { id: 'projects', label: d.nav.projects },
+  { id: 'process', label: d.nav.process },
+  { id: 'about', label: d.nav.about },
+  { id: 'contact', label: d.nav.contact },
+];
+---
+
+<footer class="footer" data-theme="dark" data-section-theme="dark">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <p class="footer__tagline">{d.footer.tagline}</p>
+      </div>
+      <nav class="footer__col" aria-label={d.a11y.footerNav}>
+        <h2 class="label">{d.footer.navTitle}</h2>
+        <ul>
+          {nav.map((n) => <li><a class="link-plain" href={`${base}#${n.id}`}>{n.label}</a></li>)}
+        </ul>
+      </nav>
+      <div class="footer__col">
+        <h2 class="label">{d.footer.contactTitle}</h2>
+        <ul>
+          <li><a class="link" href={mailHref}>{company.email}</a></li>
+          {telHref && <li><a class="link" href={telHref}>{company.phone}</a></li>}
+          <li>
+            <a class="link" href={mapUrl} target="_blank" rel="noopener">
+              {d.contact.direct.location}<span class="sr-only"> {d.a11y.newTab}</span>
+            </a>
+          </li>
+          {company.social.map((s) => <li><a class="link" href={s.url} target="_blank" rel="noopener">{s.label}</a></li>)}
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="label">{d.footer.legalTitle}</h2>
+        <p class="footer__legal">
+          {company.legalName}<br />
+          IČO {company.ico}<br />
+          {seat}<br />
+          {d.footer.registered}{company.registryFile && <>, {company.registryFile}</>}
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__mark" aria-hidden="true" data-footer-mark>
+      <Logo />
+    </div>
+
+    <div class="footer__bottom">
+      <p>© {year} {company.legalName} {d.footer.rights}</p>
+      <a class="link" href={paths.privacy(lang)}>{d.footer.privacy}</a>
+      <nav class="footer__langs" aria-label={d.a11y.language}>
+        {
+          languages.map((l) => (
+            <a
+              href={langHref(l.code)}
+              hreflang={l.hreflang}
+              lang={l.hreflang}
+              aria-current={l.code === lang ? 'true' : undefined}
+              data-lang-link
+            >
+              {t(l.code).langName}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+  </div>
+</footer>

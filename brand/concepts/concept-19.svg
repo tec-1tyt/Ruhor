@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 330"><rect width="320" height="330" fill="#E7E3DB"/>
+    <polygon points="250.07,202.00 160.00,254.00 69.93,202.00 69.93,98.00 160.00,46.00 250.07,98.00" fill="#131518"/>
+    <polygon points="260.46,208.00 160.00,266.00 59.54,208.00 59.54,92.00 160.00,34.00 260.46,92.00" fill="none" stroke="#131518" stroke-width="1"/>
+    <circle cx="160" cy="150" r="72" fill="#E7E3DB"/>
+    <circle cx="160" cy="150" r="72" fill="none" stroke="#E0592A" stroke-width="3"/>
+    <g transform="translate(132.25 114) scale(1.5)"><path fill="#E0592A" d="M9 24H21L37 48H25Z"/><path fill="#131518" d="M6 0H22A15 15 0 0 1 22 30H6V20H22A5 5 0 0 0 22 10H6Z"/><path fill="#131518" d="M0 0H10V48H0Z"/></g>
+    <g transform="translate(125.2 286) scale(0.3)"><g transform="translate(0 0)"><path fill="#131518" d="M9 24H21L37 48H25Z"/><path fill="#131518" d="M6 0H22A15 15 0 0 1 22 30H6V20H22A5 5 0 0 0 22 10H6Z"/><path fill="#131518" d="M0 0H10V48H0Z"/></g><path transform="translate(49 0)" fill="#131518" d="M0 0H10V29A9 9 0 0 0 28 29V0H38V29A19 19 0 0 1 0 29Z"/><path transform="translate(99 0)" fill="#131518" d="M0 0H10V19H28V0H38V48H28V29H10V48H0Z"/><path transform="translate(147 0)" fill="#131518" fill-rule="evenodd" d="M0 19A19 19 0 0 1 38 19V29A19 19 0 0 1 0 29Z M10 19V29A9 9 0 0 0 28 29V19A9 9 0 0 0 10 19Z"/><g transform="translate(195 0)"><path fill="#131518" d="M9 24H21L37 48H25Z"/><path fill="#131518" d="M6 0H22A15 15 0 0 1 22 30H6V20H22A5 5 0 0 0 22 10H6Z"/><path fill="#131518" d="M0 0H10V48H0Z"/></g></g></svg>

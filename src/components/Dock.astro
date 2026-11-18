@@ -1,0 +1,30 @@
+---
+/**
+ * Mobile contact bar: quick call/messenger/email + "enquire". Shown below 1100 px after the
+ * hero, hidden while the contact section is on screen. Only available channels are rendered.
+ */
+import Icon from './Icon.astro';
+import { t, type Lang } from '../i18n';
+import { mailHref } from '../data/company';
+import { channels } from '../data/channels';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const items = [
+  ...channels.map((c) => ({ ...c, label: d.dock[c.id], icon: c.id === 'call' ? ('phone' as const) : ('chat' as const) })),
+  ...(channels.length < 2 ? [{ id: 'email' as const, href: mailHref, external: false, label: d.dock.email, icon: 'mail' as const }] : []),
+].slice(0, 3);
+---
+
+<nav class="dock" data-dock aria-label={d.dock.label}>
+  {
+    items.map((i) => (
+      <a class="dock__item" href={i.href} {...(i.external ? { target: '_blank', rel: 'noopener' } : {})}>
+        <Icon name={i.icon} />
+        <span>{i.label}</span>
+      </a>
+    ))
+  }
+  <a class="dock__cta" href="#contact">{d.nav.ctaShort}<Icon name="arrow" /></a>
+</nav>

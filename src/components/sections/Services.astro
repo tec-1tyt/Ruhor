@@ -1,0 +1,92 @@
+---
+/**
+ * Services: 17 services in 4 construction stages.
+ * Desktop: sticky photo panel that switches + morphing pictogram as each stage scrolls by.
+ * Mobile / no-JS: every stage shows its own photo inline.
+ */
+import { Picture } from 'astro:assets';
+import SectionLabel from '../SectionLabel.astro';
+import { t, fmt, type Lang } from '../../i18n';
+import { serviceCategories } from '../../data/services';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+
+<section class="section services" id="services" data-theme="light" aria-labelledby="services-title">
+  <div class="container">
+    <header class="section-head section-head--split">
+      <SectionLabel index="01">{d.services.label}</SectionLabel>
+      <h2 id="services-title" class="t-h2" data-split>{d.services.title}</h2>
+      <p class="t-lead" data-reveal>{d.services.lead}</p>
+    </header>
+
+    <div class="services__layout" data-services>
+      <div class="services__visual" aria-hidden="true">
+        <div class="services__sticky">
+          <div class="frame services__frame" data-reveal-img>
+            {
+              serviceCategories.map((c, i) => (
+                <div class:list={['services__img', i === 0 && 'is-active']} data-service-img={i}>
+                  <Picture
+                    src={c.image}
+                    alt=""
+                    widths={[560, 840, 1120]}
+                    sizes="(min-width: 1520px) 620px, 40vw"
+                    formats={['avif']}
+                    fallbackFormat="webp"
+                    quality={50}
+                  />
+                </div>
+              ))
+            }
+            <div class="services__badge">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d={serviceCategories[0].shape} fill="var(--color-kiln)" data-service-shape />
+              </svg>
+              <span class="label"><span data-service-index>01</span>&nbsp;/&nbsp;{pad(serviceCategories.length)}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services__list">
+        {
+          serviceCategories.map((c, i) => (
+            <article class="svc-cat" data-service-cat={i} data-shape={c.shape} aria-labelledby={`svc-${c.id}`}>
+              <div class="frame svc-cat__media" data-reveal-img>
+                <Picture
+                  src={c.image}
+                  alt={d.services.categories[c.id].imageAlt}
+                  widths={[480, 640, 800, 1200]}
+                  sizes="(min-width: 1024px) 55vw, 100vw"
+                  formats={['avif']}
+                  fallbackFormat="webp"
+                  quality={50}
+                />
+              </div>
+              <div class="svc-cat__head">
+                <span class="svc-cat__num">{pad(i + 1)}</span>
+                <h3 id={`svc-${c.id}`} class="t-h3">{d.services.categories[c.id].title}</h3>
+                <p class="svc-cat__lead">
+                  {d.services.categories[c.id].lead}
+                  <span class="sr-only">{fmt(d.services.count, { n: c.items.length })}</span>
+                </p>
+              </div>
+              <ul class="svc-list">
+                {c.items.map((id) => (
+                  <li class="svc-item" data-reveal>
+                    <h4>{d.services.items[id].name}</h4>
+                    <p>{d.services.items[id].desc}</p>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

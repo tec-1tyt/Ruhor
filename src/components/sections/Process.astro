@@ -1,0 +1,35 @@
+---
+/** Process: five steps on a track that "draws" with scroll (vertical on mobile, horizontal on desktop). */
+import SectionLabel from '../SectionLabel.astro';
+import { t, type Lang } from '../../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+---
+
+<section class="section process" id="process" data-theme="light" aria-labelledby="process-title">
+  <div class="container">
+    <header class="section-head section-head--split">
+      <SectionLabel index="04">{d.process.label}</SectionLabel>
+      <h2 id="process-title" class="t-h2" data-split>{d.process.title}</h2>
+      <p class="t-lead" data-reveal>{d.process.lead}</p>
+    </header>
+
+    <div class="steps" data-steps>
+      <span class="steps__track" aria-hidden="true"><span class="steps__fill" data-steps-fill></span></span>
+      <ol class="steps__list">
+      {
+        d.process.steps.map((s, i) => (
+          <li class="step is-reached" data-step data-reveal>
+            <span class="step__node" aria-hidden="true" />
+            <span class="step__num">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="t-h3">{s.title}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))
+      }
+      </ol>
+    </div>
+  </div>
+</section>

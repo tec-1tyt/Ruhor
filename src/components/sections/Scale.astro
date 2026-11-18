@@ -1,0 +1,48 @@
+---
+/** 3 600 m² made visible: 180 squares of 20 m². Pure markup; GSAP only animates the fill-in. */
+import SectionLabel from '../SectionLabel.astro';
+import ArchEdge from '../ArchEdge.astro';
+import Button from '../Button.astro';
+import { t, fmt, num, type Lang } from '../../i18n';
+import { company } from '../../data/company';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const s = d.scale;
+const M2_PER_TILE = 20;
+const COLS = 20;
+const total = company.stats.pavingM2;
+const tiles = Math.round(total / M2_PER_TILE);
+const COURT_M2 = 261; // doubles tennis court, 23.77 × 10.97 m
+const courts = Math.round(total / COURT_M2);
+---
+
+<section class="section scale has-edge" id="scale" data-theme="dark" aria-labelledby="scale-title">
+  <ArchEdge color="var(--color-stone)" />
+  <div class="container scale__grid">
+    <div>
+      <SectionLabel index="05">{s.label}</SectionLabel>
+      <h2 id="scale-title" class="sr-only">{s.title}</h2>
+      <p class="scale__figure" aria-hidden="true">
+        <span data-count={total} data-locale={lang}>{num(lang, total)}</span><small>m²</small>
+      </p>
+      <p class="t-statement scale__unit">{s.unit}</p>
+      <p class="t-lead scale__compare">{fmt(s.compare, { n: courts })}</p>
+      <p class="scale__next label"><span class="scale__swatch" aria-hidden="true"></span>{s.next}</p>
+      <div class="scale__cta"><Button href="#contact" magnetic>{d.nav.cta}</Button></div>
+    </div>
+    <div>
+      <div
+        class="scale__tiles"
+        role="img"
+        aria-label={fmt(s.gridLabel, { tiles, m2: M2_PER_TILE, total: num(lang, total) })}
+        style={`--cols:${COLS}`}
+        data-tiles
+      >
+        {Array.from({ length: tiles }, (_, i) => <span class:list={['scale__tile', i === tiles - 1 && 'is-next']}></span>)}
+      </div>
+      <p class="scale__legend label">{fmt(s.legend, { m2: M2_PER_TILE })}</p>
+    </div>
+  </div>
+</section>
