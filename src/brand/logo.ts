@@ -49,6 +49,7 @@ export const BRAND_COLORS = {
   stone: '#F2F0EB',
   plaster: '#E7E3DB',
   line: '#D6D1C7',
+  brass: '#C4A46A',
   kiln: '#E0592A',
   kilnDeep: '#B5441B',
   kilnSoft: '#F07A4A',

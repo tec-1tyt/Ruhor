@@ -34,11 +34,10 @@ const svg = (w, h, body, title, pad = 0) =>
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${-pad} ${-pad} ${w + pad * 2} ${h + pad * 2}" role="img" aria-label="${title}"><title>${title}</title>${body}</svg>\n`;
 
 const tile = (size = 64, radius = 14) => {
-  // R centred optically on an ink tile (stone letter, kiln strut)
-  const s = 0.62 * size / MARK_SIZE.height;
-  const x = (size - MARK_SIZE.width * s) / 2;
-  const y = (size - MARK_SIZE.height * s) / 2;
-  return `<rect width="${size}" height="${size}" rx="${radius}" fill="${C.ink}"/><g transform="translate(${x.toFixed(2)} ${y.toFixed(2)}) scale(${s.toFixed(4)})">${rGroup(C.stone, C.kiln)}</g>`;
+  // Brass rhombus with the R on an ink tile (current logo)
+  const k = (size * 0.78) / 212;
+  const off = (size - 212 * k) / 2;
+  return `<rect width="${size}" height="${size}" rx="${radius}" fill="${C.ink}"/><g transform="translate(${off.toFixed(2)} ${off.toFixed(2)}) scale(${k.toFixed(4)})"><polygon points="106,0 212,106 106,212 0,106" fill="${C.brass}"/><g transform="translate(76.4 67.6) scale(1.6)">${rGroup(C.ink, C.stone)}</g></g>`;
 };
 
 const files = {
@@ -94,8 +93,9 @@ const og = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.o
   <rect width="1200" height="630" fill="${C.ink}"/>
   <g fill="none" stroke="${C.stone}" stroke-opacity="0.05">${arcs.join('')}</g>
   <image x="640" y="0" width="560" height="630" clip-path="url(#arch)" xlink:href="data:image/jpeg;base64,${photo.toString('base64')}"/>
-  <g transform="translate(80 250) scale(2.05)">${wordmarkBody(C.stone, C.kiln)}</g>
-  <rect x="80" y="400" width="64" height="4" fill="${C.kiln}"/>
+  <g transform="translate(80 235) scale(${150 / 212})"><polygon points="106,0 212,106 106,212 0,106" fill="${C.brass}"/><polygon points="106,14 198,106 106,198 14,106" fill="none" stroke="${C.ink}" stroke-width="1.6" opacity="0.55"/><g transform="translate(76.4 67.6) scale(1.6)">${rGroup(C.ink, C.stone)}</g></g>
+  <g transform="translate(258 ${235 + (150 - 48 * 1.45) / 2}) scale(1.45)">${wordmarkBody(C.stone, C.stone)}</g>
+  <rect x="80" y="420" width="64" height="4" fill="${C.brass}"/>
 </svg>`;
 await sharp(Buffer.from(og)).jpeg({ quality: 86, mozjpeg: true }).toFile(path.join(PUBLIC, 'og.jpg'));
 

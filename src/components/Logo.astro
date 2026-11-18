@@ -1,47 +1,63 @@
 ---
 /**
- * RUHOR logo as inline SVG (colour = currentColor, strut = kiln accent).
- * `data-logo` hooks let the motion script morph the R from three "foundation blocks".
+ * RUHOR logo as inline SVG: brass rhombus with the R + the RUHOR wordmark (currentColor).
+ * Colours come from CSS variables (--logo-d / --logo-r / --logo-s) so the logo adapts to the
+ * light/dark section under the header. `data-logo-r` marks the first wordmark R (footer morph).
  */
-import { R, GLYPHS, WORDMARK_LAYOUT, WORDMARK_SIZE, MARK_SIZE } from '../brand/logo';
+import { R, GLYPHS, WORDMARK_LAYOUT, WORDMARK_SIZE } from '../brand/logo';
 
 interface Props {
-  variant?: 'wordmark' | 'mark';
+  variant?: 'full' | 'mark';
   /** Accessible name; omit when the logo sits inside a labelled link. */
   label?: string;
   class?: string;
   animate?: boolean;
 }
-const { variant = 'wordmark', label, class: className, animate = false } = Astro.props;
-const size = variant === 'mark' ? MARK_SIZE : WORDMARK_SIZE;
-const letters = variant === 'mark' ? [WORDMARK_LAYOUT[0]] : WORDMARK_LAYOUT;
+const { variant = 'full', label, class: className, animate = false } = Astro.props;
+const D = 64; // rhombus height in the logo's own units
+const GAP = 14;
+const full = variant === 'full';
+const width = full ? D + GAP + WORDMARK_SIZE.width : D;
+const k = D / 212;
+const ox = D + GAP;
+const oy = (D - 48) / 2;
 ---
 
 <svg
   class={className}
-  viewBox={`0 0 ${size.width} ${size.height}`}
-  width={size.width}
-  height={size.height}
+  viewBox={`0 0 ${width} ${D}`}
+  width={width}
+  height={D}
   fill="currentColor"
   {...label ? { role: 'img', 'aria-label': label } : { 'aria-hidden': 'true', focusable: 'false' }}
   data-logo={animate ? 'intro' : undefined}
 >
+  <g transform={`scale(${k})`} data-diamond>
+    <polygon points="106,0 212,106 106,212 0,106" style="fill:var(--logo-d)"></polygon>
+    <polygon points="106,14 198,106 106,198 14,106" fill="none" style="stroke:var(--logo-r)" stroke-width="1.6" opacity="0.55"></polygon>
+    <g transform="translate(76.4 67.6) scale(1.6)">
+      <path d={R.strut} style="fill:var(--logo-s)"></path>
+      <path d={R.arch} style="fill:var(--logo-r)"></path>
+      <path d={R.pillar} style="fill:var(--logo-r)"></path>
+    </g>
+  </g>
   {
-    letters.map(({ glyph, x }, i) =>
-      glyph === 'R' ? (
-        <g transform={`translate(${x} 0)`} data-logo-r={i === 0 ? '' : undefined}>
-          <path d={R.strut} fill={i === 0 ? 'var(--color-kiln)' : undefined} data-part="strut" />
-          <path d={R.arch} data-part="arch" />
-          <path d={R.pillar} data-part="pillar" />
-        </g>
-      ) : (
-        <path
-          transform={`translate(${x} 0)`}
-          d={GLYPHS[glyph as keyof typeof GLYPHS]}
-          fill-rule={glyph === 'O' ? 'evenodd' : undefined}
-          data-letter
-        />
-      ),
-    )
+    full &&
+      WORDMARK_LAYOUT.map(({ glyph, x }, i) =>
+        glyph === 'R' ? (
+          <g transform={`translate(${ox + x} ${oy})`} data-logo-r={i === 0 ? '' : undefined}>
+            <path d={R.strut} data-part={i === 0 ? 'strut' : undefined}></path>
+            <path d={R.arch} data-part={i === 0 ? 'arch' : undefined}></path>
+            <path d={R.pillar} data-part={i === 0 ? 'pillar' : undefined}></path>
+          </g>
+        ) : (
+          <path
+            transform={`translate(${ox + x} ${oy})`}
+            d={GLYPHS[glyph as keyof typeof GLYPHS]}
+            fill-rule={glyph === 'O' ? 'evenodd' : undefined}
+            data-letter
+          ></path>
+        ),
+      )
   }
 </svg>
