@@ -92,6 +92,7 @@
     "shown": "Zobrazeno realizací: {n}",
     "photos": { "one": "{n} fotografie", "few": "{n} fotografie", "many": "{n} fotografie", "other": "{n} fotografií" },
     "open": "Zobrazit fotografie",
+    "region": "Ústecký kraj",
     "categories": {
       "paving": "Dlažby",
       "outdoor": "Venkovní úpravy",
@@ -110,7 +111,8 @@
       "paths": { "title": "Chodníky z desek a dlažby", "desc": "Pěší cesty v parku i u budov: podklad, obrubníky, desky.", "alt": "Chodník z betonových desek mezi stromy v parku" },
       "interiors": { "title": "Interiéry: sádrokarton a dlažba", "desc": "Dekorativní sádrokartonové stěny s osvětlením, dlažba v imitaci dřeva.", "alt": "Dekorativní sádrokartonová stěna s nikami a osvětlením" },
       "curbs": { "title": "Obrubníky a chodníky", "desc": "Žulové a betonové obrubníky, chodníky z velkoformátových desek, opravy dlážděných ulic.", "alt": "Osazování žulových obrubníků do rýhy" },
-      "utilities": { "title": "Sítě, výkopy a bourání", "desc": "Výkopy pro kanalizaci a drenáž, revizní šachty, bourání starých povrchů.", "alt": "Hluboký výkop pro inženýrské sítě" }
+      "utilities": { "title": "Sítě, výkopy a bourání", "desc": "Výkopy pro kanalizaci a drenáž, revizní šachty, bourání starých povrchů.", "alt": "Hluboký výkop pro inženýrské sítě" },
+      "usti-region": { "title": "Realizace v Ústeckém kraji", "desc": "Provedené zakázky v Ústeckém kraji. Fotografie a podrobnosti na vyžádání.", "alt": "" }
     }
   },
   "process": {

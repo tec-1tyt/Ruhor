@@ -92,6 +92,7 @@
     "shown": "Angezeigte Projekte: {n}",
     "photos": { "one": "{n} Foto", "few": "{n} Fotos", "many": "{n} Fotos", "other": "{n} Fotos" },
     "open": "Fotos ansehen",
+    "region": "Region Ústí",
     "categories": {
       "paving": "Pflaster",
       "outdoor": "Außenanlagen",
@@ -110,7 +111,8 @@
       "paths": { "title": "Wege aus Platten und Pflaster", "desc": "Fußwege im Park und an Gebäuden: Unterbau, Randsteine, Platten.", "alt": "Weg aus Betonplatten zwischen Bäumen im Park" },
       "interiors": { "title": "Innenräume: Trockenbau und Fliesen", "desc": "Dekorative Trockenbauwände mit Beleuchtung, Fliesen in Holzoptik.", "alt": "Dekorative Trockenbauwand mit Nischen und Beleuchtung" },
       "curbs": { "title": "Bordsteine und Gehwege", "desc": "Granit- und Betonbordsteine, Gehwege aus Großformatplatten, Reparatur von Straßenpflaster.", "alt": "Setzen von Granitbordsteinen im Graben" },
-      "utilities": { "title": "Leitungen, Gräben und Abbruch", "desc": "Gräben für Kanal und Drainage, Revisionsschächte, Abbruch alter Beläge.", "alt": "Tiefer Graben für Versorgungsleitungen" }
+      "utilities": { "title": "Leitungen, Gräben und Abbruch", "desc": "Gräben für Kanal und Drainage, Revisionsschächte, Abbruch alter Beläge.", "alt": "Tiefer Graben für Versorgungsleitungen" },
+      "usti-region": { "title": "Projekte in der Region Ústí", "desc": "Ausgeführte Arbeiten in der Region Ústí (Ústecký kraj), Tschechien. Fotos und Details auf Anfrage.", "alt": "" }
     }
   },
   "process": {

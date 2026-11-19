@@ -92,6 +92,7 @@
     "shown": "Projects shown: {n}",
     "photos": { "one": "{n} photo", "few": "{n} photos", "many": "{n} photos", "other": "{n} photos" },
     "open": "View photos",
+    "region": "Ústí Region",
     "categories": {
       "paving": "Paving",
       "outdoor": "Outdoor",
@@ -110,7 +111,8 @@
       "paths": { "title": "Slab and block paved paths", "desc": "Footpaths in a park and around buildings: sub-base, edging, slabs.", "alt": "A concrete slab footpath between trees in a park" },
       "interiors": { "title": "Interiors: drywall & tiles", "desc": "Drywall feature walls with lighting, wood-effect tiles.", "alt": "A drywall feature wall with lit niches" },
       "curbs": { "title": "Kerbs & pavements", "desc": "Granite and concrete kerbs, large-format slab pavements, street paving repairs.", "alt": "Setting granite kerbs in a trench" },
-      "utilities": { "title": "Utilities, trenches & demolition", "desc": "Trenches for sewer and drainage, inspection chambers, removal of old surfaces.", "alt": "A deep trench for underground utilities" }
+      "utilities": { "title": "Utilities, trenches & demolition", "desc": "Trenches for sewer and drainage, inspection chambers, removal of old surfaces.", "alt": "A deep trench for underground utilities" },
+      "usti-region": { "title": "Projects in the Ústí Region", "desc": "Completed work in the Ústí Region (Ústecký kraj), Czech Republic. Photos and details on request.", "alt": "" }
     }
   },
   "process": {
