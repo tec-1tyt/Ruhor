@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, envField, fontProviders } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
@@ -45,8 +45,8 @@ export default defineConfig({
         // same codes as the <link hreflang> tags in the HTML
         locales: { uk: 'uk', cs: 'cs', de: 'de', en: 'en' },
       },
-      // Only indexable pages: no thank-you pages, no root language redirect.
-      filter: (page) => !page.includes('/thanks/') && new URL(page).pathname !== '/',
+      // Only indexable pages: no root language redirect.
+      filter: (page) => new URL(page).pathname !== '/',
     }),
   ],
   vite: { plugins: [tailwindcss()] },
@@ -67,14 +67,4 @@ export default defineConfig({
       options: { variants: variants((s) => `ibm-plex-mono-${s}-500-normal.woff2`, '500') },
     },
   ],
-  env: {
-    schema: {
-      // Contact form delivery (Resend). Read at runtime on Vercel.
-      RESEND_API_KEY: envField.string({ context: 'server', access: 'secret', optional: true }),
-      CONTACT_TO_EMAIL: envField.string({ context: 'server', access: 'secret', optional: true }),
-      CONTACT_FROM_EMAIL: envField.string({ context: 'server', access: 'secret', optional: true }),
-      // Local testing only: log submissions instead of sending (ignored in production builds).
-      CONTACT_DRY_RUN: envField.boolean({ context: 'server', access: 'secret', default: false }),
-    },
-  },
 });

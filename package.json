@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "brand": "node scripts/brand.mjs",
-    "serve": "node scripts/serve-dist.mjs dist/client 4400"
+    "serve": "node scripts/serve-dist.mjs dist 4400"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.5",

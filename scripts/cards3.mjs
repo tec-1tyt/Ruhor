@@ -129,7 +129,7 @@ async function face(v, side, lang) {
       th = T.ink;
       inner = `<div class="abs" style="inset:0;-webkit-mask-image:radial-gradient(ellipse 190px 120px at 50% 46%,#000 10%,transparent 100%);mask-image:radial-gradient(ellipse 190px 120px at 50% 46%,#000 10%,transparent 100%)">
         <svg width="340" height="220"><defs><pattern id="f" width="40" height="20" patternUnits="userSpaceOnUse"><g fill="none" stroke="${C.brass}" stroke-width=".9">${FAN}</g></pattern></defs><rect width="340" height="220" fill="url(#f)"/></svg></div>
-      <svg class="abs" style="left:110px;top:30px" width="120" height="120" viewBox="0 0 212 212"><polygon points="106,-12 224,106 106,224 -12,106" fill="${th.bg}"/></svg>
+      <svg class="abs" style="left:110px;top:30px;overflow:visible" width="120" height="120" viewBox="0 0 212 212"><polygon points="106,-12 224,106 106,224 -12,106" fill="${th.bg}"/></svg>
       <div class="abs" style="left:120px;top:40px">${diamond(100, th.dia)}</div>
       <div class="abs name" style="left:50%;top:176px;transform:translate(-50%,-50%);background:var(--bg);padding:4px 14px"><i></i><b>${CONFIG.fullName}</b><i></i></div>`;
     } else {

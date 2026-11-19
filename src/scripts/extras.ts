@@ -1,7 +1,6 @@
 /**
  * Small interactive pieces (no GSAP needed, so they work immediately):
  *  - before/after sliders (pointer drag + keyboard through the hidden range input)
- *  - hero: fan pattern lit by the pointer
  *  - mobile contact bar visibility
  */
 
@@ -32,28 +31,6 @@ export function initCompare() {
     const stop = () => (dragging = false);
     root.addEventListener('pointerup', stop);
     root.addEventListener('pointercancel', stop);
-  });
-}
-
-export function initHeroFan() {
-  const fan = document.querySelector<HTMLElement>('[data-hero-fan]');
-  const hero = fan?.closest<HTMLElement>('.hero');
-  if (!fan || !hero) return;
-  if (!window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) return;
-
-  let tx = 72, ty = 40, x = 72, y = 40, raf = 0;
-  const tick = () => {
-    x += (tx - x) * 0.14;
-    y += (ty - y) * 0.14;
-    fan.style.setProperty('--mx', `${x.toFixed(2)}%`);
-    fan.style.setProperty('--my', `${y.toFixed(2)}%`);
-    raf = Math.abs(tx - x) + Math.abs(ty - y) > 0.05 ? requestAnimationFrame(tick) : 0;
-  };
-  hero.addEventListener('pointermove', (e) => {
-    const r = hero.getBoundingClientRect();
-    tx = ((e.clientX - r.left) / r.width) * 100;
-    ty = ((e.clientY - r.top) / r.height) * 100;
-    if (!raf) raf = requestAnimationFrame(tick);
   });
 }
 

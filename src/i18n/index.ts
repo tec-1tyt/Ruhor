@@ -41,6 +41,5 @@ export const plural = (lang: Lang, n: number, forms: Record<'one' | 'few' | 'man
 export const paths = {
   home: (lang: Lang) => `/${lang}/`,
   privacy: (lang: Lang) => `/${lang}/privacy/`,
-  thanks: (lang: Lang) => `/${lang}/thanks/`,
 };
 export type PageKey = keyof typeof paths;

@@ -697,9 +697,11 @@
     .js .svc-cat__media { display: none; }
     .services__sticky { position: sticky; top: calc(var(--header-h) + 32px); }
     .services__frame { aspect-ratio: 4 / 5; max-height: calc(100dvh - var(--header-h) - 64px); width: 100%; }
-    .services__img { position: absolute; inset: 0; }
+    .services__img { position: absolute; inset: 0; opacity: 0; transition: opacity 0.7s var(--ease); }
+    .services__img.is-active { opacity: 1; }
     .services__img img { width: 100%; height: 100%; object-fit: cover; }
-    .services__img:not(.is-active) { visibility: hidden; }
+    .svc-shape { opacity: 0; transition: opacity 0.4s var(--ease); }
+    .svc-shape.is-active { opacity: 1; }
     .services__badge {
       position: absolute;
       left: 0; bottom: 0;
@@ -902,57 +904,53 @@
     .contact__grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: var(--gutter); }
   }
 
-  .form {
+  .contact__note { margin-top: 20px; max-width: 46ch; color: var(--muted); font-size: var(--fs-small); }
+  .reach { display: grid; gap: 14px; align-content: start; }
+  .reach__item {
     position: relative;
     display: grid;
-    gap: 22px;
-    padding: clamp(24px, 3.4vw, 48px);
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(16px, 2vw, 28px);
+    min-height: 96px;
+    padding: clamp(20px, 2.4vw, 32px);
     background: var(--color-basalt);
     border: 1px solid var(--hair);
+    overflow: hidden;
+    isolation: isolate;
+    transition: color var(--d-mid) var(--ease), border-color var(--d-mid) var(--ease);
   }
-  .form__row { display: grid; gap: 22px; }
-  @media (min-width: 640px) { .form__row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  .field { display: grid; gap: 8px; align-content: start; }
-  .field__label { display: flex; justify-content: space-between; gap: 12px; font-size: 0.9375rem; font-weight: 500; }
-  .field__label small { font-weight: 400; color: var(--color-ash); }
-  .field__hint { font-size: 0.8125rem; color: var(--color-ash); }
-  .field__control {
-    width: 100%;
-    min-height: 52px;
-    padding: 14px 16px;
-    border-radius: var(--radius);
-    background: var(--color-ink);
-    color: var(--color-stone);
-    border: 1px solid rgb(242 240 235 / 0.22);
-    font: inherit;
-    font-size: 1rem; /* ≥16px: no iOS zoom on focus */
-    transition: border-color var(--d-fast) var(--ease), box-shadow var(--d-fast) var(--ease);
+  .reach__item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--color-kiln);
+    transform: translateY(101%);
+    transition: transform var(--d-mid) var(--ease);
   }
-  textarea.field__control { min-height: 148px; resize: vertical; line-height: 1.5; }
-  select.field__control {
-    appearance: none;
-    padding-right: 44px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%239CA1A8' stroke-width='1.5'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    background-size: 12px 8px;
+  .reach__icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px var(--hair);
+    transition: box-shadow var(--d-mid) var(--ease);
   }
-  .field__control:hover { border-color: rgb(242 240 235 / 0.4); }
-  .field__control:focus-visible { outline: 2px solid var(--color-kiln); border-color: var(--color-kiln); }
-  .field__control[aria-invalid='true'] { border-color: var(--color-kiln-soft); box-shadow: inset 3px 0 0 var(--color-kiln-soft); }
-  .field__error { display: flex; gap: 8px; font-size: 0.875rem; color: var(--color-kiln-soft); }
-  .field__error:empty { display: none; }
-  .form__hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  .form__note { font-size: 0.8125rem; color: var(--color-ash); }
-  .form__note a { color: var(--color-stone); }
-  .form__status { font-size: 0.9375rem; }
-  .form__status:empty { display: none; }
-  .form__status--error { padding: 16px; background: rgb(224 89 42 / 0.12); border-left: 2px solid var(--color-kiln-soft); display: grid; gap: 12px; justify-items: start; }
-  .form__success { display: grid; gap: 16px; align-content: start; justify-items: start; padding: clamp(24px, 3.4vw, 48px); background: var(--color-basalt); border: 1px solid var(--hair); }
-  .form__success svg { width: 48px; height: 48px; color: var(--color-kiln); }
-  .form__success:focus { outline: none; }
-  .spinner { width: 18px; height: 18px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 0.7s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
+  .reach__icon svg { width: 22px; height: 22px; }
+  .reach__text { display: grid; gap: 6px; min-width: 0; }
+  .reach__text .label { color: var(--color-ash); transition: color var(--d-mid) var(--ease); }
+  .reach__value { font-size: clamp(1.125rem, 0.9rem + 1.1vw, 1.75rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; overflow-wrap: anywhere; }
+  .reach__arrow { width: 22px; height: 22px; transition: transform var(--d-mid) var(--ease); }
+  .reach__item:focus-visible { outline-offset: 2px; }
+  @media (hover: hover) {
+    .reach__item:hover { color: var(--color-ink); border-color: var(--color-kiln); }
+    .reach__item:hover::before { transform: translateY(0); }
+    .reach__item:hover .reach__text .label { color: var(--color-ink); }
+    .reach__item:hover .reach__icon { box-shadow: inset 0 0 0 1px var(--color-ink); }
+    .reach__item:hover .reach__arrow { transform: translateX(4px); }
+  }
 }
 
 /* =========================================================================
@@ -983,7 +981,7 @@
 }
 
 /* =========================================================================
-   Simple pages (privacy, thanks, 404)
+   Simple pages (privacy, 404)
    ========================================================================= */
 @layer components {
   .page { min-height: 100dvh; padding-top: calc(var(--header-h) + clamp(56px, 10vw, 140px)); padding-bottom: var(--section-y); }

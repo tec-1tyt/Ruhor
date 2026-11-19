@@ -5,8 +5,7 @@
     "ogAlt": "Logo RUHOR a žulová dlažba kladená do oblouků",
     "locale": "cs_CZ",
     "privacyTitle": "Zásady ochrany osobních údajů — RUHOR Company",
-    "privacyDescription": "Jaké údaje RUHOR Company s.r.o. získává přes formulář na webu, k čemu, jak dlouho je uchovává a jaká máte práva podle GDPR.",
-    "thanksTitle": "Poptávka odeslána — RUHOR Company",
+    "privacyDescription": "Jaké údaje RUHOR Company s.r.o. získává, když nás kontaktujete, k čemu, jak dlouho je uchovává a jaká máte práva podle GDPR.",
     "notFoundTitle": "Stránka nenalezena — RUHOR Company"
   },
   "a11y": {
@@ -152,39 +151,11 @@
   },
   "contact": {
     "label": "Kontakt",
-    "title": "Napište nám o svém projektu",
-    "lead": "Popište, co je potřeba udělat — ozveme se, upřesníme podrobnosti a domluvíme prohlídku.",
-    "form": {
-      "name": "Jméno",
-      "contact": "Telefon nebo e-mail",
-      "contactHint": "Jak vás můžeme kontaktovat",
-      "service": "Druh prací",
-      "serviceAny": "Vyberte (nepovinné)",
-      "serviceOther": "Jiné nebo více druhů prací",
-      "message": "Co je potřeba udělat",
-      "messageHint": "Objekt, plocha, adresa nebo lokalita, požadovaný termín.",
-      "optional": "nepovinné",
-      "submit": "Odeslat poptávku",
-      "sending": "Odesíláme…",
-      "privacy": "Odesláním formuláře berete na vědomí zpracování údajů podle {link}.",
-      "privacyLink": "zásad ochrany osobních údajů",
-      "honeypot": "Toto pole nevyplňujte"
-    },
-    "errors": {
-      "nameRequired": "Vyplňte jméno.",
-      "contactRequired": "Vyplňte telefon nebo e-mail.",
-      "contactInvalid": "Zkontrolujte telefon nebo e-mail — zdá se, že obsahuje chybu.",
-      "messageRequired": "Stručně popište, co je potřeba udělat.",
-      "messageTooLong": "Zpráva je příliš dlouhá — maximálně 3000 znaků.",
-      "summary": "Zkontrolujte označená pole.",
-      "failed": "Poptávku se nepodařilo odeslat. Zkuste to znovu, nebo ji pošlete e-mailem — text s vašimi údaji jsme už připravili.",
-      "mailto": "Odeslat e-mailem"
-    },
-    "success": {
-      "title": "Děkujeme! Poptávka byla odeslána.",
-      "text": "Vaši zprávu jsme přijali a brzy se vám ozveme.",
-      "again": "Odeslat další poptávku"
-    },
+    "title": "Řekněte nám o svém projektu",
+    "lead": "Zavolejte nebo napište, jak vám to vyhovuje — domluvíme prohlídku objektu.",
+    "channels": { "call": "Zavolat", "whatsapp": "Napsat na WhatsApp", "email": "Napsat e-mail" },
+    "note": "Pošlete fotografie nebo stručný popis objektu — rychleji vám řekneme další kroky.",
+    "waText": "Dobrý den! Píšu z webu RUHOR Company ohledně prací na objektu.",
     "direct": {
       "title": "Přímo",
       "email": "E-mail",
@@ -231,18 +202,13 @@
     "back": "Na úvodní stránku",
     "sections": [
       { "h": "Kdo vaše údaje zpracovává", "p": ["Správcem osobních údajů je {company}, IČO {ico}, {address}. Ve věci osobních údajů nás můžete kontaktovat na adrese {email}."] },
-      { "h": "Jaké údaje získáváme", "p": ["Pouze to, co sami vyplníte ve formuláři na webu: jméno, telefon nebo e-mail, druh prací a text zprávy. Pokud nám napíšete přímo e-mailem, získáme vaši e-mailovou adresu a obsah zprávy."] },
+      { "h": "Jaké údaje získáváme", "p": ["Pouze to, co nám sami sdělíte: při telefonátu, ve zprávě na WhatsApp nebo v e-mailu — jméno, telefonní číslo či e-mailovou adresu a obsah vaší zprávy. Web sám žádné údaje neshromažďuje a nemá formuláře."] },
       { "h": "K čemu je používáme", "p": ["Abychom odpověděli na vaši poptávku, upřesnili podrobnosti a připravili nabídku. Právním základem je provedení opatření přijatých před uzavřením smlouvy na vaši žádost (čl. 6 odst. 1 písm. b) GDPR)."] },
       { "h": "Jak dlouho je uchováváme", "p": ["Údaje z poptávky uchováváme nejdéle 12 měsíců od posledního kontaktu, pokud nedojde k uzavření smlouvy. Pokud smlouvu uzavřeme, uchováváme je po dobu, kterou vyžadují právní předpisy pro smluvní a účetní dokumentaci."] },
-      { "h": "Kdo k nim má přístup", "p": ["Web je hostován na platformě Vercel Inc. Zprávy z formuláře doručuje do naší schránky služba Resend; e-mailovou schránku poskytuje Seznam.cz. Tito dodavatelé zpracovávají údaje pouze za účelem poskytování svých služeb. Někteří z nich mohou údaje zpracovávat mimo EU na základě standardních smluvních doložek Evropské komise.", "Vaše údaje neprodáváme ani je nepředáváme pro reklamní účely."] },
+      { "h": "Kdo k nim má přístup", "p": ["Web je hostován na platformě Vercel Inc. Komunikaci vedeme přes poštu Seznam.cz a, pokud tento způsob zvolíte, přes WhatsApp (Meta Platforms Ireland Ltd.). Tito dodavatelé zpracovávají údaje pouze za účelem poskytování svých služeb. Někteří z nich mohou údaje zpracovávat mimo EU na základě standardních smluvních doložek Evropské komise.", "Vaše údaje neprodáváme ani je nepředáváme pro reklamní účely."] },
       { "h": "Cookies a analytika", "p": ["Web nepoužívá cookies, analytiku ani reklamní sledovací nástroje. Písma a obrázky se načítají z našeho vlastního serveru. Hosting může dočasně uchovávat technické záznamy (například IP adresu) kvůli bezpečnosti a spolehlivému provozu webu."] },
       { "h": "Vaše práva", "p": ["Máte právo na přístup ke svým údajům, jejich opravu nebo výmaz, omezení zpracování, přenositelnost a právo vznést námitku proti zpracování. Napište nám na {email}.", "Stížnost můžete podat také u Úřadu pro ochranu osobních údajů (www.uoou.cz)."] }
     ]
-  },
-  "thanks": {
-    "title": "Děkujeme! Poptávka byla odeslána.",
-    "text": "Vaši zprávu jsme přijali a brzy se vám ozveme.",
-    "back": "Zpět na úvodní stránku"
   },
   "notFound": {
     "title": "Stránka nenalezena",

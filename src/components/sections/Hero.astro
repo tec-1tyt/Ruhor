@@ -20,14 +20,10 @@ const fanPaths = [[40, 40], [0, 20], [80, 20], [0, 60], [80, 60]]
 ---
 
 <section class="hero" id="top" data-theme="dark" data-section-theme="dark">
-  <div class="hero__fan" aria-hidden="true" data-hero-fan>
+  <div class="hero__fan" aria-hidden="true">
     <svg class="hero__fan-base" width="100%" height="100%" focusable="false">
       <defs><pattern id="fan-base" width="80" height="40" patternUnits="userSpaceOnUse"><g fill="none" stroke="#f2f0eb" stroke-width="1" set:html={fanPaths} /></pattern></defs>
       <rect width="100%" height="100%" fill="url(#fan-base)" />
-    </svg>
-    <svg class="hero__fan-hot" width="100%" height="100%" focusable="false">
-      <defs><pattern id="fan-hot" width="80" height="40" patternUnits="userSpaceOnUse"><g fill="none" stroke="#f07a4a" stroke-width="1.25" set:html={fanPaths} /></pattern></defs>
-      <rect width="100%" height="100%" fill="url(#fan-hot)" />
     </svg>
   </div>
 

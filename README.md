@@ -3,7 +3,7 @@
 Marketing site for **RUHOR Company s.r.o.** (Praha, IČO 29886856) in four languages:
 Ukrainian (default), Czech, German, English.
 
-**Stack:** Astro 7 (static pages + one serverless function), TypeScript, Tailwind CSS 4 (tokens/utilities)
+**Stack:** Astro 7 (fully static pages), TypeScript, Tailwind CSS 4 (tokens/utilities)
 with hand-written component CSS, GSAP 3.15 (ScrollTrigger, MorphSVG, SplitText, Flip, CustomEase).
 Astro ships zero JS by default, which suits a content site that has to score 90+ on mobile. Its image
 pipeline generates AVIF/WebP from the original photos, and the Vercel adapter turns the contact
@@ -43,9 +43,8 @@ src/
   layouts/         BaseLayout.astro — SEO head, hreflang, Open Graph, JSON-LD, fonts
   pages/
     index.astro    "/" → picks visitor language → /uk/ /cs/ /de/ /en/
-    [lang]/        index (home), privacy, thanks (after a no-JS form post)
+    [lang]/        index (home), privacy
     404.astro      one 404 that switches language from the URL
-    api/contact.ts serverless contact endpoint (Resend)
   scripts/         client JS: header, menu, lang switcher, services, projects (filter + lightbox),
                    form, motion (GSAP, loaded after page load)
   styles/global.css design tokens + all component styles
@@ -87,25 +86,19 @@ vercel.json        security headers, trailing slash
 Routes (`/<code>/`, `/<code>/privacy/`), hreflang tags, the language switcher, the root
 language redirect, the 404 page and the sitemap are all generated from the language list.
 
-## Contact form (Resend)
+## Contact block
 
-1. Create a free account at <https://resend.com> **with ruhor.company@seznam.cz** (or verify your own
-   domain under Domains to send from an address like `web@your-domain.cz`).
-2. Create an API key.
-3. In Vercel → Project → Settings → Environment Variables add `RESEND_API_KEY`
-   (and optionally `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`). Redeploy.
-4. Send a test enquiry from the live site and check the inbox (and spam folder once).
-
-Without the key the endpoint returns *not configured* and the visitor is offered a pre-filled email.
-The form never pretends to have sent a message. Spam protection: honeypot field, minimum fill
-time, rate limit, and Astro's Origin check against cross-site posts.
+There is no form: visitors reach the company by phone, WhatsApp or email (large tap targets in the
+contact section, plus a contact bar on phones). Edit the numbers in `src/data/company.ts`:
+`phone` (also used for WhatsApp), `email`, `messengers` (WhatsApp / Telegram / Viber). A channel is shown only
+when its data exists. The WhatsApp button opens a chat with a short greeting from `contact.waText` in each language file.
 
 ## Deploy to Vercel
 
 1. Push this folder to a Git repository (GitHub/GitLab/Bitbucket). If the repository root is the
    parent folder, set **Root Directory = `ruhor-website`** in Vercel.
 2. Vercel → *Add New Project* → import the repo. The framework (Astro) is detected; keep the defaults.
-3. Add the environment variables above. Deploy.
+3. Deploy. (No environment variables are required.)
 4. Custom domain: Vercel → Settings → Domains. Then set `SITE_URL=https://your-domain` and redeploy,
    so canonical URLs, hreflang and the sitemap use the final domain.
 

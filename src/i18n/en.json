@@ -5,8 +5,7 @@
     "ogAlt": "RUHOR logo and granite setts laid in a fan pattern",
     "locale": "en_GB",
     "privacyTitle": "Privacy policy — RUHOR Company",
-    "privacyDescription": "What data RUHOR Company s.r.o. receives through the website form, why, how long it is kept and what rights you have under the GDPR.",
-    "thanksTitle": "Enquiry sent — RUHOR Company",
+    "privacyDescription": "What data RUHOR Company s.r.o. receives when you contact us, why, how long it is kept and what rights you have under the GDPR.",
     "notFoundTitle": "Page not found — RUHOR Company"
   },
   "a11y": {
@@ -153,38 +152,10 @@
   "contact": {
     "label": "Contact",
     "title": "Tell us about your project",
-    "lead": "Describe what needs doing — we’ll get back to you, clarify the details and arrange a site visit.",
-    "form": {
-      "name": "Name",
-      "contact": "Phone or email",
-      "contactHint": "How we can reach you",
-      "service": "Type of work",
-      "serviceAny": "Choose (optional)",
-      "serviceOther": "Other or several types of work",
-      "message": "What needs doing?",
-      "messageHint": "Site, area, address or district, preferred timing.",
-      "optional": "optional",
-      "submit": "Send enquiry",
-      "sending": "Sending…",
-      "privacy": "How we handle your details is explained in our {link}.",
-      "privacyLink": "privacy policy",
-      "honeypot": "Leave this field empty"
-    },
-    "errors": {
-      "nameRequired": "Please enter your name.",
-      "contactRequired": "Please enter a phone number or email.",
-      "contactInvalid": "Please check the phone number or email — it looks incorrect.",
-      "messageRequired": "Please briefly describe what needs doing.",
-      "messageTooLong": "Your message is too long — 3,000 characters max.",
-      "summary": "Please check the highlighted fields.",
-      "failed": "We couldn’t send your enquiry. Please try again or send it by email — we’ve already prepared the text with your details.",
-      "mailto": "Send by email"
-    },
-    "success": {
-      "title": "Thank you! Your enquiry has been sent.",
-      "text": "We’ve received your message and will get back to you shortly.",
-      "again": "Send another enquiry"
-    },
+    "lead": "Call or message us whichever way suits you — we’ll arrange a site visit.",
+    "channels": { "call": "Call us", "whatsapp": "Message on WhatsApp", "email": "Send an email" },
+    "note": "Send photos or a short description of the site — it helps us suggest next steps faster.",
+    "waText": "Hello! I’m writing from the RUHOR Company website about work on a site.",
     "direct": {
       "title": "Direct",
       "email": "Email",
@@ -231,18 +202,13 @@
     "back": "Back to home",
     "sections": [
       { "h": "Who processes your data", "p": ["The data controller is {company}, IČO {ico}, {address}. For any data-related questions, contact us at {email}."] },
-      { "h": "What data we receive", "p": ["Only what you enter in the website form yourself: your name, phone or email, type of work and your message. If you email us directly, we receive your email address and the content of your message."] },
+      { "h": "What data we receive", "p": ["Only what you tell us yourself: during a call, in a WhatsApp message or in an email — your name, phone number or email address and the content of your message. The website itself collects no data and has no forms."] },
       { "h": "Why we use it", "p": ["To answer your enquiry, clarify the details and prepare an offer. The legal basis is taking steps at your request prior to entering into a contract (Art. 6(1)(b) GDPR)."] },
       { "h": "How long we keep it", "p": ["We keep enquiry data for up to 12 months after our last contact if no contract is concluded. If a contract is concluded, we keep it for as long as the law requires for contractual and accounting records."] },
-      { "h": "Who else has access", "p": ["The website is hosted by Vercel Inc. Form messages are delivered to our inbox by Resend; the mailbox is provided by Seznam.cz. These providers process data only to deliver their services. Some of them may process data outside the EU under the European Commission’s standard contractual clauses.", "We do not sell your data or share it for advertising."] },
+      { "h": "Who else has access", "p": ["The website is hosted by Vercel Inc. We handle correspondence through a Seznam.cz mailbox and, if you choose that route, through WhatsApp (Meta Platforms Ireland Ltd.). These providers process data only to deliver their services. Some of them may process data outside the EU under the European Commission’s standard contractual clauses.", "We do not sell your data or share it for advertising."] },
       { "h": "Cookies and analytics", "p": ["This website uses no cookies, no analytics and no advertising trackers. Fonts and images are served from our own server. The hosting provider may temporarily keep technical logs (such as IP addresses) for security and reliable operation."] },
       { "h": "Your rights", "p": ["You have the right to access, correct or delete your data, to restrict processing, to data portability and to object to processing. Write to us at {email}.", "You may also lodge a complaint with the Czech supervisory authority, Úřad pro ochranu osobních údajů (www.uoou.cz)."] }
     ]
-  },
-  "thanks": {
-    "title": "Thank you! Your enquiry has been sent.",
-    "text": "We’ve received your message and will get back to you shortly.",
-    "back": "Back to home"
   },
   "notFound": {
     "title": "Page not found",

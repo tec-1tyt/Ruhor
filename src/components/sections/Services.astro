@@ -44,7 +44,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
             }
             <div class="services__badge">
               <svg viewBox="0 0 48 48" aria-hidden="true">
-                <path d={serviceCategories[0].shape} fill="var(--color-kiln)" data-service-shape />
+                {serviceCategories.map((c, i) => <path d={c.shape} fill="var(--color-kiln)" class:list={['svc-shape', i === 0 && 'is-active']} data-service-shape={i} />)}
               </svg>
               <span class="label"><span data-service-index>01</span>&nbsp;/&nbsp;{pad(serviceCategories.length)}</span>
             </div>

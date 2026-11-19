@@ -13,8 +13,8 @@ export const company = {
   countryCode: 'CZ',
   email: 'ruhor.company@seznam.cz',
 
-  /** TODO(owner): phone in international format, e.g. '+420 777 123 456'. Enables click-to-call. */
-  phone: null as string | null,
+  /** Phone (also used for WhatsApp). Provided by the owner. */
+  phone: '+420 702 010 077' as string | null,
   /** TODO(owner): registered office street + number, e.g. 'Vinohradská 1234/56'. */
   street: null as string | null,
   /** TODO(owner): ZIP code of the registered office, e.g. '120 00'. */
@@ -25,11 +25,11 @@ export const company = {
   social: [] as { label: string; url: string }[],
 
   /**
-   * TODO(owner): messengers. `telegram` = username without "@" (e.g. 'ruhor_company').
+   * Messengers (WhatsApp is on the phone number above). `telegram` = username without "@" (e.g. 'ruhor_company').
    * `whatsapp` / `viber`: set to true if the phone number above is on that messenger.
    * Only channels that are filled in appear on the site (contact block + mobile contact bar).
    */
-  messengers: { telegram: null as string | null, whatsapp: false, viber: false },
+  messengers: { telegram: null as string | null, whatsapp: true, viber: false },
 
   /** Figures used on the site. pavingM2 is ONE project in Germany (owner, 17.11.2026) — never present it as total company volume. */
   stats: {

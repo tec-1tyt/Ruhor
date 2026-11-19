@@ -24,7 +24,7 @@ const { lang, page, title, description, noindex = false } = Astro.props;
 const d = t(lang);
 const site = Astro.site!;
 
-const hasAlternates = page !== 'notFound' && page !== 'thanks';
+const hasAlternates = page !== 'notFound';
 const canonical = page === 'notFound' ? null : new URL(paths[page as PageKey](lang), site).href;
 const alternates = hasAlternates
   ? languages.map((l) => ({ hreflang: l.hreflang, href: new URL(paths[page as PageKey](l.code), site).href }))
