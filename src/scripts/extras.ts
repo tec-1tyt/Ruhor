@@ -72,6 +72,25 @@ export function initMap() {
     live.hidden = false;
     fig.classList.add('is-live');
     btn.hidden = true;
+    // The embedded map would swallow page scrolling: it only reacts after a click/tap on it,
+    // and gives control back as soon as the pointer leaves or the user taps elsewhere.
+    live.addEventListener('click', () => live.classList.add('is-active'));
+    live.addEventListener('mouseleave', () => live.classList.remove('is-active'));
+    document.addEventListener('pointerdown', (e) => {
+      if (!live.contains(e.target as Node)) live.classList.remove('is-active');
+    });
+  });
+}
+
+/** Desktop browsers often have no mail program, so the email tile opens Gmail's compose window instead. */
+export function initMailLink() {
+  const a = document.querySelector<HTMLAnchorElement>('[data-mail-web]');
+  if (!a?.dataset.mailWeb) return;
+  const web = a.dataset.mailWeb;
+  a.addEventListener('click', (e) => {
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return; // phones: the mail app via mailto:
+    e.preventDefault();
+    window.open(web, '_blank', 'noopener');
   });
 }
 

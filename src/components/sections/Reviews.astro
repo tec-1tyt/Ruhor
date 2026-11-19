@@ -1,0 +1,30 @@
+---
+/** Client reviews: three short quotes supplied by the owner (names as given, Czech spelling). */
+import SectionLabel from '../SectionLabel.astro';
+import { t, type Lang } from '../../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const r = t(lang).reviews;
+---
+
+<section class="section reviews" id="reviews" data-theme="plaster" aria-labelledby="reviews-title">
+  <div class="container">
+    <header class="section-head">
+      <SectionLabel index="08">{r.label}</SectionLabel>
+      <h2 id="reviews-title" class="t-h2" data-split>{r.title}</h2>
+    </header>
+    <ul class="reviews__grid" role="list">
+      {
+        r.list.map((x) => (
+          <li data-reveal>
+            <figure class="review">
+              <blockquote><p>{x.text}</p></blockquote>
+              <figcaption><strong>{x.name}</strong><span class="label">{x.tag}</span></figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

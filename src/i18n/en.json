@@ -200,6 +200,15 @@
     "open": "Open in Google Maps",
     "frame": "Interactive map of Prague and surroundings"
   },
+  "reviews": {
+    "label": "Reviews",
+    "title": "What clients say",
+    "list": [
+      { "name": "Anna", "tag": "Turnkey house build", "text": "We had a house built from scratch, turnkey. I am completely satisfied with the crew’s work: everything was done neatly, honestly and on the agreed schedule. They explained every stage and consulted me, with no unnecessary costs. They left the site clean. I recommend them to anyone looking for a reliable team." },
+      { "name": "Lukáš", "tag": "Foundations, concrete, masonry", "text": "They did the concrete work, monolithic structures and wall masonry. The geometry is straight, the brickwork neat, and the concrete was poured on time, without rushing and without defects. You can tell these people know their trade and take responsibility for the result." },
+      { "name": "Max", "tag": "Summer kitchen, terrace, paving", "text": "They built a summer kitchen with a terrace and laid the paving. Now we spend whole evenings there with the family. Solid, beautiful and well thought out. Special thanks for hauling away all the construction waste when they finished." }
+    ]
+  },
   "footer": {
     "tagline": "Construction company in Prague. From foundations to handover.",
     "navTitle": "Sections",

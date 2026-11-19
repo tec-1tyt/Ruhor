@@ -200,6 +200,15 @@
     "open": "In Google Maps öffnen",
     "frame": "Interaktive Karte von Prag und Umgebung"
   },
+  "reviews": {
+    "label": "Referenzen",
+    "title": "Das sagen unsere Kunden",
+    "list": [
+      { "name": "Anna", "tag": "Hausbau schlüsselfertig", "text": "Wir haben ein Haus schlüsselfertig von Grund auf bauen lassen. Mit der Arbeit der Handwerker bin ich vollauf zufrieden: alles sauber, ehrlich und termingerecht ausgeführt. Über jede Etappe wurde ich informiert und mit einbezogen, es gab keine unnötigen Kosten. Nach der Arbeit blieb die Baustelle aufgeräumt zurück. Ich empfehle das Team jedem, der eine zuverlässige Mannschaft sucht." },
+      { "name": "Lukáš", "tag": "Fundament, Beton, Mauerwerk", "text": "Ausgeführt wurden Betonarbeiten, Monolithbau und Mauerwerk. Die Geometrie stimmt, das Mauerwerk ist sauber, der Beton wurde rechtzeitig, ohne Hast und ohne Mängel gegossen. Man merkt, dass die Leute ihr Handwerk verstehen und verantwortungsvoll arbeiten." },
+      { "name": "Max", "tag": "Sommerküche, Terrasse, Pflaster", "text": "Gebaut wurden eine Sommerküche mit Terrasse, dazu das Pflaster. Wir verbringen dort jetzt ganze Abende mit der Familie. Stabil, schön und durchdacht ausgeführt. Besonderen Dank dafür, dass der gesamte Bauschutt nach Abschluss abtransportiert wurde." }
+    ]
+  },
   "footer": {
     "tagline": "Bauunternehmen in Prag. Vom Fundament bis zum Schlüssel.",
     "navTitle": "Bereiche",

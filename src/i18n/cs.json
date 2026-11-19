@@ -200,6 +200,15 @@
     "open": "Otevřít v Google Maps",
     "frame": "Interaktivní mapa Prahy a okolí"
   },
+  "reviews": {
+    "label": "Reference",
+    "title": "Co říkají zákazníci",
+    "list": [
+      { "name": "Anna", "tag": "Stavba na klíč", "text": "Stavěli nám dům na klíč od základů. S prací mistrů jsem naprosto spokojená: vše bylo provedeno pečlivě, poctivě a v domluvených termínech. O každé etapě nás informovali a radili se s námi, žádné zbytečné náklady. Po práci nechali čisté staveniště. Doporučuji každému, kdo hledá spolehlivou partu." },
+      { "name": "Lukáš", "tag": "Základy, monolity, zdivo", "text": "Dělali betonáže, monolity a zdění stěn. Geometrie rovná, zdivo úhledné, beton byl zalit včas, bez spěchu a bez vad. Je vidět, že lidé svému řemeslu rozumí a k výsledku přistupují zodpovědně." },
+      { "name": "Max", "tag": "Letní kuchyně, terasa, dlažba", "text": "Postavili nám letní kuchyni s terasou a také položili zámkovou dlažbu. Teď tam trávíme celé večery s rodinou. Provedeno pevně, krásně a s rozmyslem. Zvláštní poděkování za odvoz veškerého stavebního odpadu po dokončení." }
+    ]
+  },
   "footer": {
     "tagline": "Stavební firma v Praze. Od základů až po klíče.",
     "navTitle": "Sekce",

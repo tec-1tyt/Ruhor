@@ -34,7 +34,7 @@ const reach: Reach[] = [
   <ArchEdge color="var(--color-stone)" />
   <div class="container contact__grid">
     <div>
-      <SectionLabel index="08">{c.label}</SectionLabel>
+      <SectionLabel index="09">{c.label}</SectionLabel>
       <h2 id="contact-title" class="t-h2" style="margin-block: clamp(20px, 2.4vw, 32px)" data-split>{c.title}</h2>
       <p class="t-lead" data-reveal>{c.lead}</p>
       <p class="contact__note" data-reveal>{c.note}</p>
@@ -60,7 +60,7 @@ const reach: Reach[] = [
       {
         reach.map((r) => (
           <li data-reveal>
-            <a class="reach__item" href={r.href} {...(r.external ? { target: '_blank', rel: 'noopener' } : {})}>
+            <a class="reach__item" href={r.href} {...(r.external ? { target: '_blank', rel: 'noopener' } : {})} {...(r.id === 'email' ? { 'data-mail-web': gmailHref } : {})}>
               <span class="reach__icon"><Icon name={r.icon} /></span>
               <span class="reach__text">
                 <span class="label">{r.label}{r.external && <span class="sr-only"> {d.a11y.newTab}</span>}</span>
@@ -72,9 +72,6 @@ const reach: Reach[] = [
         ))
       }
     </ul>
-    <p class="reach__alt" data-reveal>
-      <a class="link" href={gmailHref} target="_blank" rel="noopener">{c.gmail}<span class="sr-only"> {d.a11y.newTab}</span></a>
-    </p>
     </div>
   </div>
 </section>

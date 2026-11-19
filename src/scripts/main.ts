@@ -8,7 +8,7 @@ import { initMenu } from './menu';
 import { initLang } from './lang';
 import { initServices } from './services';
 import { initProjects } from './projects';
-import { initCompare, initDock, initMap, initLightReveal, initHeroGlow } from './extras';
+import { initCompare, initDock, initMap, initMailLink, initLightReveal, initHeroGlow } from './extras';
 import { loadGsap } from './lazy-gsap';
 
 const guard = (name: string, fn: () => void) => {
@@ -27,6 +27,7 @@ guard('projects', initProjects);
 guard('compare', initCompare);
 guard('dock', initDock);
 guard('map', initMap);
+guard('mail', initMailLink);
 guard('heroGlow', initHeroGlow);
 
 // Phones and touch devices get the light path: plain CSS fade-ins, and the animation library is
