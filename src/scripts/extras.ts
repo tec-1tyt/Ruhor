@@ -1,6 +1,8 @@
 /**
  * Small interactive pieces (no GSAP needed, so they work immediately):
  *  - before/after sliders (pointer drag + keyboard through the hidden range input)
+ *  - hero: pointer light (desktop, transform-only)
+ *  - click-to-load interactive map (OpenStreetMap, nothing is requested before the click)
  *  - mobile contact bar visibility
  */
 
@@ -52,4 +54,88 @@ export function initDock() {
       update();
     }, { threshold: 0.15 }).observe(contact);
   }
+}
+
+export function initMap() {
+  const btn = document.querySelector<HTMLButtonElement>('[data-map-load]');
+  const fig = document.querySelector<HTMLElement>('[data-map]');
+  const live = fig?.querySelector<HTMLElement>('[data-map-live]');
+  if (!btn || !fig || !live) return;
+  btn.addEventListener('click', () => {
+    const frame = document.createElement('iframe');
+    frame.src = btn.dataset.src ?? '';
+    frame.title = btn.dataset.title ?? '';
+    frame.loading = 'lazy';
+    frame.referrerPolicy = 'no-referrer';
+    frame.setAttribute('allowfullscreen', '');
+    live.replaceChildren(frame);
+    live.hidden = false;
+    fig.classList.add('is-live');
+    btn.hidden = true;
+  });
+}
+
+/** Light path for phones: elements below the fold fade up once, using only IntersectionObserver + CSS. */
+export function initLightReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const els = [...document.querySelectorAll<HTMLElement>('[data-reveal], [data-reveal-img]')];
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        e.target.classList.add('rv-in');
+        io.unobserve(e.target);
+      }
+    },
+    { rootMargin: '0px 0px -6% 0px' },
+  );
+  for (const el of els) {
+    if (el.getBoundingClientRect().top < window.innerHeight * 0.92) continue; // already on screen: leave alone
+    el.classList.add('rv');
+    io.observe(el);
+  }
+}
+
+/** Hero pointer light. Desktop with a mouse only; everything else keeps the quiet static pattern. */
+export function initHeroGlow() {
+  const hero = document.querySelector<HTMLElement>('.hero');
+  const glow = hero?.querySelector<HTMLElement>('[data-hero-glow]');
+  const inner = glow?.querySelector<HTMLElement>('.hero__glow-in');
+  if (!hero || !glow || !inner) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1024px) and (prefers-reduced-motion: no-preference)').matches) {
+    glow.hidden = true;
+    return;
+  }
+  const HALF = 380; // half of the 760 px light window
+  let left = 0, top = 0, hw = 0, hh = 0;
+  const measure = () => {
+    const r = hero.getBoundingClientRect();
+    left = r.left + window.scrollX;
+    top = r.top + window.scrollY;
+    hw = r.width;
+    hh = r.height;
+    inner.style.setProperty('--hw', hw + 'px');
+    inner.style.setProperty('--hh', hh + 'px');
+  };
+  measure();
+  let timer = 0;
+  window.addEventListener('resize', () => { clearTimeout(timer); timer = window.setTimeout(measure, 150); });
+
+  let tx = hw * 0.72, ty = hh * 0.4, x = tx, y = ty, raf = 0;
+  const apply = () => {
+    glow.style.transform = `translate3d(${(x - HALF).toFixed(1)}px,${(y - HALF).toFixed(1)}px,0)`;
+    inner.style.transform = `translate3d(${(HALF - x).toFixed(1)}px,${(HALF - y).toFixed(1)}px,0)`;
+  };
+  const tick = () => {
+    x += (tx - x) * 0.18;
+    y += (ty - y) * 0.18;
+    apply();
+    raf = Math.abs(tx - x) + Math.abs(ty - y) > 0.4 ? requestAnimationFrame(tick) : 0;
+  };
+  apply();
+  hero.addEventListener('pointermove', (e) => {
+    tx = e.pageX - left;
+    ty = e.pageY - top;
+    if (!raf) raf = requestAnimationFrame(tick);
+  }, { passive: true });
 }

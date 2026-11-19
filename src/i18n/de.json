@@ -41,7 +41,7 @@
     "ctaPrimary": "Projekt anfragen",
     "ctaSecondary": "Unsere Projekte",
     "caption": "Granitpflaster im Segmentbogen",
-    "imageAlt": "Platz aus Granitpflaster im Segmentbogenverband; ein Arbeiter verdichtet die Fläche mit der Rüttelplatte"
+    "imageAlt": "Zwei Arbeiter verlegen Granitpflaster von Hand im Segmentbogen"
   },
   "intro": {
     "label": "Unternehmen",
@@ -92,7 +92,7 @@
     "shown": "Angezeigte Projekte: {n}",
     "photos": { "one": "{n} Foto", "few": "{n} Fotos", "many": "{n} Fotos", "other": "{n} Fotos" },
     "open": "Fotos ansehen",
-    "region": "Region Ústí",
+    "geo": "Projekte in Prag und in der Region Ústí",
     "categories": {
       "paving": "Pflaster",
       "outdoor": "Außenanlagen",
@@ -111,8 +111,7 @@
       "paths": { "title": "Wege aus Platten und Pflaster", "desc": "Fußwege im Park und an Gebäuden: Unterbau, Randsteine, Platten.", "alt": "Weg aus Betonplatten zwischen Bäumen im Park" },
       "interiors": { "title": "Innenräume: Trockenbau und Fliesen", "desc": "Dekorative Trockenbauwände mit Beleuchtung, Fliesen in Holzoptik.", "alt": "Dekorative Trockenbauwand mit Nischen und Beleuchtung" },
       "curbs": { "title": "Bordsteine und Gehwege", "desc": "Granit- und Betonbordsteine, Gehwege aus Großformatplatten, Reparatur von Straßenpflaster.", "alt": "Setzen von Granitbordsteinen im Graben" },
-      "utilities": { "title": "Leitungen, Gräben und Abbruch", "desc": "Gräben für Kanal und Drainage, Revisionsschächte, Abbruch alter Beläge.", "alt": "Tiefer Graben für Versorgungsleitungen" },
-      "usti-region": { "title": "Projekte in der Region Ústí", "desc": "Ausgeführte Arbeiten in der Region Ústí (Ústecký kraj), Tschechien. Fotos und Details auf Anfrage.", "alt": "" }
+      "utilities": { "title": "Leitungen, Gräben und Abbruch", "desc": "Gräben für Kanal und Drainage, Revisionsschächte, Abbruch alter Beläge.", "alt": "Tiefer Graben für Versorgungsleitungen" }
     }
   },
   "process": {
@@ -134,7 +133,7 @@
       "Die RUHOR Company s.r.o. ist ein Bauunternehmen mit Sitz in Prag. Wir verlegen Pflaster, übernehmen Erd- und Betonarbeiten, bauen Terrassen, Carports und schlüsselfertige Häuser und sanieren Innenräume.",
       "Zu unseren Referenzen gehören Granitplätze, Industrieflächen, Tiefgaragen, Verkaufsräume und private Höfe. Alle Fotos auf dieser Website stammen von unseren Baustellen."
     ],
-    "photoAlt": "Zwei Arbeiter verlegen Granitpflaster von Hand im Segmentbogen",
+    "photoAlt": "Granitpflaster im Segmentbogen mit Entwässerungsrost vor einer Produktionshalle",
     "facts": {
       "company": "Firma",
       "ico": "IČO (Firmen-ID)",
@@ -158,6 +157,7 @@
     "channels": { "call": "Anrufen", "whatsapp": "Per WhatsApp schreiben", "email": "E-Mail schreiben" },
     "note": "Senden Sie Fotos oder eine kurze Beschreibung des Objekts – so können wir die nächsten Schritte schneller einschätzen.",
     "waText": "Guten Tag! Ich schreibe über die RUHOR-Website wegen Arbeiten an einem Objekt.",
+    "gmail": "In Gmail öffnen",
     "direct": {
       "title": "Direkt",
       "email": "E-Mail",
@@ -188,6 +188,18 @@
     "gridLabel": "Schema: {tiles} Quadrate à {m2} m², insgesamt {total} m²"
   },
   "dock": { "label": "Schnellkontakt", "call": "Anrufen", "email": "E-Mail", "telegram": "Telegram", "whatsapp": "WhatsApp", "viber": "Viber" },
+  "map": {
+    "label": "Einsatzgebiet",
+    "title": "Wir arbeiten in Prag und in der Region Ústí",
+    "lead": "Hier führen wir unsere Arbeiten aus. Öffnen Sie die interaktive Karte, um die Umgebung genauer zu sehen.",
+    "schematic": "Schematische Karte von Tschechien",
+    "prague": "Prag",
+    "region": "Region Ústí",
+    "load": "Interaktive Karte anzeigen",
+    "loadNote": "Die OpenStreetMap-Karte wird erst nach dem Klick geladen.",
+    "open": "In Google Maps öffnen",
+    "frame": "Interaktive Karte von Prag und Umgebung"
+  },
   "footer": {
     "tagline": "Bauunternehmen in Prag. Vom Fundament bis zum Schlüssel.",
     "navTitle": "Bereiche",

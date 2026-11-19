@@ -17,7 +17,9 @@ const c = d.contact;
 const digits = company.phone ? company.phone.replace(/\D/g, '') : null;
 const waHref = digits && company.messengers.whatsapp ? `https://wa.me/${digits}?text=${encodeURIComponent(c.waText)}` : null;
 const tgHref = company.messengers.telegram ? `https://t.me/${company.messengers.telegram}` : null;
-const mailTo = `${mailHref}?subject=${encodeURIComponent(c.mailSubject)}`;
+const mailTo = `${mailHref}?subject=${encodeURIComponent(c.mailSubject)}&body=${encodeURIComponent(c.waText)}`;
+// Gmail in the browser: opens a compose window with the company address already filled in
+const gmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(company.email)}&su=${encodeURIComponent(c.mailSubject)}&body=${encodeURIComponent(c.waText)}`;
 
 type Reach = { id: string; icon: 'phone' | 'chat' | 'mail'; label: string; value: string; href: string; external?: boolean };
 const reach: Reach[] = [
@@ -29,10 +31,10 @@ const reach: Reach[] = [
 ---
 
 <section class="section contact" id="contact" data-theme="dark" aria-labelledby="contact-title">
-  <ArchEdge color="var(--color-plaster)" />
+  <ArchEdge color="var(--color-stone)" />
   <div class="container contact__grid">
     <div>
-      <SectionLabel index="07">{c.label}</SectionLabel>
+      <SectionLabel index="08">{c.label}</SectionLabel>
       <h2 id="contact-title" class="t-h2" style="margin-block: clamp(20px, 2.4vw, 32px)" data-split>{c.title}</h2>
       <p class="t-lead" data-reveal>{c.lead}</p>
       <p class="contact__note" data-reveal>{c.note}</p>
@@ -53,6 +55,7 @@ const reach: Reach[] = [
       </dl>
     </div>
 
+    <div>
     <ul class="reach" role="list">
       {
         reach.map((r) => (
@@ -69,5 +72,9 @@ const reach: Reach[] = [
         ))
       }
     </ul>
+    <p class="reach__alt" data-reveal>
+      <a class="link" href={gmailHref} target="_blank" rel="noopener">{c.gmail}<span class="sr-only"> {d.a11y.newTab}</span></a>
+    </p>
+    </div>
   </div>
 </section>

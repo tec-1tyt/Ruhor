@@ -41,7 +41,7 @@
     "ctaPrimary": "Poslat poptávku",
     "ctaSecondary": "Naše realizace",
     "caption": "Žulová kostka, pokládka do oblouků",
-    "imageAlt": "Náměstí ze žulové kostky kladené do oblouků; pracovník hutní dlažbu vibrační deskou"
+    "imageAlt": "Dva pracovníci ručně kladou žulovou kostku do oblouků"
   },
   "intro": {
     "label": "Firma",
@@ -92,7 +92,7 @@
     "shown": "Zobrazeno realizací: {n}",
     "photos": { "one": "{n} fotografie", "few": "{n} fotografie", "many": "{n} fotografie", "other": "{n} fotografií" },
     "open": "Zobrazit fotografie",
-    "region": "Ústecký kraj",
+    "geo": "Realizace v Praze a v Ústeckém kraji",
     "categories": {
       "paving": "Dlažby",
       "outdoor": "Venkovní úpravy",
@@ -111,8 +111,7 @@
       "paths": { "title": "Chodníky z desek a dlažby", "desc": "Pěší cesty v parku i u budov: podklad, obrubníky, desky.", "alt": "Chodník z betonových desek mezi stromy v parku" },
       "interiors": { "title": "Interiéry: sádrokarton a dlažba", "desc": "Dekorativní sádrokartonové stěny s osvětlením, dlažba v imitaci dřeva.", "alt": "Dekorativní sádrokartonová stěna s nikami a osvětlením" },
       "curbs": { "title": "Obrubníky a chodníky", "desc": "Žulové a betonové obrubníky, chodníky z velkoformátových desek, opravy dlážděných ulic.", "alt": "Osazování žulových obrubníků do rýhy" },
-      "utilities": { "title": "Sítě, výkopy a bourání", "desc": "Výkopy pro kanalizaci a drenáž, revizní šachty, bourání starých povrchů.", "alt": "Hluboký výkop pro inženýrské sítě" },
-      "usti-region": { "title": "Realizace v Ústeckém kraji", "desc": "Provedené zakázky v Ústeckém kraji. Fotografie a podrobnosti na vyžádání.", "alt": "" }
+      "utilities": { "title": "Sítě, výkopy a bourání", "desc": "Výkopy pro kanalizaci a drenáž, revizní šachty, bourání starých povrchů.", "alt": "Hluboký výkop pro inženýrské sítě" }
     }
   },
   "process": {
@@ -134,7 +133,7 @@
       "RUHOR Company s.r.o. je stavební firma se sídlem v Praze. Pokládáme dlažbu, provádíme zemní a betonářské práce, stavíme terasy, přístřešky i domy na klíč a rekonstruujeme interiéry.",
       "V portfoliu máme žulová náměstí, průmyslové plochy, parkoviště, obchodní prostory i soukromé dvory. Všechny fotografie na webu pocházejí z našich zakázek."
     ],
-    "photoAlt": "Dva pracovníci ručně kladou žulovou kostku do oblouků",
+    "photoAlt": "Žulová kostka do oblouků s odvodňovací mříží u výrobní haly",
     "facts": {
       "company": "Název",
       "ico": "IČO",
@@ -158,6 +157,7 @@
     "channels": { "call": "Zavolat", "whatsapp": "Napsat na WhatsApp", "email": "Napsat e-mail" },
     "note": "Pošlete fotografie nebo stručný popis objektu — rychleji vám řekneme další kroky.",
     "waText": "Dobrý den! Píšu z webu RUHOR Company ohledně prací na objektu.",
+    "gmail": "Otevřít v Gmailu",
     "direct": {
       "title": "Přímo",
       "email": "E-mail",
@@ -188,6 +188,18 @@
     "gridLabel": "Schéma: {tiles} čtverců po {m2} m², celkem {total} m²"
   },
   "dock": { "label": "Rychlý kontakt", "call": "Zavolat", "email": "E-mail", "telegram": "Telegram", "whatsapp": "WhatsApp", "viber": "Viber" },
+  "map": {
+    "label": "Působnost",
+    "title": "Pracujeme v Praze a v Ústeckém kraji",
+    "lead": "Tady provádíme práce. Otevřete interaktivní mapu a podívejte se na okolí podrobněji.",
+    "schematic": "Schematická mapa České republiky",
+    "prague": "Praha",
+    "region": "Ústecký kraj",
+    "load": "Zobrazit interaktivní mapu",
+    "loadNote": "Mapa OpenStreetMap se načte až po kliknutí.",
+    "open": "Otevřít v Google Maps",
+    "frame": "Interaktivní mapa Prahy a okolí"
+  },
   "footer": {
     "tagline": "Stavební firma v Praze. Od základů až po klíče.",
     "navTitle": "Sekce",

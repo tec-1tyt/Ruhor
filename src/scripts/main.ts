@@ -8,7 +8,7 @@ import { initMenu } from './menu';
 import { initLang } from './lang';
 import { initServices } from './services';
 import { initProjects } from './projects';
-import { initCompare, initDock } from './extras';
+import { initCompare, initDock, initMap, initLightReveal, initHeroGlow } from './extras';
 import { loadGsap } from './lazy-gsap';
 
 const guard = (name: string, fn: () => void) => {
@@ -26,6 +26,12 @@ guard('services', initServices);
 guard('projects', initProjects);
 guard('compare', initCompare);
 guard('dock', initDock);
+guard('map', initMap);
+guard('heroGlow', initHeroGlow);
+
+// Phones and touch devices get the light path: plain CSS fade-ins, and the animation library is
+// never downloaded. Full scroll-linked motion (GSAP) is for desktop-class devices only.
+const light = window.matchMedia('(max-width: 1023px), (pointer: coarse)').matches;
 
 const startMotion = () =>
   loadGsap()
@@ -33,5 +39,7 @@ const startMotion = () =>
     .then((m) => guard('motion', m.initMotion))
     .catch((err) => console.error('[ruhor:motion] failed to load', err));
 
-if (document.readyState === 'complete') startMotion();
+if (light) {
+  guard('reveal', initLightReveal);
+} else if (document.readyState === 'complete') startMotion();
 else window.addEventListener('load', startMotion, { once: true });

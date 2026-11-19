@@ -1,0 +1,76 @@
+---
+/**
+ * Where we work: a schematic map of Czechia (Prague + Ústí Region highlighted), drawn as inline SVG
+ * from approximate border coordinates — no third-party requests. An interactive OpenStreetMap
+ * only loads after the visitor presses the button (privacy-friendly, nothing is sent before).
+ */
+import SectionLabel from '../SectionLabel.astro';
+import Icon from '../Icon.astro';
+import { t, type Lang } from '../../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const m = d.map;
+
+// Approximate outline of Czechia [lon, lat], clockwise from the western tip (schematic, not survey-grade).
+const COUNTRY: [number, number][] = [
+  [12.09, 50.25], [12.2, 50.32], [12.52, 50.4], [12.8, 50.42], [12.92, 50.42], [13.2, 50.55], [13.55, 50.66], [13.75, 50.74], [13.98, 50.85],
+  [14.22, 50.88], [14.3, 50.99], [14.55, 50.95], [14.43, 51.05], [14.82, 50.87], [15.0, 51.03], [15.28, 50.88], [15.38, 50.78], [15.7, 50.76],
+  [16.0, 50.64], [16.35, 50.66], [16.3, 50.4], [16.65, 50.1], [16.85, 50.2], [17.2, 50.4], [17.7, 50.3], [17.9, 50.05], [18.4, 49.92],
+  [18.85, 49.95], [18.6, 49.75], [18.77, 49.52], [18.4, 49.4], [18.05, 49.32], [17.65, 48.95], [17.15, 48.85], [17.0, 48.65], [16.65, 48.75],
+  [16.05, 48.75], [15.5, 48.92], [15.35, 48.99], [14.8, 48.72], [14.35, 48.57], [13.95, 48.65], [13.8, 48.77], [13.5, 48.95], [13.2, 49.13],
+  [12.9, 49.32], [12.7, 49.45], [12.45, 49.7], [12.55, 49.95], [12.3, 50.05],
+];
+const REGION: [number, number][] = [
+  [12.92, 50.42], [13.2, 50.55], [13.55, 50.66], [13.75, 50.74], [13.98, 50.85], [14.22, 50.88], [14.3, 50.99], [14.55, 50.95], [14.43, 51.05],
+  [14.6, 50.88], [14.35, 50.76], [14.45, 50.55], [14.35, 50.35], [14.1, 50.25], [13.7, 50.14], [13.35, 50.12], [13.2, 50.25], [13.05, 50.32],
+];
+const PRAGUE: [number, number] = [14.42, 50.09];
+const LON0 = 11.9, LAT0 = 51.2, K = 118, COS = 0.6455;
+const pt = ([lon, lat]: [number, number]) => [(lon - LON0) * K * COS, (LAT0 - lat) * K] as const;
+const poly = (a: [number, number][]) => a.map((p) => pt(p).map((v) => v.toFixed(1)).join(',')).join(' ');
+const W = Math.ceil((19.0 - LON0) * K * COS), H = Math.ceil((LAT0 - 48.45) * K);
+const [px, py] = pt(PRAGUE);
+const regionCenter = pt([13.75, 50.55]);
+const gmaps = (q: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+const osmSrc = 'https://www.openstreetmap.org/export/embed.html?bbox=12.9%2C49.85%2C15.0%2C51.0&layer=mapnik&marker=50.0755%2C14.4378';
+---
+
+<section class="section map" id="map" data-theme="light" aria-labelledby="map-title">
+  <div class="container">
+    <header class="section-head section-head--split">
+      <SectionLabel index="07">{m.label}</SectionLabel>
+      <h2 id="map-title" class="t-h2" data-split>{m.title}</h2>
+      <p class="t-lead" data-reveal>{m.lead}</p>
+    </header>
+
+    <div class="map__box" data-reveal>
+      <figure class="map__fig" data-map>
+        <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={m.schematic} class="map__svg">
+          <polygon class="map__country" points={poly(COUNTRY)}></polygon>
+          <polygon class="map__region" points={poly(REGION)}></polygon>
+          <path class="map__route" d={`M${px.toFixed(1)} ${py.toFixed(1)}L${regionCenter[0].toFixed(1)} ${regionCenter[1].toFixed(1)}`}></path>
+          <g class="map__pin" transform={`translate(${px.toFixed(1)} ${py.toFixed(1)})`}>
+            <circle class="map__pulse" r="7"></circle>
+            <circle class="map__dot" r="5"></circle>
+          </g>
+          <text class="map__label" x={px + 12} y={py + 16}>{m.prague}</text>
+          <text class="map__label map__label--region" x={regionCenter[0] - 12} y={regionCenter[1] - 40} text-anchor="middle">{m.region}</text>
+        </svg>
+        <div class="map__live" data-map-live hidden></div>
+        <figcaption class="sr-only">{m.schematic}</figcaption>
+      </figure>
+
+      <div class="map__actions">
+        <button class="btn btn--sm" type="button" data-map-load data-src={osmSrc} data-title={m.frame}>
+          <span class="btn__roll"><span>{m.load}</span><span aria-hidden="true">{m.load}</span></span>
+          <Icon name="plus" class="btn__icon" />
+        </button>
+        <a class="link" href={gmaps('Praha')} target="_blank" rel="noopener">{m.open} · {m.prague}<span class="sr-only"> {d.a11y.newTab}</span></a>
+        <a class="link" href={gmaps('Ústecký kraj')} target="_blank" rel="noopener">{m.open} · {m.region}<span class="sr-only"> {d.a11y.newTab}</span></a>
+      </div>
+      <p class="map__note">{m.loadNote}</p>
+    </div>
+  </div>
+</section>

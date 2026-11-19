@@ -41,7 +41,7 @@
     "ctaPrimary": "Discuss your project",
     "ctaSecondary": "See our work",
     "caption": "Granite setts, fan-pattern laying",
-    "imageAlt": "A square of granite setts laid in a fan pattern; a worker compacts the surface with a plate compactor"
+    "imageAlt": "Two workers hand-laying granite setts in a fan pattern"
   },
   "intro": {
     "label": "Company",
@@ -92,7 +92,7 @@
     "shown": "Projects shown: {n}",
     "photos": { "one": "{n} photo", "few": "{n} photos", "many": "{n} photos", "other": "{n} photos" },
     "open": "View photos",
-    "region": "Ústí Region",
+    "geo": "Projects in Prague and in the Ústí Region",
     "categories": {
       "paving": "Paving",
       "outdoor": "Outdoor",
@@ -111,8 +111,7 @@
       "paths": { "title": "Slab and block paved paths", "desc": "Footpaths in a park and around buildings: sub-base, edging, slabs.", "alt": "A concrete slab footpath between trees in a park" },
       "interiors": { "title": "Interiors: drywall & tiles", "desc": "Drywall feature walls with lighting, wood-effect tiles.", "alt": "A drywall feature wall with lit niches" },
       "curbs": { "title": "Kerbs & pavements", "desc": "Granite and concrete kerbs, large-format slab pavements, street paving repairs.", "alt": "Setting granite kerbs in a trench" },
-      "utilities": { "title": "Utilities, trenches & demolition", "desc": "Trenches for sewer and drainage, inspection chambers, removal of old surfaces.", "alt": "A deep trench for underground utilities" },
-      "usti-region": { "title": "Projects in the Ústí Region", "desc": "Completed work in the Ústí Region (Ústecký kraj), Czech Republic. Photos and details on request.", "alt": "" }
+      "utilities": { "title": "Utilities, trenches & demolition", "desc": "Trenches for sewer and drainage, inspection chambers, removal of old surfaces.", "alt": "A deep trench for underground utilities" }
     }
   },
   "process": {
@@ -134,7 +133,7 @@
       "RUHOR Company s.r.o. is a construction company registered in Prague. We lay paving, carry out groundworks and concrete works, build terraces, carports and turnkey houses, and renovate interiors.",
       "Our portfolio includes granite squares, industrial yards, car parks, retail spaces and private yards. Every photo on this website comes from our own sites."
     ],
-    "photoAlt": "Two workers hand-laying granite setts in a fan pattern",
+    "photoAlt": "Granite setts in a fan pattern with a drainage grating outside a production hall",
     "facts": {
       "company": "Company",
       "ico": "IČO (company ID)",
@@ -158,6 +157,7 @@
     "channels": { "call": "Call us", "whatsapp": "Message on WhatsApp", "email": "Send an email" },
     "note": "Send photos or a short description of the site — it helps us suggest next steps faster.",
     "waText": "Hello! I’m writing from the RUHOR Company website about work on a site.",
+    "gmail": "Open in Gmail",
     "direct": {
       "title": "Direct",
       "email": "Email",
@@ -188,6 +188,18 @@
     "gridLabel": "Diagram: {tiles} squares of {m2} m², {total} m² in total"
   },
   "dock": { "label": "Quick contact", "call": "Call", "email": "Email", "telegram": "Telegram", "whatsapp": "WhatsApp", "viber": "Viber" },
+  "map": {
+    "label": "Where we work",
+    "title": "We work in Prague and the Ústí Region",
+    "lead": "This is where we carry out our work. Open the interactive map to see the area in more detail.",
+    "schematic": "Schematic map of the Czech Republic",
+    "prague": "Prague",
+    "region": "Ústí Region",
+    "load": "Show interactive map",
+    "loadNote": "The OpenStreetMap map loads only after you click.",
+    "open": "Open in Google Maps",
+    "frame": "Interactive map of Prague and surroundings"
+  },
   "footer": {
     "tagline": "Construction company in Prague. From foundations to handover.",
     "navTitle": "Sections",

@@ -7,7 +7,6 @@ import { Picture } from 'astro:assets';
 import SectionLabel from '../SectionLabel.astro';
 import ArchEdge from '../ArchEdge.astro';
 import Icon from '../Icon.astro';
-import Logo from '../Logo.astro';
 import { t, fmt, plural, type Lang } from '../../i18n';
 import { projects, projectCategories, categoryCounts } from '../../data/projects';
 
@@ -17,8 +16,6 @@ const d = t(lang);
 const p = d.projects;
 // Image slot widths match the desktop grid (6/12 vs 3/12 columns) so no card downloads
 // a bigger file than it shows (lesson P-02). scripts/projects.ts swaps them after filtering.
-// Brand fan-paving pattern for entries without a photo
-const FAN = [[20, 20], [0, 10], [40, 10], [0, 30], [40, 30]].flatMap(([cx, cy]) => [5, 10, 15, 20].map((r) => `<path d="M${cx - r} ${cy}A${r} ${r} 0 0 1 ${cx + r} ${cy}"/>`)).join('');
 const SIZES_WIDE = '(min-width: 1100px) min(44vw, 740px), (min-width: 768px) 46vw, 100vw';
 const SIZES_NARROW = '(min-width: 1100px) min(21vw, 360px), (min-width: 768px) 46vw, 100vw';
 ---
@@ -31,6 +28,8 @@ const SIZES_NARROW = '(min-width: 1100px) min(21vw, 360px), (min-width: 768px) 4
       <h2 id="projects-title" class="t-h2" data-split>{p.title}</h2>
       <p class="t-lead" data-reveal>{p.lead}</p>
     </header>
+
+    <a class="geo-line" href="#map"><Icon name="pin" /><span>{p.geo}</span></a>
 
     <div class="filters" role="group" aria-label={p.filterLabel} data-filters hidden>
       <button class="chip" type="button" aria-pressed="true" data-filter="all">
@@ -52,16 +51,6 @@ const SIZES_NARROW = '(min-width: 1100px) min(21vw, 360px), (min-width: 768px) 4
           const item = p.items[proj.id];
           return (
             <li class="pcard" data-slot={i % 6} data-categories={proj.categories.join(' ')} data-reveal>
-              {!proj.cover ? (
-                <div class="frame pcard__media pcard__ph" aria-hidden="true">
-                  <svg class="pcard__ph-fan" width="100%" height="100%" focusable="false">
-                    <defs><pattern id={`fan-ph-${i}`} width="40" height="20" patternUnits="userSpaceOnUse"><g fill="none" stroke="currentColor" stroke-width="0.9" set:html={FAN} /></pattern></defs>
-                    <rect width="100%" height="100%" fill={`url(#fan-ph-${i})`} />
-                  </svg>
-                  <span class="pcard__ph-mark"><Logo variant="mark" /></span>
-                  <span class="label pcard__ph-tag">{p.region}</span>
-                </div>
-              ) : (
               <div class="frame pcard__media" data-reveal-img>
                 <Picture
                   src={proj.cover}
@@ -74,20 +63,21 @@ const SIZES_NARROW = '(min-width: 1100px) min(21vw, 360px), (min-width: 768px) 4
                 />
                 <span class="pcard__open" aria-hidden="true"><Icon name="plus" /></span>
               </div>
-              )}
               <p class="pcard__meta">
-                <span class="label">{proj.categories.length ? proj.categories.map((c) => p.categories[c]).join(' · ') : p.region}</span>
-                {proj.photos.length > 0 && <span class="label">{plural(lang, proj.photos.length, p.photos)}</span>}
+                <span class="label">{proj.categories.map((c) => p.categories[c]).join(' · ')}</span>
+                <span class="label">{plural(lang, proj.photos.length, p.photos)}</span>
               </p>
               <h3 class="pcard__title">
-                {proj.photos.length > 0 ? (
-                  <button class="pcard__btn" type="button" aria-haspopup="dialog" data-gallery={proj.id} data-title={item.title}>
-                    {item.title}
-                    <span class="sr-only">— {p.open}</span>
-                  </button>
-                ) : (
-                  item.title
-                )}
+                <button
+                  class="pcard__btn"
+                  type="button"
+                  aria-haspopup="dialog"
+                  data-gallery={proj.id}
+                  data-title={item.title}
+                >
+                  {item.title}
+                  <span class="sr-only">— {p.open}</span>
+                </button>
               </h3>
               <p class="pcard__desc">{item.desc}</p>
             </li>
@@ -98,7 +88,7 @@ const SIZES_NARROW = '(min-width: 1100px) min(21vw, 360px), (min-width: 768px) 4
   </div>
 
   {
-    projects.filter((proj) => proj.photos.length > 0).map((proj) => (
+    projects.map((proj) => (
       <template id={`gallery-${proj.id}`}>
         {proj.photos.map((img, n) => (
           <div class="lightbox__slide">

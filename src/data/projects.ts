@@ -21,15 +21,13 @@ const defs = [
   { id: 'interiors', categories: ['interiors'] },
   { id: 'curbs', categories: ['paving', 'groundworks'] },
   { id: 'utilities', categories: ['groundworks'] },
-  // Ústí Region: text-only entry (no photos yet). Add usti-region-1.jpg … to src/assets/photos to get a gallery.
-  { id: 'usti-region', categories: [], region: true },
-] as const satisfies readonly { id: string; categories: readonly ProjectCategory[]; region?: boolean }[];
+] as const satisfies readonly { id: string; categories: readonly ProjectCategory[] }[];
 
 export type ProjectId = (typeof defs)[number]['id'];
 
 export const projects = defs.map((p) => {
   const photos = projectPhotos(p.id);
-  return { ...p, photos, cover: photos[0] ?? null };
+  return { ...p, photos, cover: photos[0]! };
 });
 
 export const categoryCounts = Object.fromEntries(

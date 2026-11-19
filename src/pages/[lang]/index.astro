@@ -8,6 +8,7 @@ import Transform from '../../components/sections/Transform.astro';
 import Scale from '../../components/sections/Scale.astro';
 import Process from '../../components/sections/Process.astro';
 import About from '../../components/sections/About.astro';
+import Map from '../../components/sections/Map.astro';
 import Contact from '../../components/sections/Contact.astro';
 import { langCodes, t, type Lang } from '../../i18n';
 
@@ -28,5 +29,6 @@ const d = t(lang);
   <Process lang={lang} />
   <Scale lang={lang} />
   <About lang={lang} />
+  <Map lang={lang} />
   <Contact lang={lang} />
 </BaseLayout>
