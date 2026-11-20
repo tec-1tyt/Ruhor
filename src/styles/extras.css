@@ -220,5 +220,5 @@
   .hero__glow-in { position: absolute; left: 0; top: 0; width: var(--hw, 1600px); height: var(--hh, 900px); will-change: transform; }
   .hero__glow-in svg { position: absolute; inset: 0; }
   /* keep small text readable where the light passes behind it */
-  .hero__eyebrow, .hero__lead, .header__descriptor { text-shadow: 0 0 14px rgb(19 21 24 / 0.95), 0 0 3px rgb(19 21 24 / 0.9); }
+  .hero__eyebrow, .hero__lead { text-shadow: 0 0 14px rgb(19 21 24 / 0.95), 0 0 3px rgb(19 21 24 / 0.9); }
 }
