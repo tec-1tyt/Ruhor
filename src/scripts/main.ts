@@ -19,6 +19,11 @@ const guard = (name: string, fn: () => void) => {
   }
 };
 
+// Mouse vs keyboard: the orange focus ring is for keyboard users only (see extras.css)
+const root = document.documentElement;
+window.addEventListener('pointerdown', () => { root.dataset.mouse = ''; }, { capture: true, passive: true });
+window.addEventListener('keydown', (e) => { if (e.key === 'Tab') delete root.dataset.mouse; }, { capture: true });
+
 guard('header', initHeader);
 guard('menu', initMenu);
 guard('lang', initLang);

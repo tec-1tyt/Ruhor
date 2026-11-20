@@ -242,3 +242,7 @@
   @keyframes hero-zoom { from { transform: scale(1.12); } }
   @keyframes ticker { to { transform: translateX(-50%); } }
 }
+
+/* Orange focus ring only for keyboard users: after a mouse click (e.g. closing the photo viewer) it stays hidden */
+html[data-mouse] :focus-visible:not(input, select, textarea),
+html[data-mouse] .pcard:has(.pcard__btn:focus-visible) .pcard__media { outline: none; }

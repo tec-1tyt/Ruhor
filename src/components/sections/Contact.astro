@@ -8,7 +8,7 @@ import SectionLabel from '../SectionLabel.astro';
 import ArchEdge from '../ArchEdge.astro';
 import Icon from '../Icon.astro';
 import { t, type Lang } from '../../i18n';
-import { company, mailHref, telHref, mapUrl } from '../../data/company';
+import { company, mailHref, telHref } from '../../data/company';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -40,14 +40,6 @@ const reach: Reach[] = [
       <p class="contact__note" data-reveal>{c.note}</p>
 
       <dl class="direct" data-reveal>
-        <div class="direct__row">
-          <dt class="label">{c.direct.location}</dt>
-          <dd>
-            <a href={mapUrl} target="_blank" rel="noopener" class="link">
-              {c.direct.map}<span class="sr-only"> {d.a11y.newTab}</span>
-            </a>
-          </dd>
-        </div>
         <div class="direct__row">
           <dt class="label">{c.direct.company}</dt>
           <dd>{company.legalName} · IČO {company.ico}</dd>
