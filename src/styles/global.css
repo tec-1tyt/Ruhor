@@ -577,60 +577,15 @@
     .hero__ctas .btn { flex: 1 1 100%; }
   }
 
-  .hero__media {
-    position: relative;
-    --arch-r: min(40vw, 360px);
-    height: clamp(440px, 88svh, 980px);
-    margin-top: clamp(48px, 7vw, 104px);
-  }
-  @media (min-width: 768px) { .hero__media { --arch-r: min(26vw, 380px); } }
-  .hero__frame {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    background: var(--color-basalt);
-    clip-path: inset(0 calc(50% - var(--arch-r)) 0 calc(50% - var(--arch-r)) round var(--arch-r) var(--arch-r) 0 0);
-    will-change: clip-path;
-  }
-  .hero__frame img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 30%; }
-  .hero__shade { position: absolute; inset: 0; background: linear-gradient(to top, rgb(19 21 24 / 0.55), transparent 40%); pointer-events: none; }
-  .hero__caption {
-    position: absolute;
-    /* anchored inside the arch, so it never hangs over the dark background */
-    left: calc(50% - var(--arch-r) + clamp(16px, 2vw, 32px));
-    right: calc(50% - var(--arch-r) + 16px);
-    bottom: clamp(20px, 3vw, 40px);
-    z-index: 1;
-    color: var(--color-stone);
-  }
-  .hero__caption::before { content: ''; width: 24px; height: 1px; background: var(--color-kiln); }
-  .hero__dim { /* dimension line drawn across the arch width */
-    position: absolute;
-    left: calc(50% - var(--arch-r));
-    width: calc(var(--arch-r) * 2);
-    top: -28px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--color-ash);
-    pointer-events: none;
-  }
-  .hero__dim i { flex: 1; height: 1px; background: currentColor; opacity: 0.45; position: relative; }
-  .hero__dim i::before, .hero__dim i::after { content: ''; position: absolute; top: -4px; width: 1px; height: 9px; background: currentColor; }
-  .hero__dim i::before { left: 0; }
-  .hero__dim i::after { right: 0; }
-
   /* CSS-only entrance for above-the-fold content: no JS dependency, no flash.
      The H1 and the photo stay visible from the very first frame (good LCP);
      only secondary text fades. */
   @media (prefers-reduced-motion: no-preference) {
     .hero .line__inner { animation: rise var(--d-slow) var(--ease) both; animation-delay: calc(var(--i, 0) * 0.08s); }
     .hero__eyebrow, .hero__aside { animation: fade-up var(--d-slow) var(--ease) both; animation-delay: 0.35s; }
-    .hero__media { animation: lift 1.2s var(--ease) both; animation-delay: 0.15s; }
   }
   @keyframes rise { from { transform: translateY(42%); } }
   @keyframes fade-up { from { opacity: 0; transform: translateY(18px); } }
-  @keyframes lift { from { transform: translateY(56px); } }
 }
 
 /* =========================================================================
@@ -1005,7 +960,6 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .hero__frame { will-change: auto; }
 }
 
 /* Cross-document view transitions (language switch, page to page). Progressive enhancement. */

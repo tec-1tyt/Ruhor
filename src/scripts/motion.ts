@@ -27,7 +27,6 @@ export function initMotion() {
   const mm = gsap.matchMedia();
 
   mm.add('(prefers-reduced-motion: no-preference)', () => {
-    heroArch();
     splitHeadings();
     reveals();
     imageReveals();
@@ -41,49 +40,6 @@ export function initMotion() {
   });
 
   document.fonts?.ready.then(() => ScrollTrigger.refresh());
-}
-
-/** Hero photo: arch window opens to full width; image settles from a slight zoom. */
-function heroArch() {
-  const media = document.querySelector<HTMLElement>('[data-hero-media]');
-  const frame = media?.querySelector<HTMLElement>('[data-hero-frame]');
-  const img = frame?.querySelector('img');
-  if (!media || !frame || !img) return;
-
-  // Keep in sync with .hero__media --arch-r in global.css
-  const radius = () => (window.innerWidth >= 768 ? Math.min(window.innerWidth * 0.26, 380) : Math.min(window.innerWidth * 0.4, 360));
-  const archClip = () => {
-    const r = radius();
-    const x = Math.max(0, media.clientWidth / 2 - r);
-    return `inset(0px ${x}px 0px ${x}px round ${r}px ${r}px 0px 0px)`;
-  };
-  const st = { trigger: media, start: 'clamp(top bottom)', end: 'top top', scrub: 0.6, invalidateOnRefresh: true };
-
-  // "Paving being laid": a grid of dark pavers covers the photo and drops away in a diagonal wave as
-  // you scroll, uncovering the finished surface. Created here (not in the HTML), so without
-  // JavaScript the photo is simply visible.
-  const COLS = window.innerWidth >= 1280 ? 14 : 10;
-  const ROWS = 7;
-  const grid = document.createElement('div');
-  grid.className = 'hero__tiles';
-  grid.setAttribute('aria-hidden', 'true');
-  grid.style.setProperty('--tc', String(COLS));
-  grid.style.setProperty('--tr', String(ROWS));
-  const tiles = Array.from({ length: COLS * ROWS }, () => document.createElement('i'));
-  grid.append(...tiles);
-  frame.insertBefore(grid, frame.querySelector('.hero__shade'));
-  gsap.to(tiles, {
-    opacity: 0,
-    scale: 0.82,
-    ease: 'none',
-    stagger: { amount: 1, grid: [ROWS, COLS], from: 'start' },
-    scrollTrigger: { trigger: media, start: 'top 78%', end: 'top 8%', scrub: 0.6 },
-  });
-
-  gsap.fromTo(frame, { clipPath: archClip }, { clipPath: 'inset(0px 0px 0px 0px round 0px 0px 0px 0px)', ease: 'none', scrollTrigger: st });
-  gsap.fromTo(img, { scale: 1.16 }, { scale: 1, ease: 'none', scrollTrigger: { ...st } });
-  const dim = media.querySelector('.hero__dim');
-  if (dim) gsap.to(dim, { opacity: 0, ease: 'none', scrollTrigger: { trigger: media, start: 'clamp(top bottom)', end: 'top 60%', scrub: true } });
 }
 
 /** Section headings: masked line-by-line rise. */
