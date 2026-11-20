@@ -115,17 +115,12 @@ export function initLightReveal() {
   }
 }
 
-/** Hero pointer light. Desktop with a mouse only; everything else keeps the quiet static pattern. */
+/** Hero photo parallax. Desktop with a mouse only; everything else keeps the static photo. */
 export function initHeroGlow() {
   const hero = document.querySelector<HTMLElement>('.hero');
-  const glow = hero?.querySelector<HTMLElement>('[data-hero-glow]');
   const par = hero?.querySelector<HTMLElement>('[data-hero-par]');
-  if (!hero || !glow || !par) return;
-  if (!window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1024px) and (prefers-reduced-motion: no-preference)').matches) {
-    glow.hidden = true;
-    return;
-  }
-  const HALF = 450; // half of the 900 px light window
+  if (!hero || !par) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1024px) and (prefers-reduced-motion: no-preference)').matches) return;
   let left = 0, top = 0, hw = 0, hh = 0;
   const measure = () => {
     const r = hero.getBoundingClientRect();
@@ -140,7 +135,6 @@ export function initHeroGlow() {
 
   let tx = hw * 0.72, ty = hh * 0.4, x = tx, y = ty, raf = 0;
   const apply = () => {
-    glow.style.transform = `translate3d(${(x - HALF).toFixed(1)}px,${(y - HALF).toFixed(1)}px,0)`;
     // photo drifts slightly against the cursor (max ±14 px)
     const px = ((x / hw) - 0.5) * -28, py = ((y / hh) - 0.5) * -28;
     par.style.transform = `translate3d(${px.toFixed(1)}px,${py.toFixed(1)}px,0)`;

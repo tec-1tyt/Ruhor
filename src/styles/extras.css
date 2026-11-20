@@ -208,8 +208,6 @@
 /* ---------- hero pointer light ---------- */
 @layer components {
   .hero__par { position: absolute; inset: -28px; will-change: transform; }
-  .hero__glow { position: absolute; left: 0; top: 0; width: 900px; height: 900px; pointer-events: none; will-change: transform; mix-blend-mode: soft-light;
-    background: radial-gradient(circle at 50% 50%, rgb(255 255 255 / 0.9) 0%, rgb(235 240 245 / 0.4) 32%, transparent 65%); }
   /* keep small text readable where the light passes behind it */
   .hero__eyebrow, .hero__lead { text-shadow: 0 0 14px rgb(19 21 24 / 0.95), 0 0 3px rgb(19 21 24 / 0.9); }
 }
