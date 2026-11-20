@@ -13,7 +13,6 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const d = t(lang);
 const heroImg = photo('hall-fan-3');
-const showImg = photo('hall-fan-5');
 // Segmental-fan paving pattern (same arcs as the logo's arch): concentric half circles on a 80×40 tile.
 const fanPaths = [[40, 40], [0, 20], [80, 20], [0, 60], [80, 60]]
   .flatMap(([cx, cy]) => [10, 20, 30, 40].map((r) => `<path d="M${cx - r} ${cy}A${r} ${r} 0 0 1 ${cx + r} ${cy}"/>`))
@@ -50,9 +49,12 @@ const fanPaths = [[40, 40], [0, 20], [80, 20], [0, 60], [80, 60]]
       </span>
     </h1>
     <div class="hero__showcase" aria-hidden="true">
-      <div class="hero__arch">
-        <Picture src={showImg} alt="" widths={[480, 720, 900]} sizes="(min-width: 1440px) 420px, 32vw" formats={['avif']} fallbackFormat="webp" quality={50} loading="lazy" decoding="async" />
-      </div>
+      <svg class="hero__plan" viewBox="0 0 400 500" focusable="false">
+        <g class="hero__plan-arcs"><path style="--k:0" class="a" pathLength="1" d="M170 440A30 30 0 0 1 230 440"/><path style="--k:1" class="a" pathLength="1" d="M140 440A60 60 0 0 1 260 440"/><path style="--k:2" class="a" pathLength="1" d="M110 440A90 90 0 0 1 290 440"/><path style="--k:3" class="a" pathLength="1" d="M80 440A120 120 0 0 1 320 440"/><path style="--k:4" class="a" pathLength="1" d="M50 440A150 150 0 0 1 350 440"/><path style="--k:5" class="a" pathLength="1" d="M20 440A180 180 0 0 1 380 440"/><path class="a" pathLength="1" style="--k:6" d="M-10 440A210 210 0 0 1 410 440"/><path class="a" pathLength="1" style="--k:7" d="M-40 440A240 240 0 0 1 440 440"/><path style="--k:6" class="a" pathLength="1" d="M-10 440A30 30 0 0 1 50 440"/><path style="--k:7" class="a" pathLength="1" d="M-40 440A60 60 0 0 1 80 440"/><path style="--k:8" class="a" pathLength="1" d="M-70 440A90 90 0 0 1 110 440"/><path style="--k:9" class="a" pathLength="1" d="M350 440A30 30 0 0 1 410 440"/><path style="--k:10" class="a" pathLength="1" d="M320 440A60 60 0 0 1 440 440"/><path style="--k:11" class="a" pathLength="1" d="M290 440A90 90 0 0 1 470 440"/></g>
+        <path class="hero__plan-base" d="M0 440H400"/>
+        <g class="hero__plan-ticks"><path d="M0 440v12"/><path d="M20 440v6"/><path d="M40 440v6"/><path d="M60 440v6"/><path d="M80 440v6"/><path d="M100 440v12"/><path d="M120 440v6"/><path d="M140 440v6"/><path d="M160 440v6"/><path d="M180 440v6"/><path d="M200 440v12"/><path d="M220 440v6"/><path d="M240 440v6"/><path d="M260 440v6"/><path d="M280 440v6"/><path d="M300 440v12"/><path d="M320 440v6"/><path d="M340 440v6"/><path d="M360 440v6"/><path d="M380 440v6"/><path d="M400 440v12"/></g>
+        <path class="hero__plan-gem" d="M200 414l26 26-26 26-26-26z"/>
+      </svg>
       <p class="hero__badge label"><span></span>{d.projects.geo}</p>
     </div>
     <div class="hero__aside">
