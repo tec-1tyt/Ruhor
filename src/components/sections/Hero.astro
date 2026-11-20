@@ -14,14 +14,11 @@ const { lang } = Astro.props;
 const d = t(lang);
 const heroImg = photo('hall-fan-3');
 const serviceNames = Object.values(d.services.items).map((i) => i.name);
-// Segmental-fan paving pattern (same arcs as the logo's arch): concentric half circles on a 80×40 tile.
-const fanPaths = [[40, 40], [0, 20], [80, 20], [0, 60], [80, 60]]
-  .flatMap(([cx, cy]) => [10, 20, 30, 40].map((r) => `<path d="M${cx - r} ${cy}A${r} ${r} 0 0 1 ${cx + r} ${cy}"/>`))
-  .join('');
 ---
 
 <section class="hero" id="top" data-theme="dark" data-section-theme="dark">
   <div class="hero__bg">
+    <div class="hero__par" data-hero-par>
     <Picture
       src={heroImg}
       alt={d.hero.imageAlt}
@@ -34,23 +31,10 @@ const fanPaths = [[40, 40], [0, 20], [80, 20], [0, 60], [80, 60]]
       fetchpriority="high"
       decoding="async"
     />
-    <div class="hero__veil" aria-hidden="true"></div>
-  </div>
-  <div class="hero__fan" aria-hidden="true">
-    <svg class="hero__fan-base" width="100%" height="100%" focusable="false">
-      <defs><pattern id="fan-base" width="80" height="40" patternUnits="userSpaceOnUse"><g fill="none" stroke="#f2f0eb" stroke-width="1" set:html={fanPaths} /></pattern></defs>
-      <rect width="100%" height="100%" fill="url(#fan-base)" />
-    </svg>
-    <!-- Pointer light: a small window with a static radial mask moves with the cursor (transform only);
-         the hot pattern inside counter-moves so it stays fixed to the page. No per-frame repaint. -->
-    <div class="hero__glow" data-hero-glow>
-      <div class="hero__glow-in">
-        <svg width="100%" height="100%" focusable="false">
-          <defs><pattern id="fan-hot" width="80" height="40" patternUnits="userSpaceOnUse"><g fill="none" stroke="#f07a4a" stroke-width="1.1" set:html={fanPaths} /></pattern></defs>
-          <rect width="100%" height="100%" fill="url(#fan-hot)" />
-        </svg>
-      </div>
     </div>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <!-- Pointer spotlight: a warm light that follows the cursor over the photo (transform only). -->
+    <div class="hero__glow" data-hero-glow aria-hidden="true"></div>
   </div>
 
   <div class="hero__guides" aria-hidden="true">

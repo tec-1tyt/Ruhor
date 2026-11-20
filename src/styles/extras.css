@@ -207,10 +207,9 @@
 
 /* ---------- hero pointer light ---------- */
 @layer components {
-  .hero__glow { position: absolute; left: 0; top: 0; width: 760px; height: 760px; overflow: hidden; pointer-events: none; opacity: 0.55; will-change: transform;
-    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0%, transparent 68%); mask-image: radial-gradient(circle at 50% 50%, #000 0%, transparent 68%); }
-  .hero__glow-in { position: absolute; left: 0; top: 0; width: var(--hw, 1600px); height: var(--hh, 900px); will-change: transform; }
-  .hero__glow-in svg { position: absolute; inset: 0; }
+  .hero__par { position: absolute; inset: -28px; will-change: transform; }
+  .hero__glow { position: absolute; left: 0; top: 0; width: 900px; height: 900px; pointer-events: none; will-change: transform; mix-blend-mode: soft-light;
+    background: radial-gradient(circle at 50% 50%, rgb(255 214 170 / 0.95) 0%, rgb(240 122 74 / 0.45) 32%, transparent 65%); }
   /* keep small text readable where the light passes behind it */
   .hero__eyebrow, .hero__lead { text-shadow: 0 0 14px rgb(19 21 24 / 0.95), 0 0 3px rgb(19 21 24 / 0.9); }
 }
