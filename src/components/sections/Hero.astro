@@ -13,6 +13,7 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const d = t(lang);
 const heroImg = photo('hall-fan-3');
+const showImg = photo('hall-fan-5');
 // Segmental-fan paving pattern (same arcs as the logo's arch): concentric half circles on a 80×40 tile.
 const fanPaths = [[40, 40], [0, 20], [80, 20], [0, 60], [80, 60]]
   .flatMap(([cx, cy]) => [10, 20, 30, 40].map((r) => `<path d="M${cx - r} ${cy}A${r} ${r} 0 0 1 ${cx + r} ${cy}"/>`))
@@ -48,6 +49,12 @@ const fanPaths = [[40, 40], [0, 20], [80, 20], [0, 60], [80, 60]]
         {d.hero.title.map((line, i) => <span class="line"><span class="line__inner" style={`--i:${i}`}>{line}</span></span>)}
       </span>
     </h1>
+    <div class="hero__showcase" aria-hidden="true">
+      <div class="hero__arch">
+        <Picture src={showImg} alt="" widths={[480, 720, 900]} sizes="(min-width: 1440px) 420px, 32vw" formats={['avif']} fallbackFormat="webp" quality={50} loading="lazy" decoding="async" />
+      </div>
+      <p class="hero__badge label"><span></span>{d.projects.geo}</p>
+    </div>
     <div class="hero__aside">
       <p class="hero__lead">{d.hero.lead}</p>
       <div class="hero__ctas">
